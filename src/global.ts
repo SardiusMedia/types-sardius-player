@@ -10,6 +10,7 @@ declare global {
     SARDIUSENDPOINT: string;
   }
 
+  export const videojs: typeof videojs;
 
   export type ObjectKeys<T> = T extends object
     ? (keyof T)[]
