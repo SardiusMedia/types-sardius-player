@@ -1,0 +1,29 @@
+{
+  "name": "types-sardius-player",
+  "version": "1.0.0",
+  "description": "Typescript types for Sardius Player",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SardiusMedia/types-sardius-player.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SardiusMedia/types-sardius-player/issues"
+  },
+  "homepage": "https://github.com/SardiusMedia/types-sardius-player#readme",
+  "devDependencies": {
+    "@types/node": "^20.4.2",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@types/dynogels": "^9.0.7",
+    "@types/hls-parser": "^0.8.4",
+    "@types/moment": "^2.13.0"
+  }
+}
