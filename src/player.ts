@@ -1,6 +1,6 @@
-import { Moment } from 'moment';
 import { PlayerAsset, PlayerAssetImage } from './assets';
 import { AccountModel } from './accounts';
+import { StringBoolean } from './common'
 
 export interface CaptionOptions {
   cueStyle?: string;
@@ -342,7 +342,7 @@ export interface PlayerData {
   assetId: string;
   assetType: string;
   config: PlayerBuiltConfigOptions | string;
-  dateToPurgeCache?: Moment;
+  dateToPurgeCache?: any;
   end?: number;
   ignore?: string;
   localCssLinks?: string;

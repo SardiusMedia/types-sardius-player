@@ -54,13 +54,6 @@
   dependencies:
     "@types/node" "*"
 
-"@types/moment@^2.13.0":
-  version "2.13.0"
-  resolved "https://registry.yarnpkg.com/@types/moment/-/moment-2.13.0.tgz#604ebd189bc3bc34a1548689404e61a2a4aac896"
-  integrity sha512-DyuyYGpV6r+4Z1bUznLi/Y7HpGn4iQ4IVcGn8zrr1P4KotKLdH0sbK1TFR6RGyX6B+G8u83wCzL+bpawKU/hdQ==
-  dependencies:
-    moment "*"
-
 "@types/node@*", "@types/node@^20.4.2":
   version "20.4.2"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-20.4.2.tgz#129cc9ae69f93824f92fac653eebfb4812ab4af9"
@@ -81,11 +74,6 @@ joi@^17.3.0:
     "@sideway/address" "^4.1.3"
     "@sideway/formula" "^3.0.1"
     "@sideway/pinpoint" "^2.0.0"
-
-moment@*, moment@^2.29.4:
-  version "2.29.4"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.4.tgz#3dbe052889fe7c1b2ed966fcb3a77328964ef108"
-  integrity sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==
 
 typescript@^5.1.6:
   version "5.1.6"

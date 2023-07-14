@@ -43,3 +43,5 @@ export interface VCMSEvent {
   username?: string;
   token?: string;
 }
+
+export type StringBoolean = string | boolean;
