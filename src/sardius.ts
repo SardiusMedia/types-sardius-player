@@ -1,0 +1,189 @@
+import videojs, {
+  VideoJsPlayer as VJSPlayer,
+  VideoJsPlayerOptions as VJSPlayerOptions,
+} from 'video.js';
+
+export interface SardiusTextTrack extends TextTrack {
+  label: string;
+  name: string;
+  language: string;
+  default?: boolean;
+  autoselect?: boolean;
+  forced?: boolean;
+}
+
+export interface SardiusTextTrackList
+  extends ReturnType<VJSPlayer['textTracks']> {
+  mode?: TextTrack['mode'];
+  [index: number]: SardiusTextTrack;
+}
+
+interface SardiusControlBar extends videojs.ControlBar {
+  settingsMenuLegacy: KeyValueAny;
+  closedCaptions: { el_: HTMLTrackElement };
+}
+
+export interface SJSPlayer extends VJSPlayer {
+  controlBar: SardiusControlBar;
+  textTracks: () => SardiusTextTrackList;
+}
+
+export type TextTrackOptions = videojs.TextTrackOptions;
+
+export interface CaptionOptions {
+  cueStyle?: string;
+  regionStyle?: string;
+  iOS?: Omit<CaptionOptions, 'iOS'>;
+  align?: 'right' | 'left' | 'center' | 'start' | 'end';
+  line?: number;
+  position?: number;
+  size?: number;
+  snapToLines?: boolean;
+}
+
+export interface PlayerOptions {
+  plugins?: {
+    sardius?: {
+      captionOptions?: CaptionOptions;
+    };
+  };
+  labels?: KeyValueTyped<string>;
+}
+
+export interface SourceHandler {
+  options?: PlayerOptions;
+  captions?: RemoteCaptionObject[];
+  plugin: {
+    streamHandler: {
+      lib: { hls?: boolean };
+      setTextTrackDisplay: (arg: boolean) => void;
+      setCurrentTextTrack: (arg: number) => void;
+    };
+  };
+}
+
+type SardiusVJSComponentData = any;
+
+export type SJSPlayerOptions = VJSPlayerOptions & {
+  callback: (data: SardiusVJSComponentData, button: any) => void;
+  classes?: string;
+  data?: SardiusVJSComponentData;
+  id?: string;
+  isActive?: boolean | undefined;
+  label?: string;
+  options?: SardiusVJSComponentData;
+  playerOptions?: PlayerOptions;
+};
+
+interface MenuCommonOptions {
+  callback?: (data: SardiusVJSComponentData, button: any) => void;
+  classes?: string;
+  data?: SardiusVJSComponentData;
+  error?: Error;
+  isActive?: boolean | undefined;
+  minItems?: number;
+  order?: number;
+  playerOptions?: PlayerOptions;
+  label?: string;
+}
+
+export type SJSMenuItem = MenuCommonOptions & videojs.MenuItem;
+export type SJSMenu = MenuCommonOptions & videojs.Menu;
+export type SJSMenuItemOptions = MenuCommonOptions & videojs.MenuItemOptions;
+export type SJSMenuOptions = MenuCommonOptions & videojs.MenuOptions;
+export type SJSComponent = MenuCommonOptions & videojs.Component;
+
+type VJSButton = videojs.Button;
+
+interface SPButtonT extends VJSButton {
+  isSelected_: boolean;
+}
+
+export declare class SPButton extends videojs.Button implements SPButtonT {
+  constructor(player: VJSPlayer, options: VJSPlayerOptions);
+  createEl: () => HTMLButtonElement;
+  label: (label: string) => void;
+  onClick: (callback: () => void) => void;
+  handleClick: () => void;
+  isSelected_: boolean;
+}
+
+export type RemoteCaptionObject = {
+  file?: string;
+  url?: string;
+  fileType?: string;
+  id?: number;
+  label?: string;
+  kind?: TextTrackKind;
+  language?: string;
+  mode?: TextTrack['mode'];
+};
+
+export interface SPItemObject {
+  classes?: string;
+  label?: string;
+  language?: string;
+  selectable?: boolean;
+  isActive?: boolean;
+  id?: string;
+  order?: number;
+  data?: RemoteCaptionObject | TextTrack;
+  callback?: (data: Required<RemoteCaptionObject>, button: SPButton) => void;
+  options?: { id?: number };
+}
+
+export declare class SPItem extends videojs.MenuItem {
+  constructor(player: VJSPlayer, options: VJSPlayerOptions);
+  init: () => void;
+  active: () => void;
+  handleClick: () => void;
+}
+
+export declare class SPGroup extends videojs.Menu {
+  constructor(player: VJSPlayer, options: VJSPlayerOptions);
+  sortOrder: (a: number, b: number) => number;
+  addItems: (items: SPItemObject[]) => void;
+  setActiveItem: (item: SPButton | SPItemObject | undefined) => void;
+  clearGroup: () => void;
+  items?: SPItemObject[];
+}
+
+export declare class SPMenu extends videojs.MenuButton {
+  constructor(
+    player: VJSPlayer,
+    options: VJSPlayerOptions,
+    onClick?: () => void,
+  );
+  addGroup: (settings: {
+    classes?: string;
+    id?: string;
+    title?: string;
+    minItems?: number;
+  }) => SPGroup;
+  toggleMenuBarControls: () => void;
+  handleTouch: (event: Event | MouseEvent, keepHover?: boolean) => void;
+}
+
+export interface SardiusObject {
+  libs: {
+    MenuMaker: typeof SPMenu;
+    GroupMaker: typeof SPGroup;
+    ButtonMaker: typeof SPButton;
+    Component: videojs.Component;
+  };
+  menu: <T>(pluginName: string, plugin: T) => void;
+}
+
+export type SardiusVJS = typeof videojs & {
+  getComponent: (componentName: string) => videojs.Component;
+  registerPlugin: (
+    componentName: string,
+    func: typeof videojs.Component,
+  ) => videojs.Component;
+  extend: (
+    component: videojs.Component,
+    options: {
+      constructor: (player: VJSPlayer, options: VJSPlayerOptions) => SPMenu;
+    },
+  ) => videojs.Component;
+};

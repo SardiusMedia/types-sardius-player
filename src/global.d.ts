@@ -10,6 +10,10 @@ declare global {
   interface ObjectConstructor {
     keys<T>(o: T): ObjectKeys<T>;
   }
+
+  interface Window {
+    SARDIUSENDPOINT: string;
+  }
 }
 
 declare module 'serverless-req-res' {

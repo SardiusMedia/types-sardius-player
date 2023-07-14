@@ -9,4 +9,5 @@ export * from './src/mpx';
 export * from './src/player';
 export * from './src/res';
 export * from './src/req';
+export * from './src/sardius';
 export * from './src/youtube';
