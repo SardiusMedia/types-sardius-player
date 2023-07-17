@@ -87,6 +87,11 @@ export type SJSMenuItemOptions = MenuCommonOptions & videojs.MenuItemOptions;
 export type SJSMenuOptions = MenuCommonOptions & videojs.MenuOptions;
 export type SJSComponent = MenuCommonOptions & videojs.Component;
 
+export interface LanguageMenuItem extends SJSMenuItem {
+  code?: string;
+}
+export type SourceObject = videojs.Tech.SourceObject;
+
 type VJSButton = videojs.Button;
 
 interface SPButtonT extends VJSButton {
