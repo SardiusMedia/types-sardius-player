@@ -79,6 +79,9 @@ interface MenuCommonOptions {
   order?: number;
   playerOptions?: PlayerOptions;
   label?: string;
+  bitrate?: number;
+  height?: number;
+  width?: number;
 }
 
 export type SJSMenuItem = MenuCommonOptions & videojs.MenuItem;
@@ -90,11 +93,8 @@ export type SJSComponent = MenuCommonOptions & videojs.Component;
 export interface LanguageMenuItem extends SJSMenuItem {
   code?: string;
 }
-interface HeightWidth {
-  height?: number;
-  width?: number;
-}
-export type SourceObject = videojs.Tech.SourceObject & SJSMenuItemOptions & HeightWidth;
+
+export type SourceObject = videojs.Tech.SourceObject & SJSMenuItemOptions;
 
 type VJSButton = videojs.Button;
 
