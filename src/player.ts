@@ -1,6 +1,7 @@
 import { PlayerAsset, PlayerAssetImage } from './assets';
 import { AccountModel } from './accounts';
 import { StringBoolean } from './common'
+import { SJSMenuItem } from './sardius';
 
 export interface CaptionOptions {
   cueStyle?: string;
@@ -470,4 +471,8 @@ export interface OEmbedJsonObject {
   html: string;
   width: number;
   height: number;
+}
+
+export interface LanguageMenuItem extends SJSMenuItem {
+  code?: string;
 }
