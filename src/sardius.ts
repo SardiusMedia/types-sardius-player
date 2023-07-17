@@ -79,7 +79,7 @@ interface MenuCommonOptions {
   order?: number;
   playerOptions?: PlayerOptions;
   label?: string;
-  bitrate?: number;
+  bitrate?: string | number;
   height?: number;
   width?: number;
 }
