@@ -472,3 +472,7 @@ export interface OEmbedJsonObject {
   width: number;
   height: number;
 }
+
+export interface LanguageMenuItem extends SJSMenuItem {
+  code?: string;
+}
