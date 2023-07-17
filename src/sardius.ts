@@ -90,7 +90,11 @@ export type SJSComponent = MenuCommonOptions & videojs.Component;
 export interface LanguageMenuItem extends SJSMenuItem {
   code?: string;
 }
-export type SourceObject = videojs.Tech.SourceObject & SJSMenuItemOptions;
+interface HeightWidth {
+  height?: number;
+  width?: number;
+}
+export type SourceObject = videojs.Tech.SourceObject & SJSMenuItemOptions & HeightWidth;
 
 type VJSButton = videojs.Button;
 
