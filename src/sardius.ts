@@ -2,7 +2,7 @@ import videojs, {
   VideoJsPlayer as VJSPlayer,
   VideoJsPlayerOptions as VJSPlayerOptions,
 } from 'video.js';
-import { DynamoPlayerModel, PlayerData } from './player';
+import { DynamoPlayerModel, PlayerData, PlayerParams } from './player';
 
 export interface SardiusTextTrack extends TextTrack {
   label: string;
@@ -42,7 +42,24 @@ export interface CaptionOptions {
   snapToLines?: boolean;
 }
 
-export type PlayerOptions = DynamoPlayerModel & {asset: PlayerData['asset']}
+export type PlayerOptions = DynamoPlayerModel & {
+  asset: PlayerData['asset'];
+  assetUID?: string;
+  dash?: string;
+  endpoint?: string;
+  feed?: string;
+  guid?: string;
+  hls?: string;
+  options?: PlayerParams;
+  pid?: string;
+  rpid?: string;
+  simlive?: string;
+  simliveFeed?: string;
+  token?: string;
+  type?: string;
+  url?: string;
+  yt?: string;
+}
 
 export interface SourceHandler {
   options?: PlayerOptions;

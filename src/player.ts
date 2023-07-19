@@ -258,7 +258,6 @@ export interface DynamoPlayerModel {
   createdBy?: string;
   createdDate?: string;
   doAudioOnlyCheck?: boolean;
-  endpoint?: string;
   errorHtml?: string;
   favicon?: string;
   flushOnBufferStall?: number;
@@ -271,7 +270,7 @@ export interface DynamoPlayerModel {
   ignoreLocale?: boolean;
   iOSNativePlayer?: boolean;
   labels?: KeyValueTyped;
-  lao?: boolean;
+  lao?: string;
   liveDelay?: number;
   locale?: string;
   loop?: boolean;
@@ -284,7 +283,7 @@ export interface DynamoPlayerModel {
   pLoaderDebug?: boolean;
   plugins: PlayerPlugins;
   redirects?: Redirects;
-  resi?: boolean;
+  resi?: string;
   rewindDuration?: number;
   securedData?: SecuredData;
   securedUrls?: boolean;
@@ -300,12 +299,13 @@ export interface DynamoPlayerModel {
   title?: string;
   uid?: string;
   updatedAt?: string;
-  url?: string;
   useErrorImage?: boolean;
   version?: string;
   volume?: number;
   youtube?: Youtube;
 }
+
+
 
 export type DBPlayerModelSansAccountId = Omit<DynamoPlayerModel, 'accountId'>;
 
