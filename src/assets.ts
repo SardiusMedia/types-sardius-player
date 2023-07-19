@@ -130,6 +130,8 @@ interface Metadata {
   originalAsset?: AssetResponse;
   title: string;
   description?: string;
+  isLive?: boolean;
+  assetId?: string;
 }
 
 type AkamaiEdgeAuth = unknown;
