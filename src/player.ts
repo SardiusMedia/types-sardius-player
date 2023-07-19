@@ -475,8 +475,8 @@ export interface OEmbedJsonObject {
 }
 
 export interface PlayerManagerRootSettings{
-  asset?: string;
   accountId?: string;
+  asset?: string;
   assetUID?: string;
   dash?: string;
   endpoint?: string;
@@ -488,14 +488,15 @@ export interface PlayerManagerRootSettings{
   metadata?: PlayerData['asset']['metadata'];
   options: PlayerParams;
   pid?: string;
+  plugins?: PlayerPlugins;
   pluginSettings: PlayerPlugins;
   resi?: string;
   rpid?: string;
   simlive?: string;
   simliveFeed?: string;
+  techOrder?: string[];
   token?: string;
   type?: string;
   url: string;
   yt?: string;
-  plugins?: PlayerPlugins;
 }

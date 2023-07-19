@@ -26,6 +26,7 @@ interface SardiusControlBar extends videojs.ControlBar {
 
 export interface SJSPlayer extends VJSPlayer {
   controlBar: SardiusControlBar;
+  bitratesMenu: SPGroup;
   textTracks: () => SardiusTextTrackList;
 }
 
