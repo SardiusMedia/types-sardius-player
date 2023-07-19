@@ -258,6 +258,7 @@ export interface DynamoPlayerModel {
   createdBy?: string;
   createdDate?: string;
   doAudioOnlyCheck?: boolean;
+  endpoint?: string;
   errorHtml?: string;
   favicon?: string;
   flushOnBufferStall?: number;
@@ -299,6 +300,7 @@ export interface DynamoPlayerModel {
   title?: string;
   uid?: string;
   updatedAt?: string;
+  url?: string;
   useErrorImage?: boolean;
   version?: string;
   volume?: number;
