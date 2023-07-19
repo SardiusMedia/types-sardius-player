@@ -473,3 +473,29 @@ export interface OEmbedJsonObject {
   width: number;
   height: number;
 }
+
+export interface PlayerManagerRootSettings{
+  asset?: string;
+  accountId?: string;
+  assetUID?: string;
+  dash?: string;
+  endpoint?: string;
+  feed?: string;
+  guid?: string;
+  hls?: string;
+  id?: string;
+  lao?: string;
+  metadata?: PlayerData['asset']['metadata'];
+  options: PlayerParams;
+  pid?: string;
+  pluginSettings: PlayerPlugins;
+  resi?: string;
+  rpid?: string;
+  simlive?: string;
+  simliveFeed?: string;
+  token?: string;
+  type?: string;
+  url: string;
+  yt?: string;
+  plugins?: PlayerPlugins;
+}
