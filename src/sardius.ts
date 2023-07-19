@@ -43,7 +43,7 @@ export interface CaptionOptions {
 }
 
 export type PlayerOptions = DynamoPlayerModel & {
-  asset: PlayerData['asset'];
+  asset?: string;
   assetUID?: string;
   dash?: string;
   endpoint?: string;
