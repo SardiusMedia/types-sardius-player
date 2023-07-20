@@ -493,7 +493,7 @@ export interface PlayerManagerRootSettings extends Setup {
     eventId?: string;
     experienceId?: string;
     locale?: LanguageCode;
-    locationId?: string;
+    locationId?: string[];
     MiniPlayerCallback?: () => void;
     pLoader?: boolean;
     siteId?: string;
