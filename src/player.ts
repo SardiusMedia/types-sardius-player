@@ -210,6 +210,11 @@ interface ControlBar {
   volumePanel: VolumePanel;
 }
 
+type Plugins =  Omit<PlayerPlugins, 'spMenuBar'> & {
+  sardius?: Partial<SardiusPlayerConfig>;
+  spMenuBar?: SPMenuBar;
+};
+
 export interface Setup {
   autoplay?: boolean;
   BigPlayButton?: boolean;
@@ -223,17 +228,14 @@ export interface Setup {
   loop?: boolean;
   muted?: boolean;
   playbackRates?: number[];
-  plugins?: Omit<PlayerPlugins, 'spMenuBar'> & {
-    sardius?: Partial<SardiusPlayerConfig>;
-    spMenuBar?: SPMenuBar;
-  };
+  plugins?: Plugins;
   poster?: string;
   preload?: string;
+  redirects?: Redirects;
   sources?: Sources;
   techOrder?: string[];
   version?: string;
   youtube?: Youtube;
-  redirects?: Redirects;
 }
 
 interface AkamaiEdgeAuth {
@@ -474,7 +476,7 @@ export interface OEmbedJsonObject {
   height: number;
 }
 
-export interface PlayerManagerRootSettings{
+export interface PlayerManagerRootSettings extends Setup {
   accountId?: string;
   asset?: string;
   assetUID?: string;
