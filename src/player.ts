@@ -485,7 +485,7 @@ export interface PlayerManagerRootSettings extends Setup {
   metadata?: PlayerData['asset']['metadata'];
   options?: PlayerParams;
   pid?: string;
-  pluginSettings?: PlayerPlugins;
+  pluginSettings?: PlayerPlugins & { uid?: string };
   resi?: string;
   rpid?: string;
   simlive?: string;
