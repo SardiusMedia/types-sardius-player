@@ -1,6 +1,6 @@
 import { PlayerAsset, PlayerAssetImage } from './assets';
 import { AccountModel } from './accounts';
-import { StringBoolean } from './common'
+import { StringBoolean } from './common';
 
 export interface CaptionOptions {
   cueStyle?: string;
@@ -210,7 +210,7 @@ interface ControlBar {
   volumePanel: VolumePanel;
 }
 
-type Plugins =  Omit<PlayerPlugins, 'spMenuBar'> & {
+type Plugins = Omit<PlayerPlugins, 'spMenuBar'> & {
   sardius?: Partial<SardiusPlayerConfig>;
   spMenuBar?: SPMenuBar;
 };
@@ -306,8 +306,6 @@ export interface DynamoPlayerModel {
   volume?: number;
   youtube?: Youtube;
 }
-
-
 
 export type DBPlayerModelSansAccountId = Omit<DynamoPlayerModel, 'accountId'>;
 
@@ -488,10 +486,10 @@ export interface PlayerManagerRootSettings extends Setup {
   id?: string;
   lao?: string;
   metadata?: PlayerData['asset']['metadata'];
-  options: PlayerParams;
+  options?: PlayerParams;
   pid?: string;
   plugins?: PlayerPlugins;
-  pluginSettings: PlayerPlugins;
+  pluginSettings?: PlayerPlugins;
   resi?: string;
   rpid?: string;
   simlive?: string;
@@ -499,6 +497,6 @@ export interface PlayerManagerRootSettings extends Setup {
   techOrder?: string[];
   token?: string;
   type?: string;
-  url: string;
+  url?: string;
   yt?: string;
 }
