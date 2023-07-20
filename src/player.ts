@@ -210,11 +210,6 @@ interface ControlBar {
   volumePanel: VolumePanel;
 }
 
-type Plugins = Omit<PlayerPlugins, 'spMenuBar'> & {
-  sardius?: Partial<SardiusPlayerConfig>;
-  spMenuBar?: SPMenuBar;
-};
-
 export interface Setup {
   autoplay?: boolean;
   BigPlayButton?: boolean;
@@ -228,7 +223,7 @@ export interface Setup {
   loop?: boolean;
   muted?: boolean;
   playbackRates?: number[];
-  plugins?: Plugins;
+  plugins?: PlayerPlugins;
   poster?: string;
   preload?: string;
   redirects?: Redirects;
@@ -488,7 +483,6 @@ export interface PlayerManagerRootSettings extends Setup {
   metadata?: PlayerData['asset']['metadata'];
   options?: PlayerParams;
   pid?: string;
-  plugins?: PlayerPlugins;
   pluginSettings?: PlayerPlugins;
   resi?: string;
   rpid?: string;
