@@ -1,6 +1,7 @@
 import { PlayerAsset, PlayerAssetImage } from './assets';
 import { AccountModel } from './accounts';
 import { StringBoolean } from './common';
+import { SourceObject } from './sardius';
 
 export interface CaptionOptions {
   cueStyle?: string;
@@ -133,7 +134,7 @@ export interface YoutubeSettings {
 }
 
 type Youtube = YoutubeSettings | boolean;
-type Sources = unknown;
+type Sources = SourceObject[] | undefined;
 type Ruxit = unknown;
 type Peer5 = unknown;
 type Vjs = unknown;
