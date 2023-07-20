@@ -209,6 +209,7 @@ interface VolumePanel {
 interface ControlBar {
   children: string[];
   volumePanel: VolumePanel;
+  [key: string]: any;
 }
 
 export interface Setup {
