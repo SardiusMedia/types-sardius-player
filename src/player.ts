@@ -218,7 +218,7 @@ export interface Setup {
   errors?: Errors;
   flash?: KeyValueTyped;
   fluid?: boolean;
-  html5?: KeyValueTyped<KeyValueTyped>;
+  html5?: KeyValueTyped<KeyValueTyped | boolean>;
   locations?: false | PlayerLocations;
   loop?: boolean;
   muted?: boolean;
