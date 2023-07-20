@@ -479,6 +479,7 @@ export interface PlayerManagerRootSettings extends Setup {
   guid?: string;
   hls?: string;
   id?: string;
+  isIframe?: boolean;
   lao?: string;
   metadata?: PlayerData['asset']['metadata'];
   options?: PlayerParams;
