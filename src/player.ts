@@ -1,6 +1,6 @@
 import { PlayerAsset, PlayerAssetImage } from './assets';
 import { AccountModel } from './accounts';
-import { StringBoolean } from './common';
+import { LanguageCode, StringBoolean } from './common';
 import { SourceObject } from './sardius';
 
 export interface CaptionOptions {
@@ -470,6 +470,8 @@ export interface OEmbedJsonObject {
   height: number;
 }
 
+// Extended model for the JS player type rather than the iframe player.
+// This player lets you pass more things, like callback functions
 export interface PlayerManagerRootSettings extends Setup {
   accountId?: string;
   asset?: string;
@@ -485,7 +487,20 @@ export interface PlayerManagerRootSettings extends Setup {
   metadata?: PlayerData['asset']['metadata'];
   options?: PlayerParams;
   pid?: string;
-  pluginSettings?: PlayerPlugins & { uid?: string };
+  pluginSettings?: PlayerPlugins & { 
+    affiliate?: string;
+    bitrate?: number;
+    eventId?: string;
+    experienceId?: string;
+    locale?: LanguageCode;
+    locationId?: string;
+    MiniPlayerCallback?: () => void;
+    pLoader?: boolean;
+    siteId?: string;
+    TheaterModeCallback?: () => void;
+    uid?: string;
+    usehttps?: boolean;
+  };
   resi?: string;
   rpid?: string;
   simlive?: string;
