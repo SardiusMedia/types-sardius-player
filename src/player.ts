@@ -148,6 +148,7 @@ export interface Preroll {
   src?: string;
   allowSkip?: string;
   auto?: boolean;
+  href?: string;
 }
 
 export interface PlayerPlugins {
