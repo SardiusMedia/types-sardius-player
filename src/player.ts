@@ -439,6 +439,7 @@ export interface SardiusPlayerConfig {
   locale?: DynamoPlayerModel['locale'];
   maxBufferSize?: DynamoPlayerModel['maxBufferSize'];
   menuAttachments: DynamoPlayerModel['menuAttachments'];
+  MiniPlayerCallback?: () => void;
   nativeiOSFullscreen?: DynamoPlayerModel['nativeiOSFullscreen'];
   playerId: PlayerParams['playerId'];
   pLoader?: DynamoPlayerModel['pLoader'];
@@ -448,6 +449,7 @@ export interface SardiusPlayerConfig {
   shift?: DynamoPlayerModel['shift'];
   showBitrates?: DynamoPlayerModel['showBitrates'];
   simLiveLiveDelay?: DynamoPlayerModel['simLiveLiveDelay'];
+  TheaterModeCallback?: () => void;
   siteId?: PlayerParams['siteId'];
   startLevel?: DynamoPlayerModel['startLevel'];
   uid?: PlayerData['uid'];
