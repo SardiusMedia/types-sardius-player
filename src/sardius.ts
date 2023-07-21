@@ -22,8 +22,8 @@ export interface SardiusTextTrackList
 interface SardiusControlBar extends videojs.ControlBar {
   settingsMenuLegacy: KeyValueAny;
   closedCaptions: { el_: HTMLTrackElement };
-  progressControl: HTMLDivElement;
-  playToggle: HTMLDivElement;
+  progressControl: SJSButton;
+  playToggle: SJSButton;
 }
 
 export interface SJSPlayer extends VJSPlayer {
@@ -122,7 +122,7 @@ interface SPButtonT extends VJSButton {
   isSelected_: boolean;
 }
 
-export declare class SPButton extends videojs.Button implements SPButtonT {
+export declare class SJSButton extends videojs.Button implements SPButtonT {
   constructor(player: VJSPlayer, options: VJSPlayerOptions);
   createEl: () => HTMLButtonElement;
   label: (label: string) => void;
@@ -151,7 +151,7 @@ export interface SPItemObject {
   id?: string;
   order?: number;
   data?: RemoteCaptionObject | TextTrack;
-  callback?: (data: Required<RemoteCaptionObject>, button: SPButton) => void;
+  callback?: (data: Required<RemoteCaptionObject>, button: SJSButton) => void;
   options?: { 
     id?: number;
     data?: { height?: number; width?: number; };
@@ -170,7 +170,7 @@ export declare class SPGroup extends videojs.Menu {
   constructor(player: VJSPlayer, options: VJSPlayerOptions);
   sortOrder: (a: number, b: number) => number;
   addItems: (items: SPItemObject[]) => void;
-  setActiveItem: (item: SPButton | SPItemObject | undefined) => void;
+  setActiveItem: (item: SJSButton | SPItemObject | undefined) => void;
   clearGroup: () => void;
   items?: SPItemObject[];
 }
@@ -195,7 +195,7 @@ export interface SardiusObject {
   libs: {
     MenuMaker: typeof SPMenu;
     GroupMaker: typeof SPGroup;
-    ButtonMaker: typeof SPButton;
+    ButtonMaker: typeof SJSButton;
     Component: videojs.Component;
   };
   menu: <T>(pluginName: string, plugin: T) => void;
