@@ -150,7 +150,10 @@ export interface SPItemObject {
   order?: number;
   data?: RemoteCaptionObject | TextTrack;
   callback?: (data: Required<RemoteCaptionObject>, button: SPButton) => void;
-  options?: { id?: number };
+  options?: { 
+    id?: number;
+    data?: { height?: number; width?: number; };
+   };
 }
 
 export declare class SPItem extends videojs.MenuItem {
