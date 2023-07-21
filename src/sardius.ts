@@ -22,6 +22,8 @@ export interface SardiusTextTrackList
 interface SardiusControlBar extends videojs.ControlBar {
   settingsMenuLegacy: KeyValueAny;
   closedCaptions: { el_: HTMLTrackElement };
+  progressControl: HTMLDivElement;
+  playToggle: HTMLDivElement;
 }
 
 export interface SJSPlayer extends VJSPlayer {

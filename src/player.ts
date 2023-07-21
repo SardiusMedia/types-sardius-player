@@ -211,8 +211,6 @@ interface VolumePanel {
 interface ControlBar  {
   children: string[];
   volumePanel: VolumePanel;
-  progressControl: HTMLDivElement;
-  playToggle: HTMLDivElement;
   [key: string]: KeyValueAny | boolean;
 }
 
