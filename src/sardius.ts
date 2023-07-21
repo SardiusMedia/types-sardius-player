@@ -153,6 +153,7 @@ export interface SPItemObject {
   options?: { 
     id?: number;
     data?: { height?: number; width?: number; };
+    label?: string;
    };
 }
 
