@@ -92,13 +92,11 @@ interface SPMenuBar {
   items: string[];
 }
 
-export interface RedirectSettings{
+export interface RedirectSettings {
   add?: {
     format: string;
   };
-  delete?: {
-    format: string;
-  };
+  delete?: string[];
   clientside?: boolean;
 }
 
@@ -107,7 +105,7 @@ export interface RedirectObject {
   [key: string]: RedirectSettings | undefined;
 }
 
-export interface RedirectSiteSettings{
+export interface RedirectSiteSettings {
   [key: string]: RedirectObject;
 }
 
@@ -215,8 +213,7 @@ interface VolumePanel {
   vertical?: boolean;
 }
 
-
-interface ControlBar  {
+interface ControlBar {
   children: string[];
   volumePanel: VolumePanel;
   [key: string]: KeyValueAny | boolean;
@@ -500,7 +497,7 @@ export interface PlayerManagerRootSettings extends Setup {
   metadata?: PlayerData['asset']['metadata'];
   options?: PlayerParams;
   pid?: string;
-  pluginSettings?: PlayerPlugins & { 
+  pluginSettings?: PlayerPlugins & {
     affiliate?: string;
     bitrate?: number;
     eventId?: string;
