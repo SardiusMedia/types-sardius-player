@@ -103,8 +103,8 @@ export interface RedirectSettings{
 }
 
 export interface RedirectObject {
-  all: RedirectSettings;
-  [key: string]: RedirectSettings;
+  all?: RedirectSettings;
+  [key: string]: RedirectSettings | undefined;
 }
 
 interface Redirects {
