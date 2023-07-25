@@ -100,8 +100,8 @@ interface MenuCommonOptions {
   playerOptions?: PlayerOptions;
   label?: string;
   bitrate?: string | number;
-  height?: number;
-  width?: number;
+  height?: () => number;
+  width?: () => number;
 }
 
 export type SJSMenuItem = MenuCommonOptions & videojs.MenuItem;
