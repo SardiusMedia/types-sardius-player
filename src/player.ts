@@ -92,13 +92,19 @@ interface SPMenuBar {
   items: string[];
 }
 
-export interface RedirectObject {
-  all: {
-    add: {
-      format: string;
-    };
-    clientside: boolean;
+interface RedirectSettings{
+  add: {
+    format: string;
   };
+  delete: {
+    format: string;
+  };
+  clientside: boolean;
+}
+
+export interface RedirectObject {
+  all: RedirectSettings;
+  [key: string]: RedirectSettings;
 }
 
 interface Redirects {
