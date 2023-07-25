@@ -107,10 +107,12 @@ export interface RedirectObject {
   [key: string]: RedirectSettings | undefined;
 }
 
+export interface RedirectSiteSettings{
+  [key: string]: RedirectObject;
+}
+
 interface Redirects {
-  [key: string]: {
-    [key: string]: RedirectObject;
-  };
+  [key: string]: RedirectSiteSettings;
 }
 
 interface ErrorObject {
