@@ -4,6 +4,8 @@ import videojs, {
 } from 'video.js';
 import { DynamoPlayerModel, PlayerData, PlayerParams } from './player';
 
+export type VJSType = typeof videojs;
+
 export interface SardiusTextTrack extends TextTrack {
   label: string;
   name: string;
