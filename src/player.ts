@@ -96,7 +96,7 @@ export interface RedirectSettings {
   add?: {
     format: string;
   };
-  delete?: string[];
+  delete?: (keyof PlayerParams)[];
   clientside?: boolean;
 }
 
