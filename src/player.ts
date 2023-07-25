@@ -92,7 +92,7 @@ interface SPMenuBar {
   items: string[];
 }
 
-interface RedirectObject {
+export interface RedirectObject {
   all: {
     add: {
       format: string;
