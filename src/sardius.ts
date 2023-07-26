@@ -86,18 +86,18 @@ export interface SourceHandler {
 export type SJSPlayerOptions = VJSPlayerOptions & {
   callback: (data: SJSMenuItem, button: SJSMenuItem) => void;
   classes?: string;
-  data?: SJSMenuItem;
+  data?: SJSMenuItemOptions;
   id?: string;
   isActive?: boolean | undefined;
   label?: string;
-  options?: SJSMenuItem;
+  options?: SJSMenuItemOptions;
   playerOptions?: PlayerOptions;
 };
 
 interface MenuCommonOptions {
   callback?: (data: SJSMenuItem, button: SJSMenuItem) => void;
   classes?: string;
-  data?: SJSMenuItem;
+  data?: SJSMenuItemOptions;
   error?: Error;
   isActive?: boolean | undefined;
   minItems?: number;
