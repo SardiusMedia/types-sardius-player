@@ -86,15 +86,16 @@ export interface SourceHandler {
 
 interface SardiusVJSComponentData {
   bitrate?: number;
+  code?: LanguageCode;
   height?: number;
   id?: number;
   label?: string;
+  name?: string;
   options?: undefined;
   selected?: boolean;
   src?: string;
   type?: string;
   width?: number;
-  code?: LanguageCode;
 }
 
 export type SJSPlayerOptions = VJSPlayerOptions & {
