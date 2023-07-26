@@ -3,6 +3,7 @@ import videojs, {
   VideoJsPlayerOptions as VJSPlayerOptions,
 } from 'video.js';
 import { DynamoPlayerModel, PlayerParams, Youtube } from './player';
+import { SardiusMappedManifest } from './assets';
 
 export type VJSType = typeof videojs;
 
@@ -160,7 +161,7 @@ export interface SPItemObject {
   callback?: (data: Required<RemoteCaptionObject>, button: SJSButton) => void;
   options?: {
     id?: number;
-    data?: { height?: number; width?: number };
+    data?: SourceObject & SardiusMappedManifest;
     label?: string;
   };
 }
