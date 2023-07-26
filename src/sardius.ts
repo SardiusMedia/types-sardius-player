@@ -83,21 +83,21 @@ export interface SourceHandler {
   };
 }
 
+type SardiusVJSComponentData = SJSMenuItem;
+
 export type SJSPlayerOptions = VJSPlayerOptions & {
-  callback: (data: SJSMenuItem, button: SJSMenuItem) => void;
+  callback: (data: SardiusVJSComponentData, button: SJSMenuItem) => void;
   classes?: string;
-  data?: SJSMenuItemOptions;
+  data?: SardiusVJSComponentData;
   id?: string;
   isActive?: boolean | undefined;
   label?: string;
-  options?: SJSMenuItemOptions;
+  options?: SardiusVJSComponentData;
   playerOptions?: PlayerOptions;
 };
 
 interface MenuCommonOptions {
-  callback?: (data: SJSMenuItem, button: SJSMenuItem) => void;
   classes?: string;
-  data?: KeyValueAny;
   error?: Error;
   isActive?: boolean | undefined;
   minItems?: number;
@@ -109,11 +109,16 @@ interface MenuCommonOptions {
   width?: () => number;
 }
 
-export type SJSMenuItem = MenuCommonOptions & videojs.MenuItem;
-export type SJSMenu = MenuCommonOptions & videojs.Menu;
-export type SJSMenuItemOptions = MenuCommonOptions & videojs.MenuItemOptions;
-export type SJSMenuOptions = MenuCommonOptions & videojs.MenuOptions;
-export type SJSComponent = MenuCommonOptions & videojs.Component;
+interface RecursiveOptions extends MenuCommonOptions {
+  callback?: (data: MenuCommonOptions, button: SJSMenuItem) => void;
+  data?: MenuCommonOptions;
+}
+
+export type SJSMenuItem = RecursiveOptions & videojs.MenuItem;
+export type SJSMenu = RecursiveOptions & videojs.Menu;
+export type SJSMenuItemOptions = RecursiveOptions & videojs.MenuItemOptions;
+export type SJSMenuOptions = RecursiveOptions & videojs.MenuOptions;
+export type SJSComponent = RecursiveOptions & videojs.Component;
 
 export interface LanguageMenuItem extends SJSMenuItem {
   code?: string;
