@@ -97,7 +97,7 @@ export type SJSPlayerOptions = VJSPlayerOptions & {
 interface MenuCommonOptions {
   callback?: (data: SJSMenuItem, button: SJSMenuItem) => void;
   classes?: string;
-  data?: SJSMenuItemOptions;
+  data?: KeyValueAny;
   error?: Error;
   isActive?: boolean | undefined;
   minItems?: number;
