@@ -486,6 +486,7 @@ export interface PlayerManagerRootSettings extends Setup {
   accountId?: string;
   asset?: string | PlayerAsset;
   assetUID?: string;
+  bitrate?: 'lowest' | 'heighest' | 'highest';
   dash?: string;
   endpoint?: string;
   feed?: string;
