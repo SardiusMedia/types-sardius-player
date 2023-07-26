@@ -494,6 +494,7 @@ export interface PlayerManagerRootSettings extends Setup {
   id?: string;
   isIframe?: boolean;
   lao?: string;
+  locale?: string;
   metadata?: PlayerData['asset']['metadata'];
   options?: PlayerParams;
   pid?: string;
