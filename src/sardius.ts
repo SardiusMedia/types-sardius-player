@@ -83,7 +83,7 @@ export interface SourceHandler {
   };
 }
 
-type SardiusVJSComponentData = any;
+type SardiusVJSComponentData<T_OptionsDataType = any> = T_OptionsDataType;
 
 export type SJSPlayerOptions = VJSPlayerOptions & {
   callback: (data: SardiusVJSComponentData, button: any) => void;
@@ -96,10 +96,10 @@ export type SJSPlayerOptions = VJSPlayerOptions & {
   playerOptions?: PlayerOptions;
 };
 
-interface MenuCommonOptions {
+interface MenuCommonOptions<T_OptionsDataType = any> {
   callback?: (data: SardiusVJSComponentData, button: any) => void;
   classes?: string;
-  data?: SardiusVJSComponentData;
+  data?: SardiusVJSComponentData<T_OptionsDataType>;
   error?: Error;
   isActive?: boolean | undefined;
   minItems?: number;
@@ -111,11 +111,16 @@ interface MenuCommonOptions {
   width?: () => number;
 }
 
-export type SJSMenuItem = MenuCommonOptions & videojs.MenuItem;
-export type SJSMenu = MenuCommonOptions & videojs.Menu;
-export type SJSMenuItemOptions = MenuCommonOptions & videojs.MenuItemOptions;
-export type SJSMenuOptions = MenuCommonOptions & videojs.MenuOptions;
-export type SJSComponent = MenuCommonOptions & videojs.Component;
+export type SJSMenuItem<T_OptionsDataType = any> =
+  MenuCommonOptions<T_OptionsDataType> & videojs.MenuItem;
+export type SJSMenu<T_OptionsDataType = any> =
+  MenuCommonOptions<T_OptionsDataType> & videojs.Menu;
+export type SJSMenuItemOptions<T_OptionsDataType = any> =
+  MenuCommonOptions<T_OptionsDataType> & videojs.MenuItemOptions;
+export type SJSMenuOptions<T_OptionsDataType = any> =
+  MenuCommonOptions<T_OptionsDataType> & videojs.MenuOptions;
+export type SJSComponent<T_OptionsDataType = any> =
+  MenuCommonOptions<T_OptionsDataType> & videojs.Component;
 
 export interface LanguageMenuItem extends SJSMenuItem {
   code?: string;
