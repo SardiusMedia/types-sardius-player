@@ -28,10 +28,13 @@ interface SardiusControlBar extends videojs.ControlBar {
   playToggle: SJSButton;
 }
 
+declare class PlayerManager {}
+
 export interface SJSPlayer extends VJSPlayer {
   controlBar: SardiusControlBar;
   bitratesMenu: SPGroup;
   textTracks: () => SardiusTextTrackList;
+  playerManager: PlayerManager
 }
 
 export type TextTrackOptions = videojs.TextTrackOptions;
