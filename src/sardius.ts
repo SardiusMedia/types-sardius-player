@@ -4,6 +4,7 @@ import videojs, {
 } from 'video.js';
 import { DynamoPlayerModel, PlayerParams, Youtube } from './player';
 import { SardiusMappedManifest } from './assets';
+import { LanguageCode } from './common';
 
 export type VJSType = typeof videojs;
 
@@ -83,7 +84,18 @@ export interface SourceHandler {
   };
 }
 
-type SardiusVJSComponentData = SJSMenuItem;
+interface SardiusVJSComponentData {
+  bitrate?: number;
+  height?: number;
+  id?: number;
+  label?: string;
+  options?: undefined;
+  selected?: boolean;
+  src?: string;
+  type?: string;
+  width?: number;
+  code?: LanguageCode;
+}
 
 export type SJSPlayerOptions = VJSPlayerOptions & {
   callback: (data: SardiusVJSComponentData, button: SJSMenuItem) => void;
@@ -97,7 +109,9 @@ export type SJSPlayerOptions = VJSPlayerOptions & {
 };
 
 interface MenuCommonOptions {
+  callback?: (data: SardiusVJSComponentData, button: SJSMenuItem) => void;
   classes?: string;
+  data?: SardiusVJSComponentData;
   error?: Error;
   isActive?: boolean | undefined;
   minItems?: number;
@@ -109,16 +123,11 @@ interface MenuCommonOptions {
   width?: () => number;
 }
 
-interface RecursiveOptions extends MenuCommonOptions {
-  callback?: (data: MenuCommonOptions, button: SJSMenuItem) => void;
-  data?: MenuCommonOptions;
-}
-
-export type SJSMenuItem = RecursiveOptions & videojs.MenuItem;
-export type SJSMenu = RecursiveOptions & videojs.Menu;
-export type SJSMenuItemOptions = RecursiveOptions & videojs.MenuItemOptions;
-export type SJSMenuOptions = RecursiveOptions & videojs.MenuOptions;
-export type SJSComponent = RecursiveOptions & videojs.Component;
+export type SJSMenuItem = MenuCommonOptions & videojs.MenuItem;
+export type SJSMenu = MenuCommonOptions & videojs.Menu;
+export type SJSMenuItemOptions = MenuCommonOptions & videojs.MenuItemOptions;
+export type SJSMenuOptions = MenuCommonOptions & videojs.MenuOptions;
+export type SJSComponent = MenuCommonOptions & videojs.Component;
 
 export interface LanguageMenuItem extends SJSMenuItem {
   code?: string;
