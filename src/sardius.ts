@@ -83,23 +83,21 @@ export interface SourceHandler {
   };
 }
 
-type SardiusVJSComponentData<T_OptionsDataType = any> = T_OptionsDataType;
-
 export type SJSPlayerOptions = VJSPlayerOptions & {
-  callback: (data: SardiusVJSComponentData, button: any) => void;
+  callback: (data: SJSMenuItem, button: SJSMenuItem) => void;
   classes?: string;
-  data?: SardiusVJSComponentData;
+  data?: SJSMenuItem;
   id?: string;
   isActive?: boolean | undefined;
   label?: string;
-  options?: SardiusVJSComponentData;
+  options?: SJSMenuItem;
   playerOptions?: PlayerOptions;
 };
 
-interface MenuCommonOptions<T_OptionsDataType = any> {
-  callback?: (data: SardiusVJSComponentData, button: any) => void;
+interface MenuCommonOptions {
+  callback?: (data: SJSMenuItem, button: SJSMenuItem) => void;
   classes?: string;
-  data?: SardiusVJSComponentData<T_OptionsDataType>;
+  data?: SJSMenuItem;
   error?: Error;
   isActive?: boolean | undefined;
   minItems?: number;
@@ -111,16 +109,11 @@ interface MenuCommonOptions<T_OptionsDataType = any> {
   width?: () => number;
 }
 
-export type SJSMenuItem<T_OptionsDataType = any> =
-  MenuCommonOptions<T_OptionsDataType> & videojs.MenuItem;
-export type SJSMenu<T_OptionsDataType = any> =
-  MenuCommonOptions<T_OptionsDataType> & videojs.Menu;
-export type SJSMenuItemOptions<T_OptionsDataType = any> =
-  MenuCommonOptions<T_OptionsDataType> & videojs.MenuItemOptions;
-export type SJSMenuOptions<T_OptionsDataType = any> =
-  MenuCommonOptions<T_OptionsDataType> & videojs.MenuOptions;
-export type SJSComponent<T_OptionsDataType = any> =
-  MenuCommonOptions<T_OptionsDataType> & videojs.Component;
+export type SJSMenuItem = MenuCommonOptions & videojs.MenuItem;
+export type SJSMenu = MenuCommonOptions & videojs.Menu;
+export type SJSMenuItemOptions = MenuCommonOptions & videojs.MenuItemOptions;
+export type SJSMenuOptions = MenuCommonOptions & videojs.MenuOptions;
+export type SJSComponent = MenuCommonOptions & videojs.Component;
 
 export interface LanguageMenuItem extends SJSMenuItem {
   code?: string;
