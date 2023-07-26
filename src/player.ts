@@ -480,10 +480,11 @@ export interface OEmbedJsonObject {
   height: number;
 }
 
+type PlayerManagerCombinedSettings = Setup & DynamoPlayerModel;
 // Extended model for the JS player type rather than the iframe player.
 // This player lets you pass more things, like callback functions
-export interface PlayerManagerRootSettings extends Setup {
-  accountId?: string;
+export interface PlayerManagerRootSettings extends PlayerManagerCombinedSettings {
+  accountId: string;
   asset?: string | PlayerAsset;
   assetUID?: string;
   bitrate?: 'lowest' | 'heighest' | 'highest' | 'audio' | 'undefined';
