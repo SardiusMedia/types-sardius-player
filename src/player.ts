@@ -484,7 +484,7 @@ export interface OEmbedJsonObject {
 // This player lets you pass more things, like callback functions
 export interface PlayerManagerRootSettings extends Setup {
   accountId?: string;
-  asset?: string;
+  asset?: string | PlayerAsset;
   assetUID?: string;
   dash?: string;
   endpoint?: string;
