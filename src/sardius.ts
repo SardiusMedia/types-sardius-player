@@ -2,7 +2,7 @@ import videojs, {
   VideoJsPlayer as VJSPlayer,
   VideoJsPlayerOptions as VJSPlayerOptions,
 } from 'video.js';
-import { DynamoPlayerModel, PlayerData, PlayerParams } from './player';
+import { DynamoPlayerModel, PlayerParams, Youtube } from './player';
 
 export type VJSType = typeof videojs;
 
@@ -34,7 +34,8 @@ export interface SJSPlayer extends VJSPlayer {
   controlBar: SardiusControlBar;
   bitratesMenu: SPGroup;
   textTracks: () => SardiusTextTrackList;
-  playerManager: PlayerManager
+  playerManager: PlayerManager;
+  options_: videojs.PlayerOptions & { youtube: Youtube };
 }
 
 export type TextTrackOptions = videojs.TextTrackOptions;
@@ -67,7 +68,7 @@ export type PlayerOptions = DynamoPlayerModel & {
   type?: string;
   url?: string;
   yt?: string;
-}
+};
 
 export interface SourceHandler {
   options?: PlayerOptions;
@@ -157,11 +158,11 @@ export interface SPItemObject {
   order?: number;
   data?: RemoteCaptionObject | TextTrack;
   callback?: (data: Required<RemoteCaptionObject>, button: SJSButton) => void;
-  options?: { 
+  options?: {
     id?: number;
-    data?: { height?: number; width?: number; };
+    data?: { height?: number; width?: number };
     label?: string;
-   };
+  };
 }
 
 export declare class SPItem extends videojs.MenuItem {

@@ -139,7 +139,7 @@ export interface YoutubeSettings {
   ytControls?: 2;
 }
 
-type Youtube = YoutubeSettings | boolean;
+export type Youtube = YoutubeSettings | boolean;
 type Sources = SourceObject[] | undefined;
 type Ruxit = unknown;
 type Peer5 = unknown;
