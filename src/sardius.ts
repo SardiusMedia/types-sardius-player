@@ -99,7 +99,7 @@ interface SardiusVJSComponentData {
 }
 
 export type SJSPlayerOptions = VJSPlayerOptions & {
-  callback: (data: SardiusVJSComponentData, button: SJSMenuItem) => void;
+  callback: (data: SardiusVJSComponentData, button: any) => void;
   classes?: string;
   data?: SardiusVJSComponentData;
   id?: string;
@@ -110,7 +110,7 @@ export type SJSPlayerOptions = VJSPlayerOptions & {
 };
 
 interface MenuCommonOptions {
-  callback?: (data: SardiusVJSComponentData, button: SJSMenuItem) => void;
+  callback?: (data: SardiusVJSComponentData, button: any) => void;
   classes?: string;
   data?: SardiusVJSComponentData;
   error?: Error;
