@@ -167,7 +167,7 @@ export interface PlayerAsset extends MappedPlayerAsset {
 }
 
 export interface PlayerAssetWithLanguage extends PlayerAsset {
-  language?: string;
+  language?: LanguageCodesUppercase;
   languages?: Partial<Record<LanguageCodesUppercase, PlayerAsset>>;
 }
 
