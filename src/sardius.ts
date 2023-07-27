@@ -35,6 +35,7 @@ declare class PlayerManager {}
 export interface SJSPlayer extends VJSPlayer {
   controlBar: SardiusControlBar;
   bitratesMenu: SPGroup;
+  audioTracksMenu: SPGroup;
   textTracks: () => SardiusTextTrackList;
   playerManager: PlayerManager;
   options_: videojs.PlayerOptions & { youtube: Youtube };
