@@ -5,6 +5,7 @@ import videojs, {
 import { DynamoPlayerModel, PlayerParams, Youtube } from './player';
 import { SardiusMappedManifest } from './assets';
 import { LanguageCode } from './common';
+import { LanguageCodesUppercase } from './languageCodes';
 
 export type VJSType = typeof videojs;
 
@@ -140,7 +141,7 @@ export type SJSMenuOptions = MenuCommonOptions & videojs.MenuOptions;
 export type SJSComponent = MenuCommonOptions & videojs.Component;
 
 export interface LanguageMenuItem extends SJSMenuItem {
-  code?: string;
+  code?: LanguageCodesUppercase;
 }
 
 export type SourceObject = videojs.Tech.SourceObject & SJSMenuItemOptions;
