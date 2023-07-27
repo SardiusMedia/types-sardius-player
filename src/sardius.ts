@@ -84,7 +84,7 @@ export interface SourceHandler {
   };
 }
 
-export interface SJSMenuItemCustom {
+export interface SJSSource {
   bitrate?: number;
   code?: LanguageCode;
   height?: number;
@@ -99,20 +99,20 @@ export interface SJSMenuItemCustom {
 }
 
 export type SJSPlayerOptions = VJSPlayerOptions & {
-  callback: (data: SJSMenuItemCustom, button: any) => void;
+  callback: (data: SJSSource, button: any) => void;
   classes?: string;
-  data?: SJSMenuItemCustom;
+  data?: SJSSource;
   id?: string;
   isActive?: boolean | undefined;
   label?: string;
-  options?: SJSMenuItemCustom;
+  options?: SJSSource;
   playerOptions?: PlayerOptions;
 };
 
 interface MenuCommonOptions {
-  callback?: (data: SJSMenuItemCustom, button: any) => void;
+  callback?: (data: SJSSource, button: any) => void;
   classes?: string;
-  data?: SJSMenuItemCustom;
+  data?: SJSSource;
   error?: Error;
   isActive?: boolean | undefined;
   minItems?: number;

@@ -1,5 +1,6 @@
 import { types } from 'hls-parser';
 import { Preroll } from './player';
+import { SJSSource } from './sardius';
 
 export interface AssetFile {
   altUrl?: string;
@@ -104,11 +105,11 @@ export interface PlayerAssetStream {
 }
 
 export interface MappedPlayerAsset {
-  audio?: SardiusMappedManifest[];
+  audio?: SJSSource[];
   filmstrip?: string;
   images?: PlayerAssetImage[];
   stream?: PlayerAssetStream[];
-  video?: SardiusMappedManifest[];
+  video?: SJSSource[];
   duration?: number;
 }
 
