@@ -93,7 +93,7 @@ export interface SJSMenuItemCustom {
   name?: string;
   options?: undefined;
   selected?: boolean;
-  src?: string;
+  src: string;
   type?: string;
   width?: number;
 }
