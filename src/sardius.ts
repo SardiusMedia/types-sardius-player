@@ -86,11 +86,18 @@ export interface SourceHandler {
 }
 
 export interface SJSSource {
+  audioCodec?: string;
+  autoselect?: boolean;
   bitrate?: number;
   code?: LanguageCode;
+  force?: boolean;
+  groupId?: string;
   height?: number;
   id?: number;
+  instreamId?: string;
   label?: string;
+  lang?: string;
+  language?: string;
   name?: string;
   options?: undefined;
   selected?: boolean;
@@ -119,6 +126,7 @@ interface MenuCommonOptions {
   isActive?: boolean | undefined;
   minItems?: number;
   order?: number;
+  options_?: SJSSource;
   playerOptions?: PlayerOptions;
   label?: string;
   bitrate?: string | number;
@@ -174,11 +182,7 @@ export interface SPItemObject {
   order?: number;
   data?: RemoteCaptionObject | TextTrack;
   callback?: (data: Required<RemoteCaptionObject>, button: SJSButton) => void;
-  options?: {
-    id?: number;
-    data?: SourceObject & SardiusMappedManifest;
-    label?: string;
-  };
+  options_?: MenuCommonOptions;
 }
 
 export declare class SPItem extends videojs.MenuItem {
