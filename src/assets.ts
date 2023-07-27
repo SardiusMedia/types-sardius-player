@@ -1,6 +1,7 @@
 import { types } from 'hls-parser';
 import { Preroll } from './player';
 import { SJSSource } from './sardius';
+import { LanguageCodesUppercase } from './languageCodes';
 
 export interface AssetFile {
   altUrl?: string;
@@ -167,7 +168,7 @@ export interface PlayerAsset extends MappedPlayerAsset {
 
 export interface PlayerAssetWithLanguage extends PlayerAsset {
   language?: string;
-  languages?: KeyValueTyped<PlayerAsset>;
+  languages?: Record<LanguageCodesUppercase, PlayerAsset>;
 }
 
 export interface SardiusMappedManifest extends AssetFile {
