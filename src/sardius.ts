@@ -84,7 +84,7 @@ export interface SourceHandler {
   };
 }
 
-interface SardiusVJSComponentData {
+export interface SJSMenuItemCustom {
   bitrate?: number;
   code?: LanguageCode;
   height?: number;
@@ -99,20 +99,20 @@ interface SardiusVJSComponentData {
 }
 
 export type SJSPlayerOptions = VJSPlayerOptions & {
-  callback: (data: SardiusVJSComponentData, button: any) => void;
+  callback: (data: SJSMenuItemCustom, button: any) => void;
   classes?: string;
-  data?: SardiusVJSComponentData;
+  data?: SJSMenuItemCustom;
   id?: string;
   isActive?: boolean | undefined;
   label?: string;
-  options?: SardiusVJSComponentData;
+  options?: SJSMenuItemCustom;
   playerOptions?: PlayerOptions;
 };
 
 interface MenuCommonOptions {
-  callback?: (data: SardiusVJSComponentData, button: any) => void;
+  callback?: (data: SJSMenuItemCustom, button: any) => void;
   classes?: string;
-  data?: SardiusVJSComponentData;
+  data?: SJSMenuItemCustom;
   error?: Error;
   isActive?: boolean | undefined;
   minItems?: number;
