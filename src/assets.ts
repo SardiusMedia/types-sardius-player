@@ -168,7 +168,7 @@ export interface PlayerAsset extends MappedPlayerAsset {
 
 export interface PlayerAssetWithLanguage extends PlayerAsset {
   language?: string;
-  languages?: Record<LanguageCodesUppercase, PlayerAsset>;
+  languages?: Partial<Record<LanguageCodesUppercase, PlayerAsset>>;
 }
 
 export interface SardiusMappedManifest extends AssetFile {
