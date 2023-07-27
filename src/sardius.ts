@@ -126,7 +126,6 @@ interface MenuCommonOptions {
   isActive?: boolean | undefined;
   minItems?: number;
   order?: number;
-  options_?: SJSSource;
   playerOptions?: PlayerOptions;
   label?: string;
   bitrate?: string | number;
