@@ -94,8 +94,8 @@ export interface SJSSource {
   options?: undefined;
   selected?: boolean;
   src: string;
-  url?: string;
   type?: string;
+  url?: string | string[];
   width?: number;
 }
 
