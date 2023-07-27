@@ -2,6 +2,7 @@ import { PlayerAsset, PlayerAssetImage } from './assets';
 import { AccountModel } from './accounts';
 import { LanguageCode, StringBoolean } from './common';
 import { SourceObject } from './sardius';
+import { LanguageCodesUppercase } from './languageCodes';
 
 export interface CaptionOptions {
   cueStyle?: string;
@@ -485,7 +486,7 @@ type PlayerManagerCombinedSettings = Setup & DynamoPlayerModel;
 // This player lets you pass more things, like callback functions
 export interface PlayerManagerRootSettings extends PlayerManagerCombinedSettings {
   accountId: string;
-  asset?: string | PlayerAsset;
+  asset?: LanguageCodesUppercase | PlayerAsset;
   assetUID?: string;
   bitrate?: 'lowest' | 'heighest' | 'highest' | 'audio' | 'undefined';
   dash?: string;
