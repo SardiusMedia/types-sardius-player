@@ -229,10 +229,10 @@ export interface SardiusObject {
 
 export type SardiusVJS = typeof videojs & {
   getComponent: (componentName: string) => videojs.Component;
-  registerPlugin: (
-    componentName: string,
-    func: typeof videojs.Component,
-  ) => videojs.Component;
+  // registerPlugin: (
+  //   componentName: string,
+  //   func: typeof videojs.Component,
+  // ) => videojs.Component;
   extend: (
     component: videojs.Component,
     options: {
