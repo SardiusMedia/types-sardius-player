@@ -3,7 +3,6 @@ import videojs, {
   VideoJsPlayerOptions as VJSPlayerOptions,
 } from 'video.js';
 import { DynamoPlayerModel, PlayerParams, Youtube } from './player';
-import { SardiusMappedManifest } from './assets';
 import { LanguageCode } from './common';
 import { LanguageCodesUppercase } from './languageCodes';
 

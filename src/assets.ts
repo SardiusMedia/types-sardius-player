@@ -1,5 +1,5 @@
 import { types } from 'hls-parser';
-import { Preroll } from './player';
+import { AssetTypes, Preroll } from './player';
 import { SJSSource } from './sardius';
 import { LanguageCodesUppercase } from './languageCodes';
 
@@ -153,6 +153,7 @@ export interface PlayerAsset extends MappedPlayerAsset {
   adPolicy?: PlayerAdPolicy;
   akamaiEdgeAuth?: AkamaiEdgeAuth;
   assets: MappedPlayerAsset;
+  assetType: AssetTypes;
   captions: Caption[];
   createdDate?: string;
   duration?: number;
