@@ -39,6 +39,7 @@ export interface SJSPlayer extends VJSPlayer {
   textTracks: () => SardiusTextTrackList;
   playerManager: PlayerManager;
   options_: videojs.PlayerOptions & { youtube: Youtube };
+  id_?: string;
 }
 
 export type TextTrackOptions = videojs.TextTrackOptions;
