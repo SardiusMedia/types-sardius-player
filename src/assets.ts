@@ -16,7 +16,7 @@ export interface AssetFile {
   expirationDate?: Date;
   file?: string;
   height?: number | null;
-  id?: string;
+  id?: number | string;
   isDefault?: boolean;
   language?: string;
   localization?: Record<string, unknown>;
@@ -36,7 +36,7 @@ export interface AssetFile {
   title?: string;
   type?: string;
   types?: string[];
-  url?: string;
+  url?: string | string[];
   width?: number | null;
 }
 

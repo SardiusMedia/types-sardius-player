@@ -5,6 +5,7 @@ import videojs, {
 import { DynamoPlayerModel, PlayerParams, Youtube } from './player';
 import { LanguageCode } from './common';
 import { LanguageCodesUppercase } from './languageCodes';
+import { AssetFile } from './assets';
 
 export type VJSType = typeof videojs;
 
@@ -101,7 +102,7 @@ export interface SJSSource {
   lang?: string;
   language?: string;
   name?: string;
-  options?: undefined;
+  options?: Record<string, unknown>;
   qualityLabel?: string;
   selected?: boolean;
   src?: string;
