@@ -1,3 +1,4 @@
+import { Moment } from 'moment';
 import { PlayerAsset, PlayerAssetImage } from './assets';
 import { AccountModel } from './accounts';
 import { LanguageCode, StringBoolean } from './common';
@@ -213,19 +214,22 @@ export interface Setup {
   controlBar: ControlBar;
   controls?: boolean;
   fluid?: boolean;
-  html5?: KeyValueTyped<KeyValueTyped | boolean>;
+  html5?: KeyValueTyped<KeyValueTyped>;
   locations?: false | PlayerLocations;
   loop?: boolean;
   muted?: boolean;
   playbackRates?: number[];
-  plugins?: PlayerPlugins;
+  plugins?: Omit<PlayerPlugins, 'spMenuBar'> & {
+    sardius?: Partial<SardiusPlayerConfig>;
+    spMenuBar?: SPMenuBar;
+  };
   poster?: string;
   preload?: string;
-  redirects?: Redirects;
   sources?: Sources;
   techOrder?: string[];
   version?: string;
   youtube?: Youtube;
+  redirects?: Redirects;
 }
 
 interface AkamaiEdgeAuth {
@@ -334,7 +338,7 @@ export interface PlayerData {
   assetId: string;
   assetType: string;
   config: PlayerBuiltConfigOptions | string;
-  dateToPurgeCache?: any;
+  dateToPurgeCache?: Moment;
   end?: number;
   ignore?: string;
   localCssLinks?: string;
@@ -381,6 +385,7 @@ export interface PlayerParams {
   locale?: DynamoPlayerModel['locale'];
   locationId?: string;
   loop?: StringBoolean;
+  mimicOnline?: StringBoolean;
   MiniPlayer?: StringBoolean;
   muted?: StringBoolean;
   playerHost?: string;

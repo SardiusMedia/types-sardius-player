@@ -19,6 +19,7 @@
   "homepage": "https://github.com/SardiusMedia/types-sardius-player#readme",
   "devDependencies": {
     "@types/node": "^20.4.2",
+    "moment": "^2.29.4",
     "typescript": "^5.1.6"
   },
   "dependencies": {
