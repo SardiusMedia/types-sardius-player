@@ -403,7 +403,7 @@ export interface PlayerParams {
   token?: string;
   uid?: DynamoPlayerModel['uid'];
   useErrorImage?: StringBoolean;
-  playerElementId?: StringBoolean;
+  playerElementId?: string;
   usehttps?: StringBoolean;
   version?: string;
   volume?: number;
