@@ -91,6 +91,7 @@ export interface SJSSource {
   autoselect?: boolean;
   bitrate?: number | 'auto';
   code?: LanguageCode;
+  fileType?: string;
   force?: boolean;
   groupId?: string;
   height?: number | null;
