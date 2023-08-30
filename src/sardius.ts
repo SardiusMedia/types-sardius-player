@@ -4,8 +4,10 @@ import videojs, {
 } from 'video.js';
 import { DynamoPlayerModel, PlayerParams, Youtube } from './player';
 import { LanguageCode } from './common';
-import { LanguageCodesUppercase } from './languageCodes';
-import { AssetFile } from './assets';
+import {
+  LanguageCodesUppercase,
+  LanguageCodesUppercaseCC,
+} from './languageCodes';
 
 export type VJSType = typeof videojs;
 
@@ -144,7 +146,7 @@ export type SJSMenuOptions = MenuCommonOptions & videojs.MenuOptions;
 export type SJSComponent = MenuCommonOptions & videojs.Component;
 
 export interface LanguageMenuItem extends SJSMenuItem {
-  code?: LanguageCodesUppercase;
+  code?: LanguageCodesUppercase | LanguageCodesUppercaseCC;
 }
 
 export type SourceObject = videojs.Tech.SourceObject & SJSMenuItemOptions;
