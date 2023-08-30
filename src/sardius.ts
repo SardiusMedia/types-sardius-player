@@ -95,7 +95,7 @@ export interface SJSSource {
   force?: boolean;
   groupId?: string;
   height?: number | null;
-  id?: number;
+  id?: number | string;
   instreamId?: string;
   label?: string;
   lang?: string;
