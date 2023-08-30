@@ -93,7 +93,7 @@ export interface SJSSource {
   code?: LanguageCode;
   force?: boolean;
   groupId?: string;
-  height?: number;
+  height?: number | null;
   id?: number;
   instreamId?: string;
   label?: string;
@@ -105,7 +105,7 @@ export interface SJSSource {
   src: string;
   type?: string;
   url?: string | string[];
-  width?: number;
+  width?: number | null;
 }
 
 export type SJSPlayerOptions = VJSPlayerOptions & {
