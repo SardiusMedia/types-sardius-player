@@ -89,7 +89,7 @@ export interface SourceHandler {
 export interface SJSSource {
   audioCodec?: string;
   autoselect?: boolean;
-  bitrate?: number;
+  bitrate?: number | 'auto';
   code?: LanguageCode;
   force?: boolean;
   groupId?: string;
