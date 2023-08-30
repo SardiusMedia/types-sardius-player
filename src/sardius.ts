@@ -104,7 +104,7 @@ export interface SJSSource {
   options?: undefined;
   qualityLabel?: string;
   selected?: boolean;
-  src: string;
+  src?: string;
   type?: string;
   url?: string | string[];
   width?: number | null;
