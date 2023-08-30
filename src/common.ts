@@ -44,4 +44,4 @@ export interface VCMSEvent {
   token?: string;
 }
 
-export type StringBoolean = string | boolean;
+export type StringBoolean = 'true' | 'false' | boolean;

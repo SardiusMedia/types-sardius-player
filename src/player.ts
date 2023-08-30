@@ -114,18 +114,6 @@ interface Redirects {
   [key: string]: RedirectSiteSettings;
 }
 
-interface ErrorObject {
-  type: string;
-  headline: string;
-}
-
-interface Errors {
-  errors: {
-    [key: number]: ErrorObject;
-    unknown: ErrorObject;
-  };
-}
-
 export interface YoutubeSettings {
   thumbnail?: PlayerAssetImage;
   title?: string;
@@ -165,7 +153,6 @@ export interface PlayerPlugins {
   chromecast?: boolean;
   closedCaptions?: boolean;
   contextMenu?: ContextMenu;
-  errors?: Errors;
   FeedSettings?: FeedSettings;
   flushOnScrub?: boolean;
   ga?: GA;
@@ -225,8 +212,6 @@ export interface Setup {
   BigPlayButton?: boolean;
   controlBar: ControlBar;
   controls?: boolean;
-  errors?: Errors;
-  flash?: KeyValueTyped;
   fluid?: boolean;
   html5?: KeyValueTyped<KeyValueTyped | boolean>;
   locations?: false | PlayerLocations;
