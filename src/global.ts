@@ -1,3 +1,5 @@
+import VJS from 'video.js';
+
 declare global {
   export interface KeyValueAny {
     [key: string]: any;
@@ -10,7 +12,7 @@ declare global {
     SARDIUSENDPOINT: string;
   }
 
-  export const videojs: typeof videojs;
+  export const VJSType: typeof VJS;
 
   export type ObjectKeys<T> = T extends object
     ? (keyof T)[]
