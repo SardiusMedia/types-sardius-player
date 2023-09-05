@@ -10,6 +10,7 @@ import {
 } from './languageCodes';
 
 export type VJSType = typeof videojs;
+export const VideoJS = videojs;
 
 export interface SardiusTextTrack extends TextTrack {
   label: string;
