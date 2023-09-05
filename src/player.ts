@@ -217,7 +217,7 @@ export interface Setup {
   controlBar: ControlBar;
   controls?: boolean;
   fluid?: boolean;
-  html5?: KeyValueTyped<KeyValueTyped>;
+  html5?: { polyNetConfig?: { apiKey?: string }; nativeTextTracks: boolean };
   locations?: false | PlayerLocations;
   loop?: boolean;
   muted?: boolean;
