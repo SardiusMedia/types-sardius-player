@@ -1,6 +1,6 @@
 import { types } from 'hls-parser';
 import { AssetTypes, Preroll } from './player';
-import { SJSSource } from './sardius';
+import { SJSSource } from './videojs';
 import {
   LanguageCodesUppercase,
   LanguageCodesUppercaseCC,

@@ -11,4 +11,5 @@ export * from './player';
 export * from './req';
 export * from './res';
 export * from './sardius';
+export * from './videojs';
 export * from './youtube';

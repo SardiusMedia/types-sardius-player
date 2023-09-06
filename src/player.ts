@@ -2,7 +2,7 @@ import { Moment } from 'moment';
 import { PlayerAsset, PlayerAssetImage } from './assets';
 import { AccountModel } from './accounts';
 import { LanguageCode, StringBoolean } from './common';
-import { SourceObject } from './sardius';
+import { SourceObject } from './videojs';
 import {
   LanguageCodesUppercase,
   LanguageCodesUppercaseCC,
