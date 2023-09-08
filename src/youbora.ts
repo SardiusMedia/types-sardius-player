@@ -74,7 +74,7 @@ export declare class YouboraPlugin<T> {
   _adapter: YouboraAdapter<T>;
   _adsAdapter: null;
   _beat: Undeclared;
-  _listeners: Record<string, any>;
+  _listeners: Record<string, unknown>;
   _ping: Undeclared;
   _refreshData: Undeclared;
 }
