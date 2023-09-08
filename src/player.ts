@@ -2,6 +2,7 @@ import { Moment } from 'moment';
 import { PlayerAsset, PlayerAssetImage } from './assets';
 import { AccountModel } from './accounts';
 import { LanguageCode, StringBoolean } from './common';
+import { Youbora } from './youbora';
 import { SourceObject } from './videojs';
 import {
   LanguageCodesUppercase,
@@ -77,11 +78,6 @@ interface GA {
   eventId?: string;
   id?: string;
   trackCaptions?: boolean;
-}
-
-interface Youbora {
-  accountCode?: string;
-  accountId?: string;
 }
 
 interface FeedSettings {

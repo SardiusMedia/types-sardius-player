@@ -12,4 +12,5 @@ export * from './req';
 export * from './res';
 export * from './sardius';
 export * from './videojs';
+export * from './youbora';
 export * from './youtube';
