@@ -14,7 +14,7 @@ import {
   LanguageCodesUppercase,
   LanguageCodesUppercaseCC,
 } from './languageCodes';
-import { YouboraAdapter } from './youbora';
+import { YouboraPlugin } from './youbora';
 
 export type VJSTech = videojs.Tech;
 export type TextTrackOptions = videojs.TextTrackOptions;
@@ -191,7 +191,7 @@ export interface SJSPlayer extends VJSPlayer {
   playerManager: PlayerManagerClass;
   options_: videojs.PlayerOptions & { youtube: Youtube };
   id_?: string;
-  youboraplugin?: YouboraAdapter<SJSPlayer>;
+  youboraplugin?: YouboraPlugin<SJSPlayer>;
 }
 
 interface SardiusControlBar extends videojs.ControlBar {
