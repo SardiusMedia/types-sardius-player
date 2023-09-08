@@ -104,9 +104,6 @@ export declare class SPGroup extends videojs.Menu {
   setActiveItem: (item: SJSButton | SPItemObject | undefined) => void;
   clearGroup: () => void;
   items?: SPItemObject[];
-  options_: videojs.Menu['options_'] & {
-    data?: { height: number; width: number };
-  };
 }
 
 export declare class SPMenu extends videojs.MenuButton {
