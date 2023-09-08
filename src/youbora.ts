@@ -47,7 +47,8 @@ interface Listeners {
   'video-event': () => void;
 }
 
-declare class Plugin<T> {
+export declare class YouboraPlugin<T> {
+  adsAdapterListeners?: Listeners;
   backgroundDetector: Undeclared;
   browserLoadTimes: Undeclared;
   contentAdapterListeners: Undeclared;
@@ -88,7 +89,7 @@ export declare class YouboraAdapter<PlayerModel> {
   mediaFound: boolean;
   monitor: null;
   player: PlayerModel;
-  plugin: Plugin<PlayerModel>;
+  plugin: YouboraPlugin<PlayerModel>;
   references: {
     ended: () => boolean;
     error: () => boolean;
