@@ -18,6 +18,7 @@ import {
 export type VJSType = typeof videojs;
 export type VJSTech = videojs.Tech;
 export type TextTrackOptions = videojs.TextTrackOptions;
+export type VJSEventTarget = videojs.EventTarget;
 
 interface MenuCommonOptions {
   callback?: (data: SJSSource, button: any) => void;
