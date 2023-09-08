@@ -67,6 +67,7 @@ export declare class YouboraPlugin<T> {
   resizeScrollDetector: Undeclared;
   resourceTransform: Undeclared;
   sessionExpire: number;
+  setAdapter: (adapter: YouboraAdapter<T>) => void;
   storage: Undeclared;
   uuidGenerator: Undeclared;
   viewTransform: Undeclared;
