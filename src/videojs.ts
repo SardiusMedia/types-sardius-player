@@ -199,3 +199,17 @@ interface SardiusControlBar extends videojs.ControlBar {
   progressControl: SJSButton;
   playToggle: SJSButton;
 }
+
+export type SJSPlayerSardius = SJSPlayer & {
+  originalError?: {
+    (err: string | number | MediaError | null): void;
+    (): MediaError | null;
+  };
+  refresh?: (fromError: boolean, newUrl?: string, addTime?: boolean) => void;
+  delete?: () => void;
+  nextAsset?: (url: string) => void;
+  getAsset?: (key: string | undefined, assetUrl: string) => void;
+  setAsset?: (key: string, assetUrl: string, retryNumber?: number) => void;
+  refreshAsset?: () => void;
+  currentTime?: () => number;
+};
