@@ -192,9 +192,9 @@ export interface ThemeObject {
 }
 
 export interface PlayerTheme {
-  id?: keyof ThemeObject;
+  id?: string;
   styles?: KeyValueTyped;
-  themeId?: string;
+  themeId?: keyof ThemeObject;
 }
 
 interface VolumePanel {
