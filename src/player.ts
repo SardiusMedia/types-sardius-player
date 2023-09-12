@@ -192,7 +192,7 @@ export interface ThemeObject {
 }
 
 export interface PlayerTheme {
-  id?: string;
+  id?: keyof ThemeObject;
   styles?: KeyValueTyped;
   themeId?: keyof ThemeObject;
 }
