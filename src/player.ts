@@ -175,14 +175,17 @@ export interface PlayerPlugins {
   youtube?: Youtube;
 }
 
+const themeKeys = ['newDefault', 'noScrubBar', 'default', 'ignore'] as const;
+type ThemeKeys = (typeof themeKeys)[number];
+
 interface ThemeData {
-  theme: keyof ThemeObject;
+  theme: ThemeKeys;
   styles: KeyValueTyped;
 }
 
 export interface ThemeObject {
   newDefault: {
-    theme: keyof ThemeObject;
+    theme: ThemeKeys;
     // eslint-disable-next-line no-unused-vars
     styles: (defaultStyles?: KeyValueTyped) => string;
   };
@@ -192,9 +195,8 @@ export interface ThemeObject {
 }
 
 export interface PlayerTheme {
-  id?: keyof ThemeObject;
+  id?: string;
   styles?: KeyValueTyped;
-  themeId?: keyof ThemeObject;
 }
 
 interface VolumePanel {
