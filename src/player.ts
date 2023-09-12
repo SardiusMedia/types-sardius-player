@@ -176,7 +176,7 @@ export interface PlayerPlugins {
 }
 
 interface ThemeData {
-  theme: string;
+  theme: keyof ThemeObject;
   styles: KeyValueTyped;
 }
 
