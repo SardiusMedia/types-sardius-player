@@ -182,7 +182,7 @@ interface ThemeData {
 
 export interface ThemeObject {
   newDefault: {
-    theme: string;
+    theme: keyof ThemeObject;
     // eslint-disable-next-line no-unused-vars
     styles: (defaultStyles?: KeyValueTyped) => string;
   };
