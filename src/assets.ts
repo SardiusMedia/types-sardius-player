@@ -104,7 +104,7 @@ export interface PlayerAssetImage {
 
 export interface PlayerAssetStream {
   fileType?: string;
-  playlist?: SardiusMappedManifest[];
+  playlist?: SJSSource[];
   url?: string;
   src?: string;
 }
