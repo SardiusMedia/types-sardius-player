@@ -513,5 +513,6 @@ export interface PlayerManagerRootSettings
   token?: string;
   type?: string;
   url?: string;
+  usehttps?: boolean;
   yt?: string;
 }
