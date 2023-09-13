@@ -106,6 +106,7 @@ export interface PlayerAssetStream {
   fileType?: string;
   playlist?: SardiusMappedManifest[];
   url?: string;
+  src?: string;
 }
 
 export interface MappedPlayerAsset {
