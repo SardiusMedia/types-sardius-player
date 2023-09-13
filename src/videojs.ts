@@ -37,7 +37,7 @@ interface MenuCommonOptions {
   width?: () => number;
 }
 
-interface SJSSourceOptions{
+export interface SJSSourceOptions{
   end: number;
   start: number;
   [key:string]: unknown | number | string | boolean;

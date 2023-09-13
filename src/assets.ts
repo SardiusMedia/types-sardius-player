@@ -1,6 +1,6 @@
 import { types } from 'hls-parser';
 import { AssetTypes, Preroll } from './player';
-import { SJSSource } from './videojs';
+import { SJSSource, SJSSourceOptions } from './videojs';
 import {
   LanguageCodesUppercase,
   LanguageCodesUppercaseCC,
@@ -185,6 +185,7 @@ export interface SardiusMappedManifest extends AssetFile {
   qualityLabel?: string;
   segmentType?: string;
   fileType?: SardiusMappedManifest['mimeType'];
+  options?: SJSSourceOptions,
 }
 
 export interface ManifestLevel {
