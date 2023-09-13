@@ -37,6 +37,12 @@ interface MenuCommonOptions {
   width?: () => number;
 }
 
+interface SJSSourceOptions{
+  end: number;
+  start: number;
+  [key:string]: unknown | number | string | boolean;
+}
+
 export interface SJSSource {
   audioCodec?: string;
   autoselect?: boolean;
@@ -52,7 +58,7 @@ export interface SJSSource {
   lang?: string;
   language?: string;
   name?: string;
-  options?: Record<string, unknown>;
+  options?: SJSSourceOptions;
   qualityLabel?: string;
   selected?: boolean;
   src?: string;
