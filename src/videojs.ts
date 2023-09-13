@@ -8,7 +8,7 @@ import {
   PlayerOptions,
   RemoteCaptionObject,
 } from './sardius';
-import { DynamoPlayerModel, Youtube } from './player';
+import { DynamoPlayerModel } from './player';
 import { LanguageCode } from './common';
 import {
   LanguageCodesUppercase,
