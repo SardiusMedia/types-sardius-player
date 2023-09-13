@@ -8,7 +8,7 @@ import {
   PlayerOptions,
   RemoteCaptionObject,
 } from './sardius';
-import { Youtube } from './player';
+import { DynamoPlayerModel, Youtube } from './player';
 import { LanguageCode } from './common';
 import {
   LanguageCodesUppercase,
@@ -189,7 +189,7 @@ export interface SJSPlayer extends VJSPlayer {
   audioTracksMenu: SPGroup;
   textTracks: () => SardiusTextTrackList;
   playerManager: PlayerManagerClass;
-  options_: videojs.PlayerOptions & { youtube: Youtube };
+  options_: videojs.PlayerOptions & DynamoPlayerModel;
   id_?: string;
   youboraplugin?: YouboraPlugin<SJSPlayer>;
 }
