@@ -152,7 +152,7 @@ export interface PlayerAdPolicy {
   preroll: AssetPreroll;
 }
 
-export interface PlayerAsset {
+export interface PlayerAsset extends Omit<MappedPlayerAsset, 'stream'> {
   accountId: string;
   adPolicy?: PlayerAdPolicy;
   akamaiEdgeAuth?: AkamaiEdgeAuth;
