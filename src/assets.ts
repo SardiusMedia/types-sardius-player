@@ -152,7 +152,7 @@ export interface PlayerAdPolicy {
   preroll: AssetPreroll;
 }
 
-export interface PlayerAsset extends MappedPlayerAsset {
+export interface PlayerAsset {
   accountId: string;
   adPolicy?: PlayerAdPolicy;
   akamaiEdgeAuth?: AkamaiEdgeAuth;
@@ -165,6 +165,7 @@ export interface PlayerAsset extends MappedPlayerAsset {
   isLive?: boolean;
   metadata: Metadata;
   protocol?: string;
+  stream?: { src: string; type: string };
   segmentType?: string;
   ttl?: number;
   updatedAt?: string;
@@ -185,7 +186,7 @@ export interface SardiusMappedManifest extends AssetFile {
   qualityLabel?: string;
   segmentType?: string;
   fileType?: SardiusMappedManifest['mimeType'];
-  options?: SJSSourceOptions,
+  options?: SJSSourceOptions;
 }
 
 export interface ManifestLevel {
