@@ -20,6 +20,7 @@ export type VJSTech = videojs.Tech;
 export type TextTrackOptions = videojs.TextTrackOptions;
 export type VJSEventTarget = videojs.EventTarget;
 export type VJSEventListener = videojs.EventTarget.EventListener;
+export type VJSEvent = videojs.EventTarget.Event;
 export type VJSError = VJSPlayer['error'];
 
 interface MenuCommonOptions {
@@ -37,10 +38,10 @@ interface MenuCommonOptions {
   width?: () => number;
 }
 
-export interface SJSSourceOptions{
+export interface SJSSourceOptions {
   end: number;
   start: number;
-  [key:string]: unknown | number | string | boolean;
+  [key: string]: unknown | number | string | boolean;
 }
 
 export interface SJSSource {
