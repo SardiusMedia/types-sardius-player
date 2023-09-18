@@ -492,6 +492,7 @@ export interface PlayerManagerRootSettings
   metadata?: PlayerData['asset']['metadata'];
   options?: PlayerParams;
   pid?: string;
+  playerId?: string;
   pluginSettings?: PlayerPlugins & {
     affiliate?: string;
     bitrate?: number;
