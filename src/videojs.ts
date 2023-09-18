@@ -196,7 +196,7 @@ export interface SJSPlayer extends VJSPlayer {
   audioTracksMenu: SPGroup;
   textTracks: () => SardiusTextTrackList;
   playerManager: PlayerManagerClass;
-  options_: videojs.PlayerOptions & DynamoPlayerModel;
+  options_: videojs.PlayerOptions & DynamoPlayerModel & { isIframe?: boolean };
   id_?: string;
   youboraplugin?: YouboraPlugin<SJSPlayer>;
 }
