@@ -78,6 +78,7 @@ interface GA {
   eventId?: string;
   id?: string;
   trackCaptions?: boolean;
+  percentsPlayedInterval?: number;
 }
 
 interface FeedSettings {
