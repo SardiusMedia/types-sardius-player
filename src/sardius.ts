@@ -80,15 +80,15 @@ type SJSPlayerManager = SJSPlayer & {
   spThumbnails?: () => void;
 };
 
-export declare class Sardius {
+declare class Sardius {
   public options: PlayerManagerRootSettings;
   public player: SJSPlayerManager;
   public VERSION: string;
   public playerEl: ReturnType<ReturnType<typeof VJSType>['el']>;
   public videoEl: HTMLVideoElement;
   public protocol?: string;
-  public streamHandler?: StreamHandler;
-  public sourceHandler?: SourceHandler;
+  public streamHandler: StreamHandler;
+  public sourceHandler: SourceHandler;
 
   constructor(options: PlayerManagerRootSettings, player: SJSPlayerManager);
   init: () => void;
