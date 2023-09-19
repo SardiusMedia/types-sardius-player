@@ -14,3 +14,4 @@ export * from './sardius';
 export * from './videojs';
 export * from './youbora';
 export * from './youtube';
+export * from './events';
