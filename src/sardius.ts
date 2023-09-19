@@ -53,7 +53,7 @@ declare class SardiusHLS {
   public _video: HTMLVideoElement | HTMLAudioElement;
 }
 
-declare class StreamHandler {
+declare class StreamHandler extends SardiusHLS {
   plugin: Sardius;
   public protocol?: string;
   public isIOS: boolean;
