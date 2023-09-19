@@ -483,11 +483,14 @@ type PlayerManagerCombinedSettings = Setup & DynamoPlayerModel;
 export interface PlayerManagerRootSettings
   extends PlayerManagerCombinedSettings {
   accountId: string;
+  affiliate?: string;
   asset?: LanguageCodesUppercase | LanguageCodesUppercaseCC | PlayerAsset;
   assetUID?: string;
   bitrate?: 'lowest' | 'heighest' | 'highest' | 'audio' | 'undefined';
   dash?: string;
   endpoint?: string;
+  eventId?: string;
+  experienceId?: string;
   feed?: string;
   guid?: string;
   hls?: string;
