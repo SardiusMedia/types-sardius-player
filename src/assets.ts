@@ -47,14 +47,14 @@ export interface AssetFile {
 
 interface AssetResponseMetadata {
   duration: number;
-  genres: string[];
-  isPreview: boolean;
-  mood: string[];
-  prayerLeaders: string[];
-  previewId: string;
-  relatedArtists: string[];
-  setType: string[];
-  themes: string[];
+  genres?: string[];
+  isPreview?: boolean;
+  mood?: string[];
+  prayerLeaders?: string[];
+  previewId?: string;
+  relatedArtists?: string[];
+  setType?: string[];
+  themes?: string[];
 }
 
 interface AssetResponseBios {
