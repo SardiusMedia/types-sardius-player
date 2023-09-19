@@ -59,7 +59,7 @@ declare class SardiusHLS {
 
   constructor(plugin: Sardius);
   public init(): void;
-  private canHandleHlsSource(source: SJSSource): string;
+  public canHandleHlsSource(source: SJSSource): string;
   public handleHlsSource(source: SJSSource, tech: SJSTech): SardiusHLS;
   public registerHLS(): void;
   public flushBuffer(): void;
