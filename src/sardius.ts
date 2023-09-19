@@ -80,7 +80,7 @@ type SJSPlayerManager = SJSPlayer & {
   spThumbnails?: () => void;
 };
 
-declare class Sardius {
+export declare class Sardius {
   public options: PlayerManagerRootSettings;
   public player: SJSPlayerManager;
   public VERSION: string;
