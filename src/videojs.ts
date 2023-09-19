@@ -201,9 +201,16 @@ export interface SJSPlayer extends VJSPlayer {
   youboraplugin?: YouboraPlugin<SJSPlayer>;
 }
 
+interface ControlBarPlugin {
+  addClass: (className: string) => void;
+  removeClass: (className: string) => void;
+}
+
 interface SardiusControlBar extends videojs.ControlBar {
-  settingsMenuLegacy: KeyValueAny;
+  settingsMenuLegacy: ControlBarPlugin;
   closedCaptions: { el_: HTMLTrackElement };
   progressControl: SJSButton;
   playToggle: SJSButton;
+  LiveDisplay: ControlBarPlugin;
+  LiveToggle: ControlBarPlugin;
 }
