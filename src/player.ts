@@ -117,6 +117,7 @@ interface Redirects {
 
 interface YoutubeCustomVars extends KeyValueTyped<unknown> {
   title: string;
+  id: string;
 }
 
 export interface YoutubeSettings {
