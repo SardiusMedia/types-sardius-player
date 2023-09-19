@@ -87,8 +87,8 @@ export declare class Sardius {
   public playerEl: ReturnType<ReturnType<typeof VJSType>['el']>;
   public videoEl: HTMLVideoElement;
   public protocol?: string;
-  public streamHandler: StreamHandler;
-  public sourceHandler: SourceHandler;
+  public streamHandler?: StreamHandler;
+  public sourceHandler?: SourceHandler;
 
   constructor(options: PlayerManagerRootSettings, player: SJSPlayerManager);
   init: () => void;
