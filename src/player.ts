@@ -115,13 +115,17 @@ interface Redirects {
   [key: string]: RedirectSiteSettings;
 }
 
+interface YoutubeCustomVars extends KeyValueTyped<unknown> {
+  title: string;
+}
+
 export interface YoutubeSettings {
   thumbnail?: PlayerAssetImage;
   title?: string;
   showAnnotations?: boolean;
   color?: 'red' | 'white';
   controls?: 0 | 1;
-  customVars?: KeyValueTyped<unknown>;
+  customVars?: YoutubeCustomVars;
   iv_load_policy?: 1 | 3;
   modestbranding?: 0 | 1;
   rel?: 0 | 1;
