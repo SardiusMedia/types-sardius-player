@@ -12,7 +12,7 @@ import {
   PlayerPlugins,
 } from './player';
 import { LanguageMenuItem, SJSPlayer, SJSSource, VJSTech } from './videojs';
-import { SardiusEvents } from './events';
+import { SardiusEventCodes } from './events';
 
 interface SJSTech extends VJSTech {
   name_?: string;
@@ -21,10 +21,10 @@ interface SJSTech extends VJSTech {
 
 declare class SardiusEvents {
   plugin: Sardius;
-  events: typeof SardiusEvents;
+  events: typeof SardiusEventCodes;
 
   constructor(plugin: Sardius);
-  triggerEvent: <T>(code: keyof typeof SardiusEvents, data: T) => void;
+  triggerEvent: <T>(code: keyof typeof SardiusEventCodes, data: T) => void;
 }
 
 declare class SardiusHlsEvents extends SardiusEvents {

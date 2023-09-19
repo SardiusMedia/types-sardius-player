@@ -9,7 +9,7 @@
  **
  */
 
-export const SardiusEvents = {
+export const SardiusEventCodes = {
   /* ------------------------------------------------------- */
   /* ---------- STREAMING PROTOCOL LIBRARY EVENTS ---------- */
   /* ------------------------------------------------------- */
