@@ -110,7 +110,7 @@ type SJSPlayerManager = SJSPlayer & {
 };
 
 declare class OfflineHandler {
-  sourceHandler: SourceHandler;
+  sourceHandler: SourceHandler_Class;
   plugin: Sardius;
   retrySeconds: number;
   nextRetry: number;
