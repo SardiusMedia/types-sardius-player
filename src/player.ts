@@ -517,6 +517,7 @@ export interface PlayerManagerRootSettings
   rpid?: string;
   simlive?: string;
   simliveFeed?: string;
+  siteId?: string;
   techOrder?: string[];
   token?: string;
   type?: string;
