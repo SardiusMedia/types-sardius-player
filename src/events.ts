@@ -9,7 +9,7 @@
  **
  */
 
-export const SardiusEventCodes = {
+export default {
   /* ------------------------------------------------------- */
   /* ---------- STREAMING PROTOCOL LIBRARY EVENTS ---------- */
   /* ------------------------------------------------------- */
@@ -218,4 +218,4 @@ export const SardiusEventCodes = {
   SP_SUB_TRACK_AFTER_SWITCH: 'Subtitle Track Successfully Switched',
   // fired when the text track container is resized
   SP_TEXT_TRACK_CONTAINER_RESIZE: 'Text Track Container Resized',
-} as const;
+};
