@@ -45,7 +45,7 @@ export interface AssetFile {
   width?: number | null;
 }
 
-export interface AssetResponseMetadata {
+interface AssetResponseMetadata {
   duration: number;
   genres?: string[];
   isPreview?: boolean;
