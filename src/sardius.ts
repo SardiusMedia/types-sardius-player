@@ -1,5 +1,9 @@
-import Hls, { Events, ErrorData } from 'hls.js';
-import { PlayerAssetWithLanguage } from './assets';
+import Hls, { Events, ErrorData, Level } from 'hls.js';
+import {
+  Caption,
+  PlayerAssetWithLanguage,
+  SardiusMappedManifest,
+} from './assets';
 import { LanguageCodesUppercase } from './languageCodes';
 import {
   DynamoPlayerModel,
@@ -7,7 +11,7 @@ import {
   PlayerParams,
   PlayerPlugins,
 } from './player';
-import { SJSPlayer, SJSSource, VJSTech } from './videojs';
+import { LanguageMenuItem, SJSPlayer, SJSSource, VJSTech } from './videojs';
 
 interface SJSTech extends VJSTech {
   name_?: string;
@@ -80,6 +84,70 @@ type SJSPlayerManager = SJSPlayer & {
   spThumbnails?: () => void;
 };
 
+declare class OfflineHandler {
+  sourceHandler: SourceHandler;
+  plugin: Sardius;
+  retrySeconds: number;
+  nextRetry: number;
+  retryCount: number;
+  reDownload: boolean;
+  endpoint: string;
+  url?: string;
+  playlist?: SardiusMappedManifest[];
+  manifest?: string;
+  isLive?: boolean;
+
+  constructor(SourceHandler: SourceHandler, plugin: Sardius);
+  retry(): void;
+  test(): void;
+  _isLive(): Promise<SardiusMappedManifest[]>;
+  _isUpdated(): Promise<SardiusMappedManifest[]>;
+  _checkUrl(cb: (playlist: SardiusMappedManifest[]) => void): void;
+  handle(): Promise<SardiusMappedManifest[]>;
+}
+
+declare class SourceHandler_Class {
+  public plugin: Sardius;
+  public protocol?: string;
+  public sources: PlayerAssetWithLanguage;
+  public languages: PlayerAssetWithLanguage['languages'];
+  public language: boolean | LanguageCodesUppercase;
+  public defaultSrc: SJSSource;
+  public attachedMenuItems: KeyValueTyped;
+  public options: PlayerManagerRootSettings;
+  public autoLoaded: boolean;
+  public forcedLastAsset: boolean;
+  public captions: Caption[];
+  public offlineHandler: OfflineHandler;
+  public labels?: KeyValueTyped;
+  public currentSource?: SJSSource;
+
+  constructor(plugin: Sardius);
+  init(plugin: Sardius): void;
+  ready(plugin: Sardius): void;
+  isStreamingProtocol(source: SardiusMappedManifest | SJSSource): boolean;
+  setSources(
+    passedSource: LanguageCodesUppercase | PlayerAssetWithLanguage,
+  ): void;
+  forcePlay(passedTime: number): void;
+  playSrc(aSource: SJSSource, fp?: boolean): void;
+  switchSrc(aSource: SJSSource): void;
+  switchLanguage(
+    language:
+      | LanguageMenuItem
+      | { code: LanguageCodesUppercase; label: LanguageCodesUppercase },
+  ): void;
+  switchBitrate(aSource: SJSSource): void;
+  switchAudioTrack(track: number): void;
+  getBitrateFromSource(aSource: SJSSource): {
+    level: number | boolean | SJSSource;
+    bitrate: string | number | boolean | undefined;
+    levelData?: Level | undefined;
+  };
+  forcePlayAtTime(time: number): void;
+  switchLevel(aSource: SJSSource): void;
+}
+
 declare class Sardius {
   public options: PlayerManagerRootSettings;
   public player: SJSPlayerManager;
@@ -88,7 +156,7 @@ declare class Sardius {
   public videoEl: HTMLVideoElement;
   public protocol?: string;
   public streamHandler: StreamHandler;
-  public sourceHandler: SourceHandler;
+  public sourceHandler: SourceHandler_Class;
 
   constructor(options: PlayerManagerRootSettings, player: SJSPlayerManager);
   init: () => void;
@@ -99,7 +167,7 @@ declare class Sardius {
 
 export declare class PlayerManagerClass {
   public plugin: Sardius;
-  public sourceHandler?: SourceHandler;
+  public sourceHandler?: SourceHandler_Class;
   constructor(plugin: Sardius);
   setMenuLabels: (labels: string[]) => void;
   setSources: (
