@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/SardiusMedia/types-sardius-player#readme",
   "devDependencies": {
+    "hls.js": "1.4.10",
     "typescript": "^5.1.6"
   },
   "dependencies": {
@@ -25,7 +26,6 @@
     "@types/hls-parser": "^0.8.4",
     "@types/node": "^20.4.2",
     "@types/video.js": "7.3.52",
-    "hls.js": "1.4.10",
     "moment": "^2.29.4",
     "video.js": "7.8.2"
   }
