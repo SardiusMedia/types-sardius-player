@@ -48,7 +48,7 @@ export interface SJSSource {
   audioCodec?: string;
   autoselect?: boolean;
   bitrate?: number | 'auto';
-  code?: LanguageCode;
+  code?: LanguageCode & LanguageCodesUppercase;
   fileType?: string;
   force?: boolean;
   groupId?: string;
