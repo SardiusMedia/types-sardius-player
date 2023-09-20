@@ -83,7 +83,7 @@ export type SJSPlayerOptions = VJSPlayerOptions & {
 export type SJSMenuItem = MenuCommonOptions & videojs.MenuItem;
 export type SJSMenu = MenuCommonOptions & videojs.Menu;
 export type SJSMenuItemOptions = MenuCommonOptions & videojs.MenuItemOptions;
-export type SJSMenuOptions = MenuCommonOptions;
+export type SJSMenuOptions = MenuCommonOptions & Omit<videojs.MenuOptions, 'menuButton'>;
 export type SJSComponent = MenuCommonOptions & videojs.Component;
 
 export interface LanguageMenuItem extends SJSMenuItem {
