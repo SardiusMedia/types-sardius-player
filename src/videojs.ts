@@ -31,6 +31,7 @@ interface MenuCommonOptions {
   isActive?: boolean | undefined;
   minItems?: number;
   order?: number;
+  selectable?: boolean;
   playerOptions?: PlayerOptions;
   label?: string;
   bitrate?: string | number;
