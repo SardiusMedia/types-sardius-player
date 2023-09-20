@@ -205,6 +205,7 @@ export interface SJSPlayer extends VJSPlayer {
 interface ControlBarPlugin {
   addClass: (className: string) => void;
   removeClass: (className: string) => void;
+  children_: (SPMenu & { contentEl_: HTMLUListElement })[];
 }
 
 interface SardiusControlBar extends videojs.ControlBar {
