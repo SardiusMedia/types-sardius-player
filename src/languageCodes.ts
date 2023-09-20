@@ -77,3 +77,6 @@ export type LanguageCode = (typeof languageCodes)[number];
 export type LanguageCodesUppercase = (typeof languageCodesUppercase)[number];
 export type LanguageCodesUppercaseCC =
   (typeof languageCodesUppercaseCC)[number];
+export type LanguageCodeAny = LanguageCode |
+  LanguageCodesUppercase |
+  LanguageCodesUppercaseCC;

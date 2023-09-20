@@ -9,8 +9,8 @@ import {
   RemoteCaptionObject,
 } from './sardius';
 import { DynamoPlayerModel } from './player';
-import { LanguageCode } from './common';
 import {
+  LanguageCodeAny,
   LanguageCodesUppercase,
   LanguageCodesUppercaseCC,
 } from './languageCodes';
@@ -48,7 +48,7 @@ export interface SJSSource {
   audioCodec?: string;
   autoselect?: boolean;
   bitrate?: number | 'auto';
-  code?: LanguageCode & LanguageCodesUppercase;
+  code?: LanguageCodeAny;
   fileType?: string;
   force?: boolean;
   groupId?: string;
