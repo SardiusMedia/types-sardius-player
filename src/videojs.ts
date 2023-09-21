@@ -37,6 +37,7 @@ interface MenuCommonOptions {
   bitrate?: string | number;
   height?: () => number;
   width?: () => number;
+  isSelected_?: boolean;
 }
 
 export interface SJSSourceOptions {
