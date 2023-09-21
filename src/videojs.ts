@@ -51,6 +51,7 @@ export interface SJSSource {
   autoselect?: boolean;
   bitrate?: number | string;
   code?: LanguageCodeAny;
+  currentTime?: number;
   fileType?: string;
   force?: boolean;
   groupId?: string;
@@ -68,7 +69,6 @@ export interface SJSSource {
   type?: string;
   url?: string | string[];
   width?: number | null | (() => number);
-  currentTime?: number;
 }
 
 export type SJSPlayerOptions = VJSPlayerOptions & {

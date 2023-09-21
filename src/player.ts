@@ -486,6 +486,7 @@ export interface PlayerManagerRootSettings
   affiliate?: string;
   asset?: LanguageCodesUppercase | LanguageCodesUppercaseCC | PlayerAsset;
   assetUID?: string;
+  audioOnlyToggledOn?: boolean;
   bitrate?: 'lowest' | 'heighest' | 'highest' | 'audio' | 'undefined';
   dash?: string;
   endpoint?: string;
