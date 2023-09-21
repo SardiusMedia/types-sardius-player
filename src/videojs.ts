@@ -35,8 +35,8 @@ interface MenuCommonOptions {
   playerOptions?: PlayerOptions;
   label?: string;
   bitrate?: string | number;
-  height?: () => number;
-  width?: () => number;
+  height?: number | null | (() => number);
+  width?: number | null | (() => number);
   isSelected_?: boolean;
 }
 
@@ -67,7 +67,7 @@ export interface SJSSource {
   src?: string;
   type?: string;
   url?: string | string[];
-  width?: number | null;
+  width?: number | null | (() => number);
 }
 
 export type SJSPlayerOptions = VJSPlayerOptions & {
