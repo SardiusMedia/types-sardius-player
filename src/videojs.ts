@@ -55,7 +55,7 @@ export interface SJSSource {
   force?: boolean;
   groupId?: string;
   height?: number | null | (() => number);
-  id?: number | string;
+  id?: string;
   instreamId?: string;
   label?: string;
   lang?: string;
