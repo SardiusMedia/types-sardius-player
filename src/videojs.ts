@@ -68,6 +68,7 @@ export interface SJSSource {
   type?: string;
   url?: string | string[];
   width?: number | null | (() => number);
+  currentTime?: number;
 }
 
 export type SJSPlayerOptions = VJSPlayerOptions & {
