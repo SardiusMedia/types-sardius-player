@@ -30,7 +30,7 @@ interface MenuCommonOptions {
   error?: Error;
   isActive?: boolean | undefined;
   minItems?: number;
-  order?: number;
+  order?: number | 'auto';
   selectable?: boolean;
   playerOptions?: PlayerOptions;
   label?: string;
