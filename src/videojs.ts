@@ -49,7 +49,7 @@ export interface SJSSourceOptions {
 export interface SJSSource {
   audioCodec?: string;
   autoselect?: boolean;
-  bitrate?: number | 'auto';
+  bitrate?: number | string;
   code?: LanguageCodeAny;
   fileType?: string;
   force?: boolean;
