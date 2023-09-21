@@ -30,7 +30,7 @@ interface MenuCommonOptions {
   error?: Error;
   isActive?: boolean | undefined;
   minItems?: number;
-  order?: number | 'auto';
+  order?: number | string;
   selectable?: boolean;
   playerOptions?: PlayerOptions;
   label?: string;
@@ -54,7 +54,7 @@ export interface SJSSource {
   fileType?: string;
   force?: boolean;
   groupId?: string;
-  height?: number | null;
+  height?: number | null | (() => number);
   id?: number | string;
   instreamId?: string;
   label?: string;
