@@ -203,7 +203,7 @@ export interface SJSPlayer extends VJSPlayer {
   youboraplugin?: YouboraPlugin<SJSPlayer>;
 }
 
-interface ControlBarPlugin {
+interface ControlBarPlugin extends SPMenu {
   addClass: (className: string) => void;
   removeClass: (className: string) => void;
   children_: (SPMenu & { contentEl_: HTMLUListElement })[];
