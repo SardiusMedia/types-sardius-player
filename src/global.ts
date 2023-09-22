@@ -27,6 +27,8 @@ declare global {
   }
 
   export type TargetElement = Element | undefined | null;
+
+  export type BasicObjectTypes = string | number | boolean | undefined;
 }
 
 export {};
