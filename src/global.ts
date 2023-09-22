@@ -7,6 +7,9 @@ declare global {
   export interface KeyValueTyped<T = string> {
     [key: string]: T;
   }
+  export interface KeyValueBasic {
+    [key: string]: BasicObjectTypes;
+  }
 
   export interface Window {
     SARDIUSENDPOINT: string;
