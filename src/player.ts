@@ -454,7 +454,7 @@ export interface SardiusPlayerConfig {
   shift?: DynamoPlayerModel['shift'];
   showBitrates?: DynamoPlayerModel['showBitrates'];
   simLiveLiveDelay?: DynamoPlayerModel['simLiveLiveDelay'];
-  TheaterModeCallback?: () => void;
+  TheaterModeCallback?: (settings?: KeyValueTyped) => void;
   siteId?: PlayerParams['siteId'];
   startLevel?: DynamoPlayerModel['startLevel'];
   uid?: PlayerData['uid'];
@@ -513,7 +513,7 @@ export interface PlayerManagerRootSettings
     MiniPlayerCallback?: () => void;
     pLoader?: boolean;
     siteId?: string;
-    TheaterModeCallback?: () => void;
+    TheaterModeCallback?: (settings?: KeyValueTyped) => void;
     uid?: string;
     usehttps?: boolean;
   };
