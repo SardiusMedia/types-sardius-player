@@ -145,6 +145,11 @@ export declare class SJSButton extends videojs.Button implements SPButtonT {
   onClick: (callback: () => void) => void;
   handleClick: () => void;
   isSelected_: boolean;
+  childNameIndex_?: {
+    SeekBar?: {
+      childNameIndex_?: { PlayProgressBar?: { el_: HTMLDivElement } };
+    };
+  };
 }
 
 export interface SardiusObject {
