@@ -444,7 +444,7 @@ export interface SardiusPlayerConfig {
   locale?: DynamoPlayerModel['locale'];
   maxBufferSize?: DynamoPlayerModel['maxBufferSize'];
   menuAttachments: DynamoPlayerModel['menuAttachments'];
-  MiniPlayerCallback?: () => void;
+  MiniPlayerCallback?: (settings?: KeyValueBasic) => void;
   nativeiOSFullscreen?: DynamoPlayerModel['nativeiOSFullscreen'];
   playerId: PlayerParams['playerId'];
   pLoader?: DynamoPlayerModel['pLoader'];
@@ -510,7 +510,7 @@ export interface PlayerManagerRootSettings
     experienceId?: string;
     locale?: LanguageCode;
     locationId?: string[];
-    MiniPlayerCallback?: () => void;
+    MiniPlayerCallback?: (settings?: KeyValueBasic) => void;
     pLoader?: boolean;
     siteId?: string;
     TheaterModeCallback?: (settings?: KeyValueBasic) => void;
