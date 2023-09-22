@@ -217,4 +217,5 @@ interface SardiusControlBar extends videojs.ControlBar {
   playToggle: SJSButton;
   LiveDisplay: ControlBarPlugin;
   LiveToggle: ControlBarPlugin;
+  TheaterMode: ControlBarPlugin;
 }
