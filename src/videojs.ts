@@ -150,6 +150,7 @@ export declare class SJSButton extends videojs.Button implements SPButtonT {
       childNameIndex_?: { PlayProgressBar?: { el_: HTMLDivElement } };
     };
   };
+  seekBar?: { mouseTimeDisplay: SJSButton };
 }
 
 export interface SardiusObject {
