@@ -11,7 +11,13 @@ import {
   PlayerParams,
   PlayerPlugins,
 } from './player';
-import { LanguageMenuItem, SJSPlayer, SJSSource, VJSTech } from './videojs';
+import {
+  LanguageMenuItem,
+  SJSButton,
+  SJSPlayer,
+  SJSSource,
+  VJSTech,
+} from './videojs';
 import events from './events';
 
 interface SJSTech extends VJSTech {
@@ -107,6 +113,9 @@ type SJSPlayerManager = SJSPlayer & {
   // preroll?: (prerollSettings?: KeyValueTyped) => void;
   youbora?: (settings: KeyValueTyped<string | boolean | undefined>) => void;
   spThumbnails?: () => void;
+  remotePlayback?: boolean;
+  poster_?: string;
+  posterImage?: SJSButton;
 };
 
 declare class OfflineHandler {
