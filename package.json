@@ -18,10 +18,10 @@
   },
   "homepage": "https://github.com/SardiusMedia/types-sardius-player#readme",
   "devDependencies": {
-    "hls.js": "1.4.10",
     "typescript": "^5.1.6"
   },
   "dependencies": {
+    "hls.js": "1.4.10",
     "@types/dynogels": "^9.0.7",
     "@types/hls-parser": "^0.8.4",
     "@types/node": "^20.4.2",
