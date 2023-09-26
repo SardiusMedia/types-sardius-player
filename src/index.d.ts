@@ -1,3 +1,5 @@
+import events from './events';
+
 export * from './accounts';
 export * from './assets';
 export * from './common';
@@ -15,3 +17,5 @@ export * from './videojs';
 export * from './youbora';
 export * from './youtube';
 export * from './events';
+
+export { events };
