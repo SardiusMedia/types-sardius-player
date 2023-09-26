@@ -15,6 +15,7 @@ import {
   LanguageCodesUppercaseCC,
 } from './languageCodes';
 import { YouboraPlugin } from './youbora';
+import { AssetFile } from './assets';
 
 export type VJSTech = videojs.Tech;
 export type TextTrackOptions = videojs.TextTrackOptions;
@@ -46,7 +47,7 @@ export interface SJSSourceOptions {
   [key: string]: unknown | number | string | boolean;
 }
 
-export interface SJSSource {
+export interface SJSSource extends AssetFile {
   audioCodec?: string;
   autoselect?: boolean;
   bitrate?: number | string;

@@ -6,13 +6,13 @@ import {
   LanguageCodesUppercaseCC,
 } from './languageCodes';
 
-type AssetFileOptions = Record<string, unknown> & SJSSourceOptions
+type AssetFileOptions = Record<string, unknown> & SJSSourceOptions;
 
 export interface AssetFile {
   altUrl?: string;
   approved?: boolean;
   availableDate?: Date;
-  bitrate?: number | 'auto';
+  bitrate?: number | string;
   categories?: string[];
   checksum?: string;
   copywrite?: string;
@@ -20,7 +20,7 @@ export interface AssetFile {
   description?: string;
   expirationDate?: Date;
   file?: string;
-  height?: number | null;
+  height?: number | null | (() => number);
   id?: number | string;
   isDefault?: boolean;
   language?: string;
@@ -42,7 +42,7 @@ export interface AssetFile {
   type?: string;
   types?: string[];
   url?: string | string[];
-  width?: number | null;
+  width?: number | null | (() => number);
 }
 
 interface AssetResponseMetadata {
