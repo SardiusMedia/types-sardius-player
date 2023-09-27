@@ -199,6 +199,7 @@ export interface AccountModel {
   };
   logo?: string;
   loginType?: string;
+  login?:KeyValueTyped;
   mediaSources?: KeyValueTyped<MediaSourcesObjects>;
   name: string;
   orgSize?: string | null;
@@ -225,6 +226,7 @@ export interface AccountModel {
     type?: string;
     hash?: string;
   };
+  youtubeApiKey?: string;
 }
 
 export interface AccessLevel {
