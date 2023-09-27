@@ -199,7 +199,7 @@ export interface AccountModel {
   };
   logo?: string;
   loginType?: string;
-  login?:KeyValueTyped;
+  login?: KeyValueTyped;
   mediaSources?: KeyValueTyped<MediaSourcesObjects>;
   name: string;
   orgSize?: string | null;
