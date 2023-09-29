@@ -528,4 +528,6 @@ export interface PlayerManagerRootSettings
   url?: string;
   usehttps?: boolean;
   yt?: string;
+  content?: never;
+  status?: never;
 }
