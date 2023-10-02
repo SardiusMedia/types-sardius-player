@@ -41,7 +41,7 @@ export type QueryableTypes = string | number | boolean;
 
 export type GSIName = string | null;
 
-interface Options {
+export interface DBOptions {
   ascending: boolean;
   attributes: string[];
   exactLimit: number;
@@ -58,7 +58,7 @@ export interface QueryArguments {
   pk: Pk;
   gsiName?: GSIName;
   sk?: Sk;
-  transforms?: Partial<Options>;
+  transforms?: Partial<DBOptions>;
 }
 
 export interface UpdateOptions {
