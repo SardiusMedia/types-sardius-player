@@ -45,7 +45,11 @@ export interface DBOptions {
   ascending: boolean;
   attributes: string[];
   exactLimit: number;
-  filters: FilterOperations[];
+  filters: {
+    operation: FilterOperations;
+    value: string | number | boolean;
+    value2?: string | number | boolean;
+  }[];
   limit: number;
   loadAll: boolean;
   query: dynogels.Query;
