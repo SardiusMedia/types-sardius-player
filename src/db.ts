@@ -10,28 +10,28 @@ export interface Index {
 
 export type Pk = string | number;
 
-export type Sk = string | number | boolean | Filter;
+export type Sk = string | number | boolean | FilterOperations;
 
-export interface Filter {
-  key?: string;
-  operation:
-    | '='
-    | '=='
-    | '==='
-    | 'equals'
-    | '<='
-    | '<'
-    | '>'
-    | '>='
-    | 'begins'
-    | 'beginsWith'
-    | 'between'
-    | 'exist'
-    | 'exists'
-    | 'contains';
-  value: QueryableTypes;
-  value2?: QueryableTypes;
-}
+export type Operations =
+  | '='
+  | '=='
+  | '==='
+  | 'equals'
+  | '<='
+  | '<'
+  | '>'
+  | '>='
+  | 'begins'
+  | 'beginsWith'
+  | 'between';
+
+export type FilterOperations =
+  | Operations
+  | 'contains'
+  | 'exist'
+  | 'exists'
+  | 'null'
+  | null;
 
 export type QueryableTypes = string | number | boolean;
 
@@ -51,7 +51,7 @@ export interface QueryArguments {
   gsiName?: GSIName;
   sk?: Sk;
   attributes?: string[];
-  filters?: Filter[];
+  filters?: FilterOperations[];
   transforms?: Partial<Transforms>;
 }
 
