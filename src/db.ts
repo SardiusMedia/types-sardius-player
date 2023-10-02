@@ -83,11 +83,11 @@ export interface DynamoResponseRaw<T = DynamoPlayerModel> {
   ScannedCount: number;
 }
 
-export interface DynamoDbTable {
+export interface DynamoDbTable<T> {
   hashKey: string;
   rangeKey: string;
   timestamps: boolean;
   tableName: string;
   indexes: Index[];
-  schema: Joi.Schema<KeyValueAny>;
+  schema: Joi.Schema<T>;
 }
