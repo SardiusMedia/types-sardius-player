@@ -1,3 +1,4 @@
+import Joi from 'joi';
 import dynogels from 'dynogels';
 import { DynamoPlayerModel } from './player';
 
@@ -10,7 +11,10 @@ export interface Index {
 
 export type Pk = string | number;
 
-export type Sk = string | number | boolean | FilterOperations;
+export interface Sk {
+  operation: FilterOperations;
+  value: Pk;
+}
 
 export type Operations =
   | '='
@@ -37,22 +41,24 @@ export type QueryableTypes = string | number | boolean;
 
 export type GSIName = string | null;
 
-interface Transforms {
-  query: dynogels.Query;
+interface Options {
+  ascending: boolean;
+  attributes: string[];
+  exactLimit: number;
+  filters: FilterOperations[];
   limit: number;
   loadAll: boolean;
+  query: dynogels.Query;
+  rawResults: boolean;
+  sort: 'ascending' | 'descending';
   startKey: dynogels.AWS.DynamoDB.Key;
-  ascending: boolean;
-  exactLimit: number;
 }
 
 export interface QueryArguments {
   pk: Pk;
   gsiName?: GSIName;
   sk?: Sk;
-  attributes?: string[];
-  filters?: FilterOperations[];
-  transforms?: Partial<Transforms>;
+  transforms?: Partial<Options>;
 }
 
 export interface UpdateOptions {
@@ -77,8 +83,11 @@ export interface DynamoResponseRaw<T = DynamoPlayerModel> {
   ScannedCount: number;
 }
 
-export interface DynogelsIndex {
-  hashKey?: dynogels.ModelConfiguration['hashKey'];
-  rangeKey?: dynogels.ModelConfiguration['rangeKey'];
-  name: string;
+export interface DynamoDbTable {
+  hashKey: string;
+  rangeKey: string;
+  timestamps: boolean;
+  tableName: string;
+  indexes: Index[];
+  schema: Joi.Schema;
 }
