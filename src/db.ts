@@ -73,7 +73,7 @@ export interface UpdateOptions {
 export interface DynamoResponse<T = DynamoPlayerModel> {
   Items: T[];
   Count?: number;
-  LastEvaluatedKey: dynogels.AWS.DynamoDB.Key;
+  LastEvaluatedKey?: dynogels.AWS.DynamoDB.Key;
   ScannedCount: number;
 }
 
