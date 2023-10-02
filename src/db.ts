@@ -5,7 +5,7 @@ import { DynamoPlayerModel } from './player';
 export interface Index {
   name: string;
   hashKey: Pk;
-  rangeKey?: string;
+  rangeKey: string;
   type?: string;
 }
 
