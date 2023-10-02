@@ -89,5 +89,5 @@ export interface DynamoDbTable {
   timestamps: boolean;
   tableName: string;
   indexes: Index[];
-  schema: Joi.Schema;
+  schema: Joi.Schema<KeyValueAny>;
 }
