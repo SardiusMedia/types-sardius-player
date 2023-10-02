@@ -46,6 +46,7 @@ export interface DBOptions {
   attributes: string[];
   exactLimit: number;
   filters: {
+    key: string;
     operation: FilterOperations;
     value: string | number | boolean;
     value2?: string | number | boolean;
