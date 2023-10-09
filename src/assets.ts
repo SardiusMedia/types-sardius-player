@@ -193,10 +193,7 @@ export interface SardiusMappedManifestNoSubs extends AssetFile {
 }
 
 export interface SardiusMappedManifest extends SardiusMappedManifestNoSubs {
-  subtitles?: Writeable<
-    types.Rendition<'SUBTITLES'>,
-    keyof types.Rendition<'SUBTITLES'>
-  >[];
+  subtitles?: types.Rendition<'SUBTITLES'>[];
 }
 
 export interface ManifestLevel {
