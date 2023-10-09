@@ -5,6 +5,7 @@ import {
   LanguageCodesUppercase,
   LanguageCodesUppercaseCC,
 } from './languageCodes';
+import { Writeable } from './common';
 
 type AssetFileOptions = Record<string, unknown> & SJSSourceOptions;
 
@@ -189,7 +190,10 @@ export interface SardiusMappedManifest extends AssetFile {
   segmentType?: string;
   fileType?: SardiusMappedManifest['mimeType'];
   options?: SJSSourceOptions;
-  subtitles?: types.Rendition<'SUBTITLES'>[];
+  subtitles?: Writeable<
+    types.Rendition<'SUBTITLES'>,
+    keyof types.Rendition<'SUBTITLES'>
+  >[];
 }
 
 export interface ManifestLevel {
