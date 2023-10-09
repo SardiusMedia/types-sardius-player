@@ -182,17 +182,17 @@ export interface PlayerAssetWithLanguage extends PlayerAsset {
   >;
 }
 
-export interface SardiusMappedManifest extends AssetFile {
+export interface SardiusMappedManifestNoSubs extends AssetFile {
   isLive?: boolean;
   isMasterPlaylist?: boolean;
-  playlists?: (Partial<types.Variant> & SardiusMappedManifest)[];
+  playlists?: (Partial<types.Variant> & SardiusMappedManifestNoSubs)[];
   qualityLabel?: string;
   segmentType?: string;
   fileType?: SardiusMappedManifest['mimeType'];
   options?: SJSSourceOptions;
 }
 
-export interface SardiusMappedManifestSubtitles extends SardiusMappedManifest {
+export interface SardiusMappedManifest extends SardiusMappedManifestNoSubs {
   subtitles?: Writeable<
     types.Rendition<'SUBTITLES'>,
     keyof types.Rendition<'SUBTITLES'>
