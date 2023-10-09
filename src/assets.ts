@@ -190,6 +190,9 @@ export interface SardiusMappedManifest extends AssetFile {
   segmentType?: string;
   fileType?: SardiusMappedManifest['mimeType'];
   options?: SJSSourceOptions;
+}
+
+export interface SardiusMappedManifestSubtitles extends SardiusMappedManifest {
   subtitles?: Writeable<
     types.Rendition<'SUBTITLES'>,
     keyof types.Rendition<'SUBTITLES'>
