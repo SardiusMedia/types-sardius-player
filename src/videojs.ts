@@ -35,14 +35,8 @@ interface MenuCommonOptions {
   playerOptions?: PlayerOptions;
   label?: string;
   bitrate?: string | number;
-  height?:
-    | number
-    | null
-    | ((num?: number | string, skipListeners?: boolean) => number);
-  width?:
-    | number
-    | null
-    | ((num?: number | string, skipListeners?: boolean) => number);
+  height?: number | null | (() => number);
+  width?: number | null | (() => number);
   isSelected_?: boolean;
 }
 
