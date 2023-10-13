@@ -22,6 +22,7 @@ export type VJSEventTarget = videojs.EventTarget;
 export type VJSEventListener = videojs.EventTarget.EventListener;
 export type VJSEvent = videojs.EventTarget.Event;
 export type VJSError = VJSPlayer['error'];
+export type VJSMenu = videojs.Menu;
 
 interface MenuCommonOptions {
   callback?: (data: SJSSource, button: any) => void;
