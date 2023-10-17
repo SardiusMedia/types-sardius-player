@@ -101,6 +101,9 @@ declare class StreamHandler extends SardiusHLS {
 type SJSPlayerManager = SJSPlayer & {
   playerManager: PlayerManagerClass;
   originalError?: SJSPlayer['error'];
+  error?:
+    | SJSPlayer['error']
+    | ((err: Pick<MediaError, 'code' | 'message'>) => void);
   refresh?: (fromError: boolean, newUrl?: string, addTime?: boolean) => void;
   delete?: () => void;
   nextAsset?: (url: string) => void;
