@@ -19,6 +19,7 @@ import {
   VJSTech,
 } from './videojs';
 import events from './events';
+import { Writeable } from './common';
 
 interface SJSTech extends VJSTech {
   name_?: string;
@@ -98,7 +99,10 @@ declare class StreamHandler extends SardiusHLS {
   setLocale: (locale: string) => void;
 }
 
-export type SardiusMediaError = Pick<MediaError, 'code' | 'message'>;
+export type SardiusMediaError = Pick<
+  Writeable<MediaError, keyof MediaError>,
+  'code' | 'message'
+>;
 
 type SJSPlayerManager = SJSPlayer & {
   playerManager: PlayerManagerClass;
