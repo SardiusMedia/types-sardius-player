@@ -98,12 +98,12 @@ declare class StreamHandler extends SardiusHLS {
   setLocale: (locale: string) => void;
 }
 
+export type SardiusMediaError = Pick<MediaError, 'code' | 'message'>;
+
 type SJSPlayerManager = SJSPlayer & {
   playerManager: PlayerManagerClass;
   originalError?: SJSPlayer['error'];
-  error?:
-    | SJSPlayer['error']
-    | ((err: Pick<MediaError, 'code' | 'message'>) => void);
+  error?: SJSPlayer['error'] | ((err: SardiusMediaError) => void);
   refresh?: (fromError: boolean, newUrl?: string, addTime?: boolean) => void;
   delete?: () => void;
   nextAsset?: (url: string) => void;
