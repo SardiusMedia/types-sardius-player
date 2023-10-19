@@ -325,9 +325,27 @@ export const AssetTypes_Array = [
   'simliveFeed',
   'token',
   'yt',
+];
+
+const ConstTypes = [
+  'asset',
+  'assetUID',
+  'feed',
+  'file',
+  'guid',
+  'iframe',
+  'js',
+  'lao',
+  'pid',
+  'resi',
+  'rpid',
+  'simlive',
+  'simliveFeed',
+  'token',
+  'yt',
 ] as const;
 
-export type AssetTypes = typeof AssetTypes_Array[number];
+export type AssetTypes = (typeof ConstTypes)[number];
 
 export interface PlayerBuiltConfigOptions {
   cdn: string;
