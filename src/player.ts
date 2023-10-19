@@ -309,22 +309,25 @@ export interface DynamoPlayerModel {
 
 export type DBPlayerModelSansAccountId = Omit<DynamoPlayerModel, 'accountId'>;
 
-export type AssetTypes =
-  | 'asset'
-  | 'assetUID'
-  | 'feed'
-  | 'file'
-  | 'guid'
-  | 'iframe'
-  | 'js'
-  | 'lao'
-  | 'pid'
-  | 'resi'
-  | 'rpid'
-  | 'simlive'
-  | 'simliveFeed'
-  | 'token'
-  | 'yt';
+export const AssetTypes_Array = [
+  'asset',
+  'assetUID',
+  'feed',
+  'file',
+  'guid',
+  'iframe',
+  'js',
+  'lao',
+  'pid',
+  'resi',
+  'rpid',
+  'simlive',
+  'simliveFeed',
+  'token',
+  'yt',
+] as const;
+
+export type AssetTypes = typeof AssetTypes_Array[number];
 
 export interface PlayerBuiltConfigOptions {
   cdn: string;
