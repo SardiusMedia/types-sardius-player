@@ -101,8 +101,8 @@ declare class StreamHandler extends SardiusHLS {
 
 export type SardiusMediaError = Pick<
   Writeable<MediaError, keyof MediaError>,
-  'code' | 'message'
->;
+  'message'
+> & { code: string | number };
 
 type SJSPlayerManager = SJSPlayer & {
   playerManager: PlayerManagerClass;
