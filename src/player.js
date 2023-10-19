@@ -1,0 +1,17 @@
+export const AssetTypes_Array = [
+  'asset',
+  'assetUID',
+  'feed',
+  'file',
+  'guid',
+  'iframe',
+  'js',
+  'lao',
+  'pid',
+  'resi',
+  'rpid',
+  'simlive',
+  'simliveFeed',
+  'token',
+  'yt',
+];
