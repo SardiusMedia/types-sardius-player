@@ -172,7 +172,7 @@ export declare class SPItem extends videojs.MenuItem {
   handleClick: () => void;
 }
 
-export type SardiusVJS = typeof videojs & {
+export type SardiusVJS = Omit<typeof videojs, 'MenuOptions'> & {
   getComponent: (componentName: string) => videojs.Component;
   // registerPlugin: (
   //   componentName: string,
