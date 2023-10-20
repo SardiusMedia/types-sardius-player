@@ -172,19 +172,18 @@ export declare class SPItem extends videojs.MenuItem {
   handleClick: () => void;
 }
 
-export type SardiusVJS = Omit<typeof videojs, 'MenuOptions'> & {
+export type SardiusVJS = typeof videojs & {
   getComponent: (componentName: string) => videojs.Component;
-  // registerPlugin: (
-  //   componentName: string,
-  //   func: typeof videojs.Component,
-  // ) => videojs.Component;
   extend: (
     component: videojs.Component,
     options: {
       constructor: (player: VJSPlayer, options: VJSPlayerOptions) => SPMenu;
     },
   ) => videojs.Component;
-  MenuOptions: Omit<videojs.MenuOptions, 'menuButton'>;
+  new (
+    player: VJSPlayer,
+    options?: Omit<videojs.MenuOptions, 'menuButton'>,
+  ): VJSMenu;
 };
 
 export interface SardiusTextTrack extends TextTrack {
