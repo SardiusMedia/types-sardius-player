@@ -23,6 +23,7 @@ export type VJSEventListener = videojs.EventTarget.EventListener;
 export type VJSEvent = videojs.EventTarget.Event;
 export type VJSError = VJSPlayer['error'];
 export type VJSMenu = videojs.Menu;
+export type VJSMenuOptions = videojs.MenuOptions;
 
 interface MenuCommonOptions {
   callback?: (data: SJSSource, button: any) => void;
@@ -180,10 +181,6 @@ export type SardiusVJS = typeof videojs & {
       constructor: (player: VJSPlayer, options: VJSPlayerOptions) => SPMenu;
     },
   ) => videojs.Component;
-  new (
-    player: VJSPlayer,
-    options?: Omit<videojs.MenuOptions, 'menuButton'>,
-  ): VJSMenu;
 };
 
 export interface SardiusTextTrack extends TextTrack {
