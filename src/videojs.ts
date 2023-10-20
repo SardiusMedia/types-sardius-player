@@ -184,6 +184,7 @@ export type SardiusVJS = typeof videojs & {
       constructor: (player: VJSPlayer, options: VJSPlayerOptions) => SPMenu;
     },
   ) => videojs.Component;
+  MenuOptions: Omit<videojs.MenuOptions, 'menuButton'>;
 };
 
 export interface SardiusTextTrack extends TextTrack {
