@@ -5,7 +5,6 @@ import {
   LanguageCodesUppercase,
   LanguageCodesUppercaseCC,
 } from './languageCodes';
-import { Writeable } from './common';
 
 type AssetFileOptions = Record<string, unknown> & SJSSourceOptions;
 
@@ -46,7 +45,7 @@ export interface AssetFile {
   width?: number | null | (() => number);
 }
 
-interface AssetResponseMetadata {
+export interface AssetResponseMetadata {
   duration: number;
   genres?: string[];
   isPreview?: boolean;
