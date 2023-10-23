@@ -1,10 +1,16 @@
 import { types } from 'hls-parser';
 import { AssetTypes, Preroll } from './player';
-import { SJSSource, SJSSourceOptions } from './videojs';
+import { SJSSource } from './videojs';
 import {
   LanguageCodesUppercase,
   LanguageCodesUppercaseCC,
 } from './languageCodes';
+
+export interface AssetFileOptions {
+  end: number;
+  start: number;
+  [key: string]: unknown | number | string | boolean;
+}
 
 export interface AssetFile {
   altUrl?: string;
@@ -27,7 +33,7 @@ export interface AssetFile {
   metadata?: Record<string, unknown>;
   mimeType?: string;
   moreInfo?: string;
-  options?: Record<string, unknown>;
+  options?: AssetFileOptions;
   order?: number;
   publishState?: string;
   raw?: string;
@@ -186,7 +192,7 @@ export interface SardiusMappedManifest extends AssetFile {
   qualityLabel?: string;
   segmentType?: string;
   fileType?: SardiusMappedManifest['mimeType'];
-  options?: SJSSourceOptions;
+  options?: AssetFileOptions;
 }
 
 export interface ManifestLevel {

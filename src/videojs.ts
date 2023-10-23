@@ -43,12 +43,6 @@ interface MenuCommonOptions {
   isSelected_?: boolean;
 }
 
-export interface SJSSourceOptions {
-  end: number;
-  start: number;
-  [key: string]: unknown | number | string | boolean;
-}
-
 export interface SJSSource extends AssetFile{
   audioCodec?: string;
   autoselect?: boolean;
@@ -61,7 +55,6 @@ export interface SJSSource extends AssetFile{
   label?: string;
   lang?: string;
   name?: string;
-  options?: SJSSourceOptions;
   qualityLabel?: string;
   selected?: boolean;
   src?: string;
