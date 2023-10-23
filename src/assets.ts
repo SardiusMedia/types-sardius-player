@@ -6,8 +6,6 @@ import {
   LanguageCodesUppercaseCC,
 } from './languageCodes';
 
-type AssetFileOptions = Record<string, unknown> & SJSSourceOptions;
-
 export interface AssetFile {
   altUrl?: string;
   approved?: boolean;
@@ -29,7 +27,7 @@ export interface AssetFile {
   metadata?: Record<string, unknown>;
   mimeType?: string;
   moreInfo?: string;
-  options?: AssetFileOptions;
+  options?: Record<string, unknown>;
   order?: number;
   publishState?: string;
   raw?: string;
