@@ -23,6 +23,7 @@ export type VJSEventListener = videojs.EventTarget.EventListener;
 export type VJSEvent = videojs.EventTarget.Event;
 export type VJSError = VJSPlayer['error'];
 export type VJSMenu = videojs.Menu;
+export type VJSButton = videojs.Button;
 
 interface MenuCommonOptions {
   callback?: (data: SJSSource, button: any) => void;
@@ -133,8 +134,6 @@ export declare class SPMenu extends videojs.MenuButton {
   toggleMenuBarControls: () => void;
   handleTouch: (event: Event | MouseEvent, keepHover?: boolean) => void;
 }
-
-type VJSButton = videojs.Button;
 
 interface SPButtonT extends VJSButton {
   isSelected_: boolean;
