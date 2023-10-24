@@ -433,7 +433,7 @@ export interface SardiusPlayerConfig {
   captionOptions?: CaptionOptions;
   captions?: PlayerAsset['captions'];
   controls: DynamoPlayerModel['controls'];
-  disableRefresh?: DynamoPlayerModel['disableRefresh'];
+  disableRefresh?: boolean;
   doAudioOnlyCheck?: DynamoPlayerModel['doAudioOnlyCheck'];
   eventId?: PlayerParams['eventId'];
   experienceId?: PlayerParams['experienceId'];
