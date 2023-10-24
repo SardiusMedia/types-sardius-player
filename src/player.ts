@@ -259,6 +259,7 @@ export interface DynamoPlayerModel {
   controls?: boolean;
   createdBy?: string;
   createdDate?: string;
+  disableRefresh?: StringBoolean;
   doAudioOnlyCheck?: boolean;
   errorHtml?: string;
   favicon?: string;
@@ -380,6 +381,7 @@ export interface PlayerParams {
   cypress?: StringBoolean;
   debug?: StringBoolean;
   decrypt?: StringBoolean;
+  disableRefresh?: StringBoolean;
   end?: number;
   eventId?: string;
   experienceId?: string;
@@ -492,6 +494,7 @@ export interface PlayerManagerRootSettings
   audioOnlyToggledOn?: boolean;
   bitrate?: 'lowest' | 'heighest' | 'highest' | 'audio' | 'undefined';
   dash?: string;
+  disableRefresh?: boolean;
   endpoint?: string;
   eventId?: string;
   experienceId?: string;
