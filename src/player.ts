@@ -219,6 +219,7 @@ export interface Setup {
   BigPlayButton?: boolean;
   controlBar: ControlBar;
   controls?: boolean;
+  disableRefresh?: boolean;
   fluid?: boolean;
   html5?: { polyNetConfig?: { apiKey?: string }; nativeTextTracks?: boolean };
   locations?: false | PlayerLocations;
@@ -259,7 +260,6 @@ export interface DynamoPlayerModel {
   controls?: boolean;
   createdBy?: string;
   createdDate?: string;
-  disableRefresh?: StringBoolean;
   doAudioOnlyCheck?: boolean;
   errorHtml?: string;
   favicon?: string;
@@ -381,7 +381,6 @@ export interface PlayerParams {
   cypress?: StringBoolean;
   debug?: StringBoolean;
   decrypt?: StringBoolean;
-  disableRefresh?: StringBoolean;
   end?: number;
   eventId?: string;
   experienceId?: string;
@@ -433,7 +432,6 @@ export interface SardiusPlayerConfig {
   captionOptions?: CaptionOptions;
   captions?: PlayerAsset['captions'];
   controls: DynamoPlayerModel['controls'];
-  disableRefresh?: boolean;
   doAudioOnlyCheck?: DynamoPlayerModel['doAudioOnlyCheck'];
   eventId?: PlayerParams['eventId'];
   experienceId?: PlayerParams['experienceId'];
@@ -495,7 +493,6 @@ export interface PlayerManagerRootSettings
   audioOnlyToggledOn?: boolean;
   bitrate?: 'lowest' | 'heighest' | 'highest' | 'audio' | 'undefined';
   dash?: string;
-  disableRefresh?: boolean;
   endpoint?: string;
   eventId?: string;
   experienceId?: string;
