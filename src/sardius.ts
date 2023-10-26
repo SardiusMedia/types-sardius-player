@@ -65,7 +65,7 @@ declare class SardiusHLS {
   public init(): void;
   public setCurrentLevel(levelId: number): void;
   public getLevels(): Level[] | undefined;
-  public getCurrentAudioTrack(): number | undefined;
+  public setCurrentAudioTrack(id: number): void;
   public setCurrentTextTrack(id: number): void;
   public setTextTrackDisplay(isShowing: boolean): void;
 }
