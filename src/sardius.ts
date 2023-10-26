@@ -159,9 +159,6 @@ declare class SourceHandler_Class {
   constructor(plugin: Sardius);
   init(plugin: Sardius): void;
   setSources(passedSource: PlayerAssetWithLanguage): void;
-  forcePlay(passedTime: number): void;
-  playSrc(aSource: SJSSource, fp?: boolean): void;
-  switchSrc(aSource: SJSSource): void;
   switchLanguage(
     language:
       | LanguageMenuItem
@@ -169,13 +166,6 @@ declare class SourceHandler_Class {
   ): void;
   switchBitrate(aSource: SJSSource): void;
   switchAudioTrack(track: number): void;
-  getBitrateFromSource(aSource: SJSSource): {
-    level: number | boolean | SJSSource;
-    bitrate: string | number | boolean | undefined;
-    levelData?: Level | undefined;
-  };
-  forcePlayAtTime(time: number): void;
-  switchLevel(aSource: SJSSource): void;
 }
 
 declare class Sardius {
