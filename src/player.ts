@@ -234,6 +234,7 @@ export interface Setup {
   preload?: string;
   sources?: Sources;
   techOrder?: string[];
+  uid?: PlayerParams['uid'];
   version?: string;
   youtube?: Youtube;
   redirects?: Redirects;
