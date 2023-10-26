@@ -63,26 +63,10 @@ declare class SardiusHLS {
 
   constructor(plugin: Sardius);
   public init(): void;
-  public canHandleHlsSource(source: SJSSource): string;
-  public handleHlsSource(source: SJSSource, tech: SJSTech): SardiusHLS;
-  public registerHLS(): void;
-  public flushBuffer(): void;
-  public getMidrangeBitrate(): number;
-  public flushOnScrub(): void;
-  public hlsSetup(): void;
-  public hlsInitialize(): void;
-  public dispose(): void;
-  public load(source: SJSSource): void;
-  public provider(source: SJSSource, tech: SJSTech): SardiusHLS;
-  public getCurrentLevel(): number | undefined;
   public setCurrentLevel(levelId: number): void;
   public getLevels(): Level[] | undefined;
   public getCurrentAudioTrack(): number | undefined;
-  public setCurrentAudioTrack(id: number): void;
-  public getAudioTracks(): MediaPlaylist[] | undefined;
-  public getCurrentTextTrack(): number | undefined;
   public setCurrentTextTrack(id: number): void;
-  public getTextTracks(): MediaPlaylist[] | undefined;
   public setTextTrackDisplay(isShowing: boolean): void;
 }
 
