@@ -138,7 +138,7 @@ declare class OfflineHandler {
   isLive?: boolean;
 
   constructor(SourceHandler: SourceHandler, plugin: Sardius);
-  private retry(): void;
+  private retry: () => void;
   private test(): void;
   private _isLive(): Promise<SardiusMappedManifest[]>;
   private _isUpdated(): Promise<SardiusMappedManifest[]>;
