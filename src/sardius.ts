@@ -49,8 +49,6 @@ declare class SardiusHlsErrors {
   fatalError: number;
 
   constructor(plugin: Sardius, sardiusHLS: SardiusHLS);
-  recoverFatalError: () => void;
-  handleError: (event: Events.ERROR, data: ErrorData) => void;
 }
 
 declare class SardiusHLS {
@@ -189,7 +187,6 @@ export declare class PlayerManagerClass {
   public plugin: Sardius;
   public sourceHandler?: SourceHandler_Class;
   constructor(plugin: Sardius);
-  setMenuLabels: (labels: string[]) => void;
   setSources: (sources: PlayerAssetWithLanguage) => void;
 }
 
