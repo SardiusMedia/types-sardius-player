@@ -113,7 +113,6 @@ type SJSPlayerManager = SJSPlayer & {
   nextAsset?: (url: string) => void;
   getAsset?: (key: string | undefined, assetUrl: string) => void;
   setAsset?: (key: string, assetUrl: string, retryNumber?: number) => void;
-  refetchAsset?: () => void;
   currentTime?: () => number;
   source: (src: SJSSource) => string | undefined;
   ga?: (gaSettings?: PlayerPlugins['ga']) => void;
@@ -139,12 +138,12 @@ declare class OfflineHandler {
   isLive?: boolean;
 
   constructor(SourceHandler: SourceHandler, plugin: Sardius);
-  retry(): void;
-  test(): void;
-  _isLive(): Promise<SardiusMappedManifest[]>;
-  _isUpdated(): Promise<SardiusMappedManifest[]>;
-  _checkUrl(cb: (playlist: SardiusMappedManifest[]) => void): void;
-  handle(): Promise<SardiusMappedManifest[]>;
+  private retry(): void;
+  private test(): void;
+  private _isLive(): Promise<SardiusMappedManifest[]>;
+  private _isUpdated(): Promise<SardiusMappedManifest[]>;
+  private _checkUrl(cb: (playlist: SardiusMappedManifest[]) => void): void;
+  private handle(): Promise<SardiusMappedManifest[]>;
 }
 
 declare class SourceHandler_Class {
