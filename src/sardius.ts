@@ -158,8 +158,6 @@ declare class SourceHandler_Class {
 
   constructor(plugin: Sardius);
   init(plugin: Sardius): void;
-  ready(plugin: Sardius): void;
-  isStreamingProtocol(source: SardiusMappedManifest | SJSSource): boolean;
   setSources(passedSource: PlayerAssetWithLanguage): void;
   forcePlay(passedTime: number): void;
   playSrc(aSource: SJSSource, fp?: boolean): void;
