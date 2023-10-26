@@ -40,7 +40,6 @@ declare class SardiusHlsEvents extends SardiusEvents {
   playerSettingsHasNudgeOffset?: boolean;
 
   constructor(plugin: Sardius, sardiusHLS: SardiusHLS);
-  registerEvents: () => void;
 }
 
 declare class SardiusHlsErrors {
