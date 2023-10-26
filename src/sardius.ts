@@ -160,10 +160,6 @@ declare class Sardius {
   public sourceHandler: SourceHandler_Class;
 
   constructor(options: PlayerManagerRootSettings, player: SJSPlayerManager);
-  init: () => void;
-  seekToLive: () => void;
-  libs: () => void;
-  ready: () => void;
 }
 
 export declare class PlayerManagerClass {
