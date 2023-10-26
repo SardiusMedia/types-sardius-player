@@ -300,7 +300,6 @@ export interface DynamoPlayerModel {
   techOrder?: string[];
   theme?: PlayerTheme;
   title?: string;
-  uid?: string;
   updatedAt?: string;
   useErrorImage?: boolean;
   version?: string;
@@ -361,7 +360,7 @@ export interface PlayerData {
   query: PlayerParams;
   queryParams?: string;
   start?: number;
-  uid?: string;
+  uid?: PlayerParams['uid'];
   version?: string;
   youtubeInfo?: Youtube;
 }
@@ -411,7 +410,7 @@ export interface PlayerParams {
   template?: string;
   TheaterMode?: StringBoolean;
   token?: string;
-  uid?: DynamoPlayerModel['uid'];
+  uid?: string;
   useErrorImage?: StringBoolean;
   playerElementId?: string;
   usehttps?: StringBoolean;
@@ -461,7 +460,7 @@ export interface SardiusPlayerConfig {
   TheaterModeCallback?: (settings?: KeyValueBasic) => void;
   siteId?: PlayerParams['siteId'];
   startLevel?: DynamoPlayerModel['startLevel'];
-  uid?: PlayerData['uid'];
+  uid?: PlayerParams['uid'];
   usehttps?: PlayerParams['usehttps'];
   makeAvailable?: StringBoolean;
 }
@@ -518,7 +517,6 @@ export interface PlayerManagerRootSettings
     pLoader?: boolean;
     siteId?: string;
     TheaterModeCallback?: (settings?: KeyValueBasic) => void;
-    uid?: string;
     usehttps?: boolean;
   };
   resi?: string;
