@@ -43,7 +43,7 @@ interface MenuCommonOptions {
   isSelected_?: boolean;
 }
 
-export interface SJSSource extends AssetFile{
+export interface SJSSource extends AssetFile {
   audioCodec?: string;
   autoselect?: boolean;
   code?: LanguageCodeAny;
@@ -58,6 +58,8 @@ export interface SJSSource extends AssetFile{
   qualityLabel?: string;
   selected?: boolean;
   src?: string;
+  kind?: string;
+  mode?: string;
 }
 
 export type SJSPlayerOptions = VJSPlayerOptions & {
