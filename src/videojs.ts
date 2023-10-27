@@ -58,8 +58,6 @@ export interface SJSSource extends AssetFile {
   qualityLabel?: string;
   selected?: boolean;
   src?: string;
-  kind?: string;
-  mode?: string;
 }
 
 export type SJSPlayerOptions = VJSPlayerOptions & {
