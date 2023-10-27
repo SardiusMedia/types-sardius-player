@@ -29,8 +29,6 @@ declare global {
     keys<T>(o: T): ObjectKeys<T>;
   }
 
-  export type TargetElement = Element | undefined | null;
-
   export type BasicObjectTypes = string | number | boolean | undefined;
 }
 
