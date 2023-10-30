@@ -16,6 +16,7 @@ import {
   SJSButton,
   SJSPlayer,
   SJSSource,
+  SardiusTrigger,
   VJSTech,
 } from './videojs';
 import events from './events';
@@ -89,15 +90,7 @@ type SJSPlayerManager = SJSPlayer & {
   playerManager: PlayerManagerClass;
   vjsError?: SJSPlayer['error'] | ((err: SardiusMediaError) => void);
   vjsTrigger?: SJSPlayer['trigger'];
-  trigger?: ({
-    event,
-    hash,
-    source,
-  }: {
-    event: string;
-    hash?: KeyValueAny;
-    source: string;
-  }) => void;
+  trigger?: SardiusTrigger;
   error?: SJSPlayer['error'] | ((err: SardiusMediaError) => void);
   refresh?: (fromError: boolean, newUrl?: string, addTime?: boolean) => void;
   delete?: () => void;
