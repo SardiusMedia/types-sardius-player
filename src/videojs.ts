@@ -183,6 +183,16 @@ export interface SardiusTextTrackList
   [index: number]: SardiusTextTrack;
 }
 
+type Trigger = ({
+  event,
+  hash,
+  source,
+}: {
+  event: string;
+  hash?: KeyValueAny;
+  source: string;
+}) => boolean;
+
 export interface SJSPlayer extends VJSPlayer {
   controlBar: SardiusControlBar;
   bitratesMenu: SPGroup;
@@ -192,6 +202,7 @@ export interface SJSPlayer extends VJSPlayer {
   options_: videojs.PlayerOptions & DynamoPlayerModel & { isIframe?: boolean };
   id_?: string;
   youboraplugin?: YouboraPlugin<SJSPlayer>;
+  trigger: Trigger;
 }
 
 interface ControlBarPlugin extends SPMenu {
