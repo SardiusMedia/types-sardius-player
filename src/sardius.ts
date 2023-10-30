@@ -87,7 +87,8 @@ export type SardiusMediaError = Pick<
 
 type SJSPlayerManager = SJSPlayer & {
   playerManager: PlayerManagerClass;
-  originalError?: SJSPlayer['error'] | ((err: SardiusMediaError) => void);
+  vjsError?: SJSPlayer['error'] | ((err: SardiusMediaError) => void);
+  vjsTrigger?: SJSPlayer['trigger'];
   error?: SJSPlayer['error'] | ((err: SardiusMediaError) => void);
   refresh?: (fromError: boolean, newUrl?: string, addTime?: boolean) => void;
   delete?: () => void;
