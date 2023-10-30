@@ -32,7 +32,7 @@ declare class SardiusEvents {
   events: typeof events;
 
   constructor(plugin: Sardius);
-  triggerEvent: <T>(code: keyof typeof events, data: T) => void;
+  triggerEvent: <T>(code: keyof typeof events, data: T, source: string) => void;
 }
 
 declare class SardiusHlsEvents extends SardiusEvents {
