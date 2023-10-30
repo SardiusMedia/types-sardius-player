@@ -183,6 +183,8 @@ export interface SardiusTextTrackList
   [index: number]: SardiusTextTrack;
 }
 
+export type VJSTrigger = VJSPlayer['trigger'];
+
 type Trigger = ({
   event,
   hash,
