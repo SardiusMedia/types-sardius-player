@@ -432,6 +432,7 @@ export interface SardiusPlayerConfig {
   captionOptions?: CaptionOptions;
   captions?: PlayerAsset['captions'];
   controls: DynamoPlayerModel['controls'];
+  debug?: PlayerParams['debug'];
   doAudioOnlyCheck?: DynamoPlayerModel['doAudioOnlyCheck'];
   eventId?: PlayerParams['eventId'];
   experienceId?: PlayerParams['experienceId'];
