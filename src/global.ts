@@ -18,7 +18,7 @@ declare global {
   export const VJSType: typeof VJS;
 
   export type ObjectKeys<T> = T extends object
-    ? (keyof T)[]
+    ? string[]
     : T extends number
     ? []
     : T extends Array<any> | string
