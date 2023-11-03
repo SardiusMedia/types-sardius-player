@@ -35,16 +35,23 @@ export interface PlayerLocations {
   ids?: string[];
 }
 
+interface AdSettings {
+  afterBreakText?: string;
+  amount?: number;
+  beforeBreakText?: string;
+  showCountdown?: boolean;
+  skippable?: boolean;
+  urls?: string[];
+}
+
 export interface SardiusAds {
+  amount?: number;
   contribConfig?: {
     contentIsLive?: boolean;
   };
   frequencyEach?: number;
-  preroll?: {
-    amount?: number;
-    skippable?: boolean;
-    urls?: string[];
-  };
+  postroll?: AdSettings;
+  preroll?: AdSettings;
 }
 
 type Position =
