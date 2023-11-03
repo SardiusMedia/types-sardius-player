@@ -185,15 +185,11 @@ export interface SardiusTextTrackList
 
 export type VJSTrigger = VJSPlayer['trigger'];
 
-export type SardiusTrigger = ({
-  event,
-  data,
-  source,
-}: {
-  event: string;
-  data?: KeyValueAny;
-  source: string;
-}) => boolean;
+export type SardiusTrigger = (
+  event: string,
+  data?: KeyValueAny,
+  source?: string,
+) => boolean;
 
 export interface SJSPlayer extends VJSPlayer {
   controlBar: SardiusControlBar;
