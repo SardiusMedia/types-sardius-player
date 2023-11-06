@@ -174,7 +174,6 @@ export interface PlayerPlugins {
   logo?: Logo;
   MiniPlayer?: boolean;
   peer5?: Peer5;
-  preroll?: boolean | Preroll;
   ruxit?: Ruxit;
   sardius?: Partial<SardiusPlayerConfig> | boolean;
   sardiusAds?: false | SardiusAds;
@@ -311,7 +310,6 @@ export interface DynamoPlayerModel {
   updatedAt?: string;
   useErrorImage?: boolean;
   version?: string;
-  volume?: number;
   youtube?: Youtube;
 }
 
@@ -423,7 +421,6 @@ export interface PlayerParams {
   playerElementId?: string;
   usehttps?: StringBoolean;
   version?: string;
-  volume?: number;
   width?: number;
   youbora?: StringBoolean;
   makeAvailable?: StringBoolean;
