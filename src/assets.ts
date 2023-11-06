@@ -148,19 +148,21 @@ interface Metadata {
 
 type AkamaiEdgeAuth = unknown;
 
+// Only used on mpx type
 interface AssetPreroll {
   canSkip?: Preroll['allowSkip'];
   format?: string;
   url?: Preroll['src'];
 }
 
+// Only used on mpx type
 export interface PlayerAdPolicy {
   preroll: AssetPreroll;
 }
 
 export interface PlayerAsset extends Omit<MappedPlayerAsset, 'stream'> {
   accountId: string;
-  adPolicy?: PlayerAdPolicy;
+  adPolicy?: PlayerAdPolicy; // Only used on mpx type
   akamaiEdgeAuth?: AkamaiEdgeAuth;
   assets: MappedPlayerAsset;
   assetType: AssetTypes;
