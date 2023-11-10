@@ -19,6 +19,8 @@ const languageCodes = [
   'pt', // Portuguese
   'ru', // Russian
   'th', // Thai
+  'ur', // Urdu
+  'vi', // Vietnamese
   'xz', // ASL
   'zh', // Mandarin
 ] as const;
@@ -44,6 +46,8 @@ const languageCodesUppercase = [
   'PT', // Portuguese
   'RU', // Russian
   'TH', // Thai
+  'UR', // Urdu
+  'VI', // Vietnamese
   'XZ', // ASL
   'ZH', // Mandarin
 ] as const;
@@ -69,6 +73,8 @@ const languageCodesUppercaseCC = [
   'PTCC', // Portuguese
   'RUCC', // Russian
   'THCC', // Thai
+  'URCC', // Urdu
+  'VICC', // Vietnamese
   'XZCC', // ASL
   'ZHCC', // Mandarin
 ] as const;
