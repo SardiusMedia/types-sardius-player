@@ -35,7 +35,7 @@ export interface PlayerLocations {
   ids?: string[];
 }
 
-interface AdSettings {
+export interface AdSettings {
   afterBreakText?: string;
   amount?: number;
   beforeBreakText?: string;
