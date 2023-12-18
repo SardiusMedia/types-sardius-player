@@ -498,6 +498,7 @@ export interface PlayerManagerRootSettings
   audioOnlyToggledOn?: boolean;
   bitrate?: 'lowest' | 'heighest' | 'highest' | 'audio' | 'undefined';
   dash?: string;
+  disableIosSpinner?: boolean;
   endpoint?: string;
   eventId?: string;
   experienceId?: string;
