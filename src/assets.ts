@@ -170,7 +170,7 @@ export interface PlayerAsset extends Omit<MappedPlayerAsset, 'stream'> {
   createdDate?: string;
   duration?: number;
   id: string;
-  isDolby: boolean;
+  isDolby?: boolean;
   isLive?: boolean;
   metadata: Metadata;
   protocol?: string;
