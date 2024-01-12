@@ -81,13 +81,6 @@ interface Logo {
   url?: string;
 }
 
-interface GA {
-  eventId?: string;
-  id?: string;
-  trackCaptions?: boolean;
-  percentsPlayedInterval?: number;
-}
-
 interface FeedSettings {
   accountId?: string;
   feedId?: string;
@@ -169,7 +162,6 @@ export interface PlayerPlugins {
   contextMenu?: ContextMenu;
   FeedSettings?: FeedSettings;
   flushOnScrub?: boolean;
-  ga?: GA;
   locations?: false | PlayerLocations;
   logo?: Logo;
   MiniPlayer?: boolean;

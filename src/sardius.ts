@@ -99,8 +99,6 @@ type SJSPlayerManager = SJSPlayer & {
   setAsset?: (key: string, assetUrl: string, retryNumber?: number) => void;
   currentTime?: () => number;
   source: (src: SJSSource) => string | undefined;
-  ga?: (gaSettings?: PlayerPlugins['ga']) => void;
-  // preroll?: (prerollSettings?: KeyValueTyped) => void;
   youbora?: (settings: KeyValueTyped<string | boolean | undefined>) => void;
   spThumbnails?: () => void;
   remotePlayback?: boolean;
