@@ -406,6 +406,7 @@ export interface PlayerParams {
   start?: number;
   stop?: number;
   template?: string;
+  testDolby?: boolean;
   TheaterMode?: StringBoolean;
   token?: string;
   uid?: string;
