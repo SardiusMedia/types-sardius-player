@@ -232,6 +232,7 @@ export interface Setup {
   preload?: string;
   sources?: Sources;
   techOrder?: string[];
+  testDolby?: boolean;
   uid?: PlayerParams['uid'];
   version?: string;
   youtube?: Youtube;
@@ -406,7 +407,7 @@ export interface PlayerParams {
   start?: number;
   stop?: number;
   template?: string;
-  testDolby?: boolean;
+  testDolby?: StringBoolean;
   TheaterMode?: StringBoolean;
   token?: string;
   uid?: string;
