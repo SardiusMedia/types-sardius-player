@@ -1,4 +1,4 @@
-import Hls, { Events, ErrorData, Level, MediaPlaylist } from 'hls.js';
+import Hls, { Level } from 'hls.js';
 import {
   Caption,
   PlayerAssetWithLanguage,
@@ -9,7 +9,6 @@ import {
   DynamoPlayerModel,
   PlayerManagerRootSettings,
   PlayerParams,
-  PlayerPlugins,
 } from './player';
 import {
   LanguageMenuItem,
