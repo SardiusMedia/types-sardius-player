@@ -262,10 +262,10 @@ export interface DynamoPlayerModel {
   doAudioOnlyCheck?: boolean;
   errorHtml?: string;
   favicon?: string;
-  flushOnBufferStall?: number;
-  flushOnLowBuffer?: number;
+  flushOnBufferStall?: boolean;
+  flushOnLowBuffer?: boolean;
   flushOnScrub?: boolean;
-  harmonizePlaylists?: number;
+  harmonizePlaylists?: boolean;
   hlsAdvancedSettings?: KeyValueAny; // See https://github.com/video-dev/hls.js/blob/master/docs/API.md#fine-tuning
   hlsjsDebug?: boolean;
   id?: string;
