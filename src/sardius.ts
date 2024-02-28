@@ -1,4 +1,4 @@
-import Hls, { Events, ErrorData, Level, MediaPlaylist } from 'hls.js';
+import Hls, { Level } from 'hls.js';
 import {
   Caption,
   PlayerAssetWithLanguage,
@@ -9,7 +9,6 @@ import {
   DynamoPlayerModel,
   PlayerManagerRootSettings,
   PlayerParams,
-  PlayerPlugins,
 } from './player';
 import {
   LanguageMenuItem,
@@ -86,7 +85,7 @@ export type SardiusMediaError = Pick<
   'message'
 > & { code: string | number; source: string };
 
-type SJSPlayerManager = SJSPlayer & {
+export type SJSPlayerManager = SJSPlayer & {
   playerManager: PlayerManagerClass;
   vjsError?: SJSPlayer['error'] | ((err: SardiusMediaError) => void);
   vjsTrigger?: SJSPlayer['trigger'];

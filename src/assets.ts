@@ -167,7 +167,7 @@ export interface PlayerAsset extends Omit<MappedPlayerAsset, 'stream'> {
   assets: MappedPlayerAsset;
   assetType: AssetTypes;
   captions: Caption[];
-  createdDate?: string;
+  createdAt?: string;
   duration?: number;
   id: string;
   isLive?: boolean;
