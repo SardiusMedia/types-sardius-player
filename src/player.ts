@@ -258,6 +258,7 @@ export interface DynamoPlayerModel {
   captionOptions?: CaptionOptions;
   controls?: boolean;
   createdBy?: string;
+  createdAt?: string;
   createdDate?: string;
   doAudioOnlyCheck?: boolean;
   errorHtml?: string;
