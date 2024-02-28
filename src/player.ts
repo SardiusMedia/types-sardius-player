@@ -259,6 +259,7 @@ export interface DynamoPlayerModel {
   controls?: boolean;
   createdBy?: string;
   createdAt?: string;
+  createdDate?: string;
   doAudioOnlyCheck?: boolean;
   errorHtml?: string;
   favicon?: string;
