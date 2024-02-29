@@ -301,6 +301,7 @@ export interface DynamoPlayerModel {
   theme?: PlayerTheme;
   title?: string;
   updatedAt?: string;
+  updatedBy?: string;
   useErrorImage?: boolean;
   version?: string;
   youtube?: Youtube;
