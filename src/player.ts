@@ -517,6 +517,7 @@ export interface PlayerManagerRootSettings
     siteId?: string;
     TheaterModeCallback?: (settings?: KeyValueBasic) => void;
     usehttps?: boolean;
+    uid?: string;
   };
   resi?: string;
   rpid?: string;
