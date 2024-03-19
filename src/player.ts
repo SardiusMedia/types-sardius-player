@@ -259,6 +259,7 @@ export interface DynamoPlayerModel {
   controls?: boolean;
   createdBy?: string;
   createdAt?: string;
+  createdDate?: string;
   doAudioOnlyCheck?: boolean;
   errorHtml?: string;
   favicon?: string;
@@ -300,6 +301,7 @@ export interface DynamoPlayerModel {
   theme?: PlayerTheme;
   title?: string;
   updatedAt?: string;
+  updatedBy?: string;
   useErrorImage?: boolean;
   version?: string;
   youtube?: Youtube;
