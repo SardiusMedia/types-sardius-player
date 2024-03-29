@@ -276,6 +276,7 @@ export interface DynamoPlayerModel {
   lao?: string;
   liveDelay?: number;
   locale?: string;
+  locked?: boolean;
   loop?: boolean;
   maxBufferSize?: number;
   menuAttachments?: KeyValueAny;
