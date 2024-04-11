@@ -45,7 +45,6 @@ export interface AdSettings {
 }
 
 export interface SardiusAds {
-  amount?: number;
   contribConfig?: {
     contentIsLive?: boolean;
   };
