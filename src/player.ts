@@ -435,6 +435,7 @@ export interface SardiusPlayerConfig {
   eventId?: PlayerParams['eventId'];
   experienceId?: PlayerParams['experienceId'];
   FeedSettings?: PlayerPlugins['FeedSettings'];
+  feedId?: PlayerParams['feedId'];
   flushOnBufferStall?: DynamoPlayerModel['flushOnBufferStall'];
   flushOnLowBuffer?: DynamoPlayerModel['flushOnLowBuffer'];
   flushOnScrub?: DynamoPlayerModel['flushOnScrub'];
