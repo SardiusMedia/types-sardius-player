@@ -171,7 +171,7 @@ export interface PlayerPlugins {
   spAutoplay?: boolean;
   spMenuBar: SPMenuBar;
   spMetadata?: boolean;
-  system73?: boolean;
+  system73?: string;
   TheaterMode?: boolean;
   thumbnails?: boolean;
   vjs?: Vjs;
