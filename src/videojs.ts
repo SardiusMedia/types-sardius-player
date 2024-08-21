@@ -50,6 +50,7 @@ export interface SJSSource extends AssetFile {
   currentTime?: number;
   fileType?: string;
   force?: boolean;
+  default?: boolean;
   groupId?: string;
   instreamId?: string;
   label?: string;
