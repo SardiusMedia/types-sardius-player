@@ -111,7 +111,6 @@ export interface PlayerAssetImage {
 export interface PlayerAssetStream {
   fileType?: string;
   playlist?: SJSSource[];
-  redirectUrl?: string;
   url?: string;
   src?: string;
 }
@@ -122,6 +121,7 @@ export interface MappedPlayerAsset {
   images?: PlayerAssetImage[];
   stream?: PlayerAssetStream[];
   video?: SJSSource[];
+  redirectUrl?: string;
   duration?: number;
 }
 
