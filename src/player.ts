@@ -459,7 +459,7 @@ export interface SardiusPlayerConfig {
   shift?: DynamoPlayerModel['shift'];
   showBitrates?: DynamoPlayerModel['showBitrates'];
   simLiveLiveDelay?: DynamoPlayerModel['simLiveLiveDelay'];
-  streamType?: 'cloudflare' | 'entrypoint' | 'vod' | 'simlive';
+  streamType?: 'cloudflare' | 'entrypoint' | 'vod' | 'simlive' | 'unknown';
   TheaterModeCallback?: (settings?: KeyValueBasic) => void;
   siteId?: PlayerParams['siteId'];
   startLevel?: DynamoPlayerModel['startLevel'];
@@ -529,6 +529,7 @@ export interface PlayerManagerRootSettings
   simlive?: string;
   simliveFeed?: string;
   siteId?: string;
+  streamType?: SardiusPlayerConfig['streamType'];
   techOrder?: string[];
   token?: string;
   type?: string;
