@@ -381,6 +381,7 @@ export interface PlayerParams {
   cypress?: StringBoolean;
   debug?: StringBoolean;
   decrypt?: StringBoolean;
+  dvrLength?: string;
   end?: number;
   eventId?: string;
   experienceId?: string;
@@ -433,6 +434,7 @@ export interface SardiusPlayerConfig {
   controls: DynamoPlayerModel['controls'];
   debug?: PlayerParams['debug'];
   doAudioOnlyCheck?: DynamoPlayerModel['doAudioOnlyCheck'];
+  dvrLength?: PlayerManagerRootSettings['dvrLength'];
   eventId?: PlayerParams['eventId'];
   experienceId?: PlayerParams['experienceId'];
   FeedSettings?: PlayerPlugins['FeedSettings'];
@@ -459,7 +461,12 @@ export interface SardiusPlayerConfig {
   shift?: DynamoPlayerModel['shift'];
   showBitrates?: DynamoPlayerModel['showBitrates'];
   simLiveLiveDelay?: DynamoPlayerModel['simLiveLiveDelay'];
-  streamType?: 'sardiusStream' | 'entrypoint' | 'sardiusStorage' | 'simlive' | 'unknown';
+  streamType?:
+    | 'sardiusStream'
+    | 'entrypoint'
+    | 'sardiusStorage'
+    | 'simlive'
+    | 'unknown';
   TheaterModeCallback?: (settings?: KeyValueBasic) => void;
   siteId?: PlayerParams['siteId'];
   startLevel?: DynamoPlayerModel['startLevel'];
@@ -496,6 +503,7 @@ export interface PlayerManagerRootSettings
   bitrate?: 'lowest' | 'heighest' | 'highest' | 'audio' | 'undefined';
   dash?: string;
   disableIosSpinner?: boolean;
+  dvrLength?: number;
   endpoint?: string;
   eventId?: string;
   experienceId?: string;
