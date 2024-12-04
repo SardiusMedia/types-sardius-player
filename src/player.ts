@@ -261,6 +261,7 @@ export interface DynamoPlayerModel {
   createdAt?: string;
   createdDate?: string;
   doAudioOnlyCheck?: boolean;
+  dvrLength?: number;
   errorHtml?: string;
   favicon?: string;
   flushOnBufferStall?: boolean;
