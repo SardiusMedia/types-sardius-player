@@ -164,7 +164,7 @@ export interface PlayerPlugins {
   FeedSettings?: FeedSettings;
   flushOnScrub?: boolean;
   locations?: false | PlayerLocations;
-  markersPlugin?: MarkersPluginOptions;
+  markersPlugin?: Partial<MarkersPluginOptions>;
   logo?: Logo;
   MiniPlayer?: boolean;
   peer5?: Peer5;
