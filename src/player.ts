@@ -8,6 +8,7 @@ import {
   LanguageCodesUppercase,
   LanguageCodesUppercaseCC,
 } from './languageCodes';
+import { MarkersPluginOptions } from './markers';
 
 export interface CaptionOptions {
   cueStyle?: string;
@@ -163,8 +164,7 @@ export interface PlayerPlugins {
   FeedSettings?: FeedSettings;
   flushOnScrub?: boolean;
   locations?: false | PlayerLocations;
-  // TODO: Define this object
-  markersPlugin?: KeyValueAny;
+  markersPlugin?: MarkersPluginOptions;
   logo?: Logo;
   MiniPlayer?: boolean;
   peer5?: Peer5;
