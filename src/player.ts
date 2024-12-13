@@ -163,6 +163,8 @@ export interface PlayerPlugins {
   FeedSettings?: FeedSettings;
   flushOnScrub?: boolean;
   locations?: false | PlayerLocations;
+  // TODO: Define this object
+  markersPlugin?: KeyValueAny;
   logo?: Logo;
   MiniPlayer?: boolean;
   peer5?: Peer5;
@@ -221,6 +223,7 @@ export interface Setup {
   fluid?: boolean;
   html5?: { polyNetConfig?: { apiKey?: string }; nativeTextTracks?: boolean };
   locations?: false | PlayerLocations;
+  markersPlugin?: PlayerPlugins['markersPlugin'];
   loop?: boolean;
   muted?: boolean;
   playbackRates?: number[];
@@ -261,6 +264,7 @@ export interface DynamoPlayerModel {
   createdAt?: string;
   createdDate?: string;
   doAudioOnlyCheck?: boolean;
+  preventBackBufferScrub?: boolean;
   dvrLength?: number;
   errorHtml?: string;
   favicon?: string;
@@ -382,6 +386,7 @@ export interface PlayerParams {
   cypress?: StringBoolean;
   debug?: StringBoolean;
   decrypt?: StringBoolean;
+  preventBackBufferScrub?: StringBoolean;
   dvrLength?: string;
   end?: number;
   eventId?: string;
@@ -435,6 +440,7 @@ export interface SardiusPlayerConfig {
   controls: DynamoPlayerModel['controls'];
   debug?: PlayerParams['debug'];
   doAudioOnlyCheck?: DynamoPlayerModel['doAudioOnlyCheck'];
+  preventBackBufferScrub?: PlayerManagerRootSettings['preventBackBufferScrub'];
   dvrLength?: PlayerManagerRootSettings['dvrLength'];
   eventId?: PlayerParams['eventId'];
   experienceId?: PlayerParams['experienceId'];
@@ -504,6 +510,7 @@ export interface PlayerManagerRootSettings
   bitrate?: 'lowest' | 'heighest' | 'highest' | 'audio' | 'undefined';
   dash?: string;
   disableIosSpinner?: boolean;
+  preventBackBufferScrub?: boolean;
   dvrLength?: number;
   endpoint?: string;
   eventId?: string;
