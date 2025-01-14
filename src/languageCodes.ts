@@ -72,6 +72,20 @@ const languageCodes = [
   'tr',
   'uk',
   'uz',
+  'as',
+  'cat',
+  'fj',
+  'ha',
+  'hmn',
+  'ig',
+  'jv',
+  'ku',
+  'mg',
+  'or',
+  'sm',
+  'tgl',
+  'ti',
+  'myn',
 ] as const;
 
 const languageCodesUppercase = [
@@ -148,6 +162,20 @@ const languageCodesUppercase = [
   'TR',
   'UK',
   'UZ',
+  'AS',
+  'CAT',
+  'FJ',
+  'HA',
+  'HMN',
+  'IG',
+  'JV',
+  'KU',
+  'MG',
+  'OR',
+  'SM',
+  'TGL',
+  'TI',
+  'MYN',
 ] as const;
 
 const languageCodesUppercaseCC = [
@@ -224,6 +252,20 @@ const languageCodesUppercaseCC = [
   'TRCC',
   'UKCC',
   'UZCC',
+  'ASCC',
+  'CATCC',
+  'FJCC',
+  'HACC',
+  'HMNCC',
+  'IGCC',
+  'JVCC',
+  'KUCC',
+  'MGCC',
+  'ORCC',
+  'SMCC',
+  'TGLCC',
+  'TICC',
+  'MYNCC',
 ] as const;
 
 export type LanguageCode = (typeof languageCodes)[number];
