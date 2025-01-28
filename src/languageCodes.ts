@@ -86,6 +86,7 @@ const languageCodes = [
   'tgl',
   'ti',
   'myn',
+  'hau',
 ] as const;
 
 const languageCodesUppercase = [
@@ -176,6 +177,7 @@ const languageCodesUppercase = [
   'TGL',
   'TI',
   'MYN',
+  'HAU',
 ] as const;
 
 const languageCodesUppercaseCC = [
@@ -266,6 +268,7 @@ const languageCodesUppercaseCC = [
   'TGLCC',
   'TICC',
   'MYNCC',
+  'HAUCC',
 ] as const;
 
 export type LanguageCode = (typeof languageCodes)[number];
