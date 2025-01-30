@@ -383,6 +383,8 @@ export interface PlayerParams {
   bitrate?: string;
   cacheKey?: string;
   cdn?: string;
+  clipDuration?: string;
+  clipStartTime?: string;
   cypress?: StringBoolean;
   debug?: StringBoolean;
   decrypt?: StringBoolean;
