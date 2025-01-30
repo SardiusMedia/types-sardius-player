@@ -183,6 +183,7 @@ export interface CaptionOptions {
 export type PlayerOptions = DynamoPlayerModel & {
   asset?: string;
   assetUID?: string;
+  checkDolby?: boolean;
   dash?: string;
   endpoint?: string;
   feed?: string;
