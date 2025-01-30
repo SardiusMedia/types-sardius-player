@@ -440,7 +440,6 @@ export interface SardiusPlayerConfig {
   bitrate?: PlayerParams['bitrate'];
   captionOptions?: CaptionOptions;
   captions?: PlayerAsset['captions'];
-  checkDolby?: boolean;
   clipDuration?: number;
   clipStartTime?: number;
   controls: DynamoPlayerModel['controls'];
