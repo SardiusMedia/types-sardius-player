@@ -439,8 +439,8 @@ export interface SardiusPlayerConfig {
   bitrate?: PlayerParams['bitrate'];
   captionOptions?: CaptionOptions;
   captions?: PlayerAsset['captions'];
-  clipDuration?: PlayerParams['clipDuration'];
-  clipStartTime?: PlayerParams['clipStartTime'];
+  clipDuration?: number;
+  clipStartTime?: number;
   controls: DynamoPlayerModel['controls'];
   debug?: PlayerParams['debug'];
   doAudioOnlyCheck?: DynamoPlayerModel['doAudioOnlyCheck'];
