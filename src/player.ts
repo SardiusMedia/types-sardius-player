@@ -217,6 +217,7 @@ interface ControlBar {
 export interface Setup {
   autoplay?: boolean;
   BigPlayButton?: boolean;
+  checkDolby?: boolean;
   controlBar: ControlBar;
   controls?: boolean;
   disableRefresh?: boolean;
