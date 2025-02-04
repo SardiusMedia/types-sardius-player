@@ -385,7 +385,7 @@ export interface PlayerParams {
   cacheKey?: string;
   cdn?: string;
   clipDuration?: string;
-  clipStartTime?: string;
+  clipStart?: string;
   cypress?: StringBoolean;
   debug?: StringBoolean;
   decrypt?: StringBoolean;
@@ -441,7 +441,7 @@ export interface SardiusPlayerConfig {
   captionOptions?: CaptionOptions;
   captions?: PlayerAsset['captions'];
   clipDuration?: number;
-  clipStartTime?: number;
+  clipStart?: number;
   controls: DynamoPlayerModel['controls'];
   debug?: PlayerParams['debug'];
   doAudioOnlyCheck?: DynamoPlayerModel['doAudioOnlyCheck'];
