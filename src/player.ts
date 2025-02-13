@@ -221,6 +221,7 @@ export interface Setup {
   controlBar: ControlBar;
   controls?: boolean;
   disableRefresh?: boolean;
+  overrideFetch?: boolean;
   fluid?: boolean;
   html5?: { polyNetConfig?: { apiKey?: string }; nativeTextTracks?: boolean };
   locations?: false | PlayerLocations;
