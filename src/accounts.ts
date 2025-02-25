@@ -143,6 +143,12 @@ interface StreamObjects {
   size: string;
 }
 
+interface PlayerAccountSettings {
+  system73?: string;
+  locationsEnabled?: boolean;
+  version?: string;
+}
+
 export interface AccountModel {
   access?: Array<AccessLevel>;
   accountManager?: string;
@@ -205,6 +211,7 @@ export interface AccountModel {
   orgSize?: string | null;
   payments?: PaymentsObject;
   preRollUrls?: Array<string>;
+  player?: PlayerAccountSettings;
   publishingProfileDefault?: string;
   publishingProfiles?: Array<PublishingProfilesObjects>;
   tier?: string;
