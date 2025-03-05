@@ -386,6 +386,7 @@ export interface PlayerParams {
   cacheKey?: string;
   cdn?: string;
   clipDuration?: string;
+  customDimension11?: string;
   clipStart?: string;
   cypress?: StringBoolean;
   debug?: StringBoolean;
@@ -442,6 +443,7 @@ export interface SardiusPlayerConfig {
   captionOptions?: CaptionOptions;
   captions?: PlayerAsset['captions'];
   clipDuration?: number;
+  customDimension11?: string;
   clipStart?: number;
   controls: DynamoPlayerModel['controls'];
   debug?: PlayerParams['debug'];
