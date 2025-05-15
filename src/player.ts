@@ -531,6 +531,7 @@ export interface PlayerManagerRootSettings
   lao?: string;
   locale?: string;
   metadata?: PlayerData['asset']['metadata'];
+  nativeControlsForTouch?: boolean;
   options?: PlayerParams;
   pid?: string;
   playerId?: string;
