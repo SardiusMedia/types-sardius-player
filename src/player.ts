@@ -208,7 +208,7 @@ interface VolumePanel {
   vertical?: boolean;
 }
 
-interface ControlBar {
+export interface ControlBar {
   children: string[];
   volumePanel: VolumePanel;
   [key: string]: KeyValueAny | boolean;

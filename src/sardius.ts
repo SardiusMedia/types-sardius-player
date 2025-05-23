@@ -9,6 +9,7 @@ import {
   DynamoPlayerModel,
   PlayerManagerRootSettings,
   PlayerParams,
+  ControlBar,
 } from './player';
 import {
   LanguageMenuItem,
@@ -184,6 +185,7 @@ export type PlayerOptions = DynamoPlayerModel & {
   asset?: string;
   assetUID?: string;
   checkDolby?: boolean;
+  controlBar?: Partial<ControlBar>;
   dash?: string;
   endpoint?: string;
   feed?: string;
