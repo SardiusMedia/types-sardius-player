@@ -517,6 +517,7 @@ export interface PlayerManagerRootSettings
   audioOnlyToggledOn?: boolean;
   bitrate?: 'lowest' | 'heighest' | 'highest' | 'audio' | 'undefined';
   dash?: string;
+  debug?: boolean;
   disableIosSpinner?: boolean;
   preventBackBufferScrub?: boolean;
   dvrLength?: number;
