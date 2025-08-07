@@ -185,6 +185,7 @@ export type PlayerOptions = DynamoPlayerModel & {
   asset?: string;
   assetUID?: string;
   checkDolby?: boolean;
+  bitmovinMultiAudioOutputFix?: boolean;
   controlBar?: Partial<ControlBar>;
   dash?: string;
   endpoint?: string;
