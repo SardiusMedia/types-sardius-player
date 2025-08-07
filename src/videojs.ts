@@ -219,6 +219,7 @@ interface SardiusControlBar extends videojs.ControlBar {
   settingsMenuLegacy: ControlBarPlugin;
   closedCaptions: { el_: HTMLTrackElement };
   progressControl: SJSButton;
+  ProgressControl?: SJSButton;
   currentTimeDisplay: SJSButton;
   playToggle: SJSButton;
   LiveDisplay: ControlBarPlugin;
