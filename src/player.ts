@@ -229,6 +229,7 @@ export interface Setup {
   loop?: boolean;
   muted?: boolean;
   playbackRates?: number[];
+  playerType?: 'sardius' | 'bitmovin';
   plugins?: Omit<PlayerPlugins, 'spMenuBar'> & {
     sardius?: Partial<SardiusPlayerConfig>;
     spMenuBar?: SPMenuBar;
