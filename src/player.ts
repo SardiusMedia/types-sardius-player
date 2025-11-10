@@ -242,6 +242,7 @@ export interface Setup {
   version?: string;
   youtube?: Youtube;
   redirects?: Redirects;
+  bitmovinVersion?: string;
 }
 
 interface AkamaiEdgeAuth {
