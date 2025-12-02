@@ -23,7 +23,7 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
-    "@types/dynogels": "^9.0.7",
+    "@types/dynogels": "^9.0.10",
     "@types/hls-parser": "^0.8.4",
     "@types/node": "^20.4.2",
     "@types/video.js": "7.3.52",
