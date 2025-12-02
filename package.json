@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@types/dynogels": "^9.0.7",
-    "@types/hls-parser": "^0.8.4",
+    "@types/hls-parser": "^0.8.7",
     "@types/node": "^20.4.2",
     "@types/video.js": "7.3.52",
     "moment": "^2.29.4",
