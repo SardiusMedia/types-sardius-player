@@ -257,6 +257,8 @@ interface SecuredData extends KeyValueAny {
 
 export interface DynamoPlayerModel {
   accountId: string;
+  abrMax?: number; // max selectable video bitrate for ABR (kbps)
+  abrMin?: number; // min selectable video bitrate for ABR (kbps)
   akamaiEdgeAuth?: AkamaiEdgeAuth;
   assetTypeOverride?: Record<AssetTypes, AssetTypes>;
   authKey?: string | false;
