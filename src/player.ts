@@ -171,6 +171,7 @@ export interface PlayerPlugins {
   ruxit?: Ruxit;
   sardius?: Partial<SardiusPlayerConfig> | boolean;
   sardiusAds?: false | SardiusAds;
+  sidebar?: { enabled: boolean };
   spAutoplay?: boolean;
   spMenuBar: SPMenuBar;
   spMetadata?: boolean;
