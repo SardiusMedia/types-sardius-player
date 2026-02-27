@@ -157,14 +157,16 @@ export interface Preroll {
 export interface SidebarTabConfig {
   title: string;
   enabled: boolean;
+  /** Display order; lower numbers appear first. */
+  order?: number;
 }
 
 export interface SidebarConfig {
   enabled: boolean;
   transcripts?: SidebarTabConfig;
   markers?: SidebarTabConfig;
-  feedPlaylist?: SidebarTabConfig;
-  assetMetadata?: SidebarTabConfig;
+  feed?: SidebarTabConfig;
+  metadata?: SidebarTabConfig;
   bios?: SidebarTabConfig;
   categories?: SidebarTabConfig;
   album?: SidebarTabConfig;
