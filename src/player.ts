@@ -154,6 +154,26 @@ export interface Preroll {
   href?: string;
 }
 
+export interface SidebarTabConfig {
+  title: string;
+  enabled: boolean;
+}
+
+export interface SidebarConfig {
+  enabled: boolean;
+  transcripts?: SidebarTabConfig;
+  markers?: SidebarTabConfig;
+  feedPlaylist?: SidebarTabConfig;
+  assetMetadata?: SidebarTabConfig;
+  bios?: SidebarTabConfig;
+  categories?: SidebarTabConfig;
+  album?: SidebarTabConfig;
+  series?: SidebarTabConfig;
+  topics?: SidebarTabConfig;
+  tags?: SidebarTabConfig;
+  files?: SidebarTabConfig;
+}
+
 export interface PlayerPlugins {
   airplay?: boolean;
   airplayButton?: KeyValueAny;
@@ -171,7 +191,7 @@ export interface PlayerPlugins {
   ruxit?: Ruxit;
   sardius?: Partial<SardiusPlayerConfig> | boolean;
   sardiusAds?: false | SardiusAds;
-  sidebar?: { enabled: boolean; transcripts?: boolean };
+  sidebar?: SidebarConfig;
   spAutoplay?: boolean;
   spMenuBar: SPMenuBar;
   spMetadata?: boolean;
