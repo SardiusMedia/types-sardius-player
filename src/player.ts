@@ -161,12 +161,17 @@ export interface SidebarTabConfig {
   order?: number;
 }
 
+export interface MetadataTabConfig extends SidebarTabConfig {
+  /** Key paths on originalAsset (e.g. "metadata.scriptureReference"); values shown under headers from startCase(last segment). */
+  keys?: string[];
+}
+
 export interface SidebarConfig {
   enabled: boolean;
   transcripts?: SidebarTabConfig;
   markers?: SidebarTabConfig;
   feed?: SidebarTabConfig;
-  metadata?: SidebarTabConfig;
+  metadata?: MetadataTabConfig;
   bios?: SidebarTabConfig;
   categories?: SidebarTabConfig;
   album?: SidebarTabConfig;
