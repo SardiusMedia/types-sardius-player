@@ -161,6 +161,12 @@ export interface SidebarTabConfig {
   order?: number;
 }
 
+/** Feed tab–specific options. When autoNext is true, the player advances to the next item in the feed when the current video ends. */
+export interface FeedTabConfig extends SidebarTabConfig {
+  /** When true, automatically navigate to the next feed item when playback ends. */
+  autoNext?: boolean;
+}
+
 export interface MetadataTabConfig extends SidebarTabConfig {
   /** Key paths on originalAsset (e.g. "metadata.scriptureReference"); values shown under headers from startCase(last segment). */
   keys?: string[];
@@ -170,7 +176,7 @@ export interface SidebarConfig {
   enabled: boolean;
   transcripts?: SidebarTabConfig;
   markers?: SidebarTabConfig;
-  feed?: SidebarTabConfig;
+  feed?: FeedTabConfig;
   metadata?: MetadataTabConfig;
   bios?: SidebarTabConfig;
   categories?: SidebarTabConfig;
