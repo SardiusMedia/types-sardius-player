@@ -1,0 +1,61 @@
+{
+  "sidebar": {
+    "enabled": true,
+    "transcripts": {
+      "title": "Transcripts",
+      "enabled": true,
+      "order": 0
+    },
+    "markers": {
+      "title": "Markers",
+      "enabled": true,
+      "order": 1
+    },
+    "feed": {
+      "title": "Feed",
+      "enabled": true,
+      "order": 2
+    },
+    "metadata": {
+      "title": "Metadata",
+      "enabled": true,
+      "order": 3,
+      "keys": ["metadata.scriptureReference", "metadata.speaker", "metadata.description"]
+    },
+    "bios": {
+      "title": "Bios",
+      "enabled": true,
+      "order": 4
+    },
+    "categories": {
+      "title": "Categories",
+      "enabled": true,
+      "order": 5
+    },
+    "album": {
+      "title": "Album",
+      "enabled": true,
+      "order": 6
+    },
+    "series": {
+      "title": "Series",
+      "enabled": true,
+      "order": 7
+    },
+    "topics": {
+      "title": "Topics",
+      "enabled": true,
+      "order": 8
+    },
+    "tags": {
+      "title": "Tags",
+      "enabled": true,
+      "order": 9
+    },
+    "files": {
+      "title": "Files",
+      "enabled": true,
+      "order": 10
+    }
+  }
+}
