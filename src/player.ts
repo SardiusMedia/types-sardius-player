@@ -338,6 +338,8 @@ export interface DynamoPlayerModel {
   securedUrls?: boolean;
   setup: Setup;
   shift?: number;
+  /** When true, show the Bitmovin title bar/overlay; default is hidden. Overridable via `showTitle` query param. */
+  showTitle?: boolean;
   showBitrates?: boolean;
   simLiveLiveDelay?: number;
   sources?: Sources;
@@ -456,6 +458,8 @@ export interface PlayerParams {
   refreshAsset?: StringBoolean;
   sardiusOverride?: StringBoolean;
   siteId?: string;
+  /** When `true`, show the Bitmovin title bar; when `false`, hide it. Omitted defers to Dynamo `showTitle`. */
+  showTitle?: StringBoolean;
   start?: number;
   stop?: number;
   template?: string;

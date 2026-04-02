@@ -1,6 +1,6 @@
 {
   "name": "types-sardius-player",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Typescript types for Sardius Player",
   "main": "index.js",
   "scripts": {
