@@ -145,6 +145,11 @@ interface Metadata {
   description?: string;
   isLive?: boolean;
   assetId?: string;
+  /**
+   * Set when `playerDataOnly` build stubbed the manifest after a 204 (e.g. live stream offline).
+   * Clients should show the stream-offline screen instead of loading the manifest URL.
+   */
+  streamManifestOffline204?: boolean;
 }
 
 type AkamaiEdgeAuth = unknown;
@@ -196,6 +201,8 @@ export interface SardiusMappedManifest extends AssetFile {
   segmentType?: string;
   fileType?: SardiusMappedManifest['mimeType'];
   options?: AssetFileOptions;
+  /** True when manifest fetch returned 204 and a stub was used (playerDataOnly). */
+  streamManifestOffline204?: boolean;
 }
 
 export interface ManifestLevel {
