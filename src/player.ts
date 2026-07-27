@@ -277,6 +277,13 @@ export interface Setup {
   youtube?: Youtube;
   redirects?: Redirects;
   bitmovinVersion?: string;
+  /**
+   * VOD skip offsets in seconds (negative = rewind, positive = fast-forward).
+   * Sorted ascending at runtime. One value = direct skip button; two or more =
+   * stopwatch toggle that opens a sliding time-control bar.
+   * Defaults to [-30] (or [-rewindDuration] when that player field is set).
+   */
+  advancedTimeControls?: number[];
 }
 
 interface AkamaiEdgeAuth {
