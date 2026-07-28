@@ -284,7 +284,47 @@ export interface Setup {
    * Defaults to [-30] (or [-rewindDuration] when that player field is set).
    */
   advancedTimeControls?: number[];
+  /**
+   * Per-device ABR video bitrate limits (bps). When present, takes precedence
+   * over top-level abrMin/abrMax. Resolved client-side from the user agent.
+   */
+  bitrateLimits?: BitrateLimits;
 }
+
+export type BitrateLimitDeviceKey =
+  | 'safari'
+  | 'chrome'
+  | 'firefox'
+  | 'edge'
+  | 'opera'
+  | 'ios'
+  | 'android';
+
+export interface BitrateLimitDeviceSettings {
+  /** When true, use global min/max even if global.enabled is false. */
+  useGlobal?: boolean;
+  /** Higher number wins among matching enabled device entries. */
+  priority?: number;
+  enabled?: boolean;
+  /** Lower ABR bound in bits per second. */
+  min?: number;
+  /** Upper ABR bound in bits per second. */
+  max?: number;
+}
+
+export interface BitrateLimitGlobalSettings {
+  enabled?: boolean;
+  /** Lower ABR bound in bits per second. */
+  min?: number;
+  /** Upper ABR bound in bits per second. */
+  max?: number;
+}
+
+export type BitrateLimits = Partial<
+  Record<BitrateLimitDeviceKey, BitrateLimitDeviceSettings>
+> & {
+  global?: BitrateLimitGlobalSettings;
+};
 
 interface AkamaiEdgeAuth {
   key?: string;
