@@ -336,6 +336,16 @@ interface SecuredData extends KeyValueAny {
   expires?: number;
 }
 
+/**
+ * Custom Cog (settings) menu section titles.
+ * Known keys: language, audioTracks. Additional string keys allowed for future menus.
+ */
+export interface CogMenuLabels {
+  language?: string;
+  audioTracks?: string;
+  [key: string]: string | undefined;
+}
+
 export interface DynamoPlayerModel {
   accountId: string;
   abrMax?: number; // max selectable video bitrate for ABR (kbps)
@@ -372,6 +382,8 @@ export interface DynamoPlayerModel {
   loop?: boolean;
   maxBufferSize?: number;
   menuAttachments?: KeyValueAny;
+  /** Custom Cog menu section titles (e.g. language, audioTracks). */
+  menuLabels?: CogMenuLabels;
   muted?: boolean;
   nativeiOSFullscreen?: boolean;
   playbackRates?: number[] | false;
