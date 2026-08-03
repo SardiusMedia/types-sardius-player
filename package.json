@@ -28,6 +28,6 @@
     "@types/node": "^20.4.2",
     "@types/video.js": "7.3.52",
     "moment": "^2.29.4",
-    "video.js": "7.21.7"
+    "video.js": "8.23.4"
   }
 }
