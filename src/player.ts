@@ -9,6 +9,18 @@ import {
   LanguageCodesUppercaseCC,
 } from './languageCodes';
 import { MarkersPluginOptions } from './markers';
+import type { SardiusAdServer } from './adServer';
+
+export type {
+  SardiusAdServer,
+  SardiusAdServerCompanionSlot,
+  SardiusAdServerCreativeType,
+  SardiusAdServerFallback,
+  SardiusAdServerLinearSettings,
+  SardiusAdServerMarkerSources,
+  SardiusAdServerNonLinearSettings,
+  SardiusAdServerTagType,
+} from './adServer';
 
 export interface CaptionOptions {
   cueStyle?: string;
@@ -204,6 +216,11 @@ export interface PlayerPlugins {
   ruxit?: Ruxit;
   sardius?: Partial<SardiusPlayerConfig> | boolean;
   sardiusAds?: false | SardiusAds;
+  /**
+   * VAST / ad-server settings (SE-16300). Optional and independent of
+   * `sardiusAds` (direct-asset preroll/postroll). Omit on existing players.
+   */
+  sardiusAdServer?: false | SardiusAdServer;
   sidebar?: SidebarConfig;
   spAutoplay?: boolean;
   spMenuBar: SPMenuBar;
@@ -292,13 +309,7 @@ export interface Setup {
 }
 
 export type BitrateLimitDeviceKey =
-  | 'safari'
-  | 'chrome'
-  | 'firefox'
-  | 'edge'
-  | 'opera'
-  | 'ios'
-  | 'android';
+  'safari' | 'chrome' | 'firefox' | 'edge' | 'opera' | 'ios' | 'android';
 
 export interface BitrateLimitDeviceSettings {
   /** When true, use global min/max even if global.enabled is false. */
@@ -578,11 +589,7 @@ export interface SardiusPlayerConfig {
   showBitrates?: DynamoPlayerModel['showBitrates'];
   simLiveLiveDelay?: DynamoPlayerModel['simLiveLiveDelay'];
   streamType?:
-    | 'sardiusStream'
-    | 'entrypoint'
-    | 'sardiusStorage'
-    | 'simlive'
-    | 'unknown';
+    'sardiusStream' | 'entrypoint' | 'sardiusStorage' | 'simlive' | 'unknown';
   TheaterModeCallback?: (settings?: KeyValueBasic) => void;
   siteId?: PlayerParams['siteId'];
   startLevel?: DynamoPlayerModel['startLevel'];
@@ -609,8 +616,7 @@ export interface OEmbedJsonObject {
 type PlayerManagerCombinedSettings = Setup & DynamoPlayerModel;
 // Extended model for the JS player type rather than the iframe player.
 // This player lets you pass more things, like callback functions
-export interface PlayerManagerRootSettings
-  extends PlayerManagerCombinedSettings {
+export interface PlayerManagerRootSettings extends PlayerManagerCombinedSettings {
   accountId: string;
   affiliate?: string;
   asset?: LanguageCodesUppercase | LanguageCodesUppercaseCC | PlayerAsset;
