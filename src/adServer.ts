@@ -69,5 +69,11 @@ export interface SardiusAdServer {
   linear?: SardiusAdServerLinearSettings;
   nonLinear?: SardiusAdServerNonLinearSettings;
   companionSlots?: SardiusAdServerCompanionSlot[];
+  /**
+   * Optional preroll-only frequency window in seconds. Runtime stores
+   * `{accountId}_{assetId}_vast_break_history` and skips later prerolls
+   * inside that window. Independent of `sardiusAds.frequencyEach`.
+   */
+  frequencyEach?: number;
   fallback?: SardiusAdServerFallback;
 }

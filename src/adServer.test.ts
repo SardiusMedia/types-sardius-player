@@ -50,6 +50,7 @@ const vastAdServer: SardiusAdServer = {
     intervalSeconds: 300,
     percentage: 25,
   },
+  frequencyEach: 3600,
 };
 
 const pluginsWithBoth: PlayerPlugins = {
