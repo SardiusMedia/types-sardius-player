@@ -16,4 +16,5 @@ Fields match the SE-16297 creative matrix in api-players `docs/ads.md`.
 - `tagUrl` is a string (external or Sardius feed). Do not add a mode enum.
 - Marker flags are independent booleans, not a required set.
 - Fallback `postroll` and `percentage` are VOD-only at runtime (SE-16302).
+- `frequencyEach` is optional preroll-only client history (seconds).
 - Tests: `adServer.test.ts` (compile-time assignability via `tsc --noEmit`).
