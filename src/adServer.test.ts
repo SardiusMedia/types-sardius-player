@@ -22,35 +22,23 @@ const adSettings: AdSettings = existingDirectAssetAds.preroll || {};
 
 const vastAdServer: SardiusAdServer = {
   enabled: true,
-  tagUrl: 'https://feeds.example.com/exampleAccount01/exampleFeed01/vast',
-  tagType: 'vast',
-  markerSources: {
-    storedCues: true,
-    dateRange: true,
-    scte35: true,
-    cueTags: true,
-  },
-  acceptedCreativeTypes: ['linear', 'nonLinear', 'companion'],
-  linear: {
-    minDurationSeconds: 15,
-    maxDurationSeconds: 30,
-    skippable: true,
-    skipOffsetSeconds: 5,
-  },
-  nonLinear: {
-    width: 300,
-    height: 250,
-    showCloseButton: true,
-  },
-  companionSlots: [{ width: 300, height: 250 }],
+  tagUrl: 'https://ads.example.com/vast',
+  overlayPlacement: 'lowerThird',
+  showCloseButton: true,
+  skipPrerollWhenCueAtStart: false,
+  skipPostrollWhenCueAtEnd: true,
   fallback: {
     enabled: true,
-    preroll: true,
-    postroll: true,
-    intervalSeconds: 300,
-    percentage: 25,
+    entries: [
+      { timing: 'intervalMinutes', value: 5 },
+      {
+        timing: 'percentage',
+        value: 50,
+        mediaUrl: 'https://cdn.example.com/spot.mp4',
+        clickThroughUrl: 'https://example.com/go',
+      },
+    ],
   },
-  frequencyEach: 3600,
 };
 
 const pluginsWithBoth: PlayerPlugins = {
@@ -88,15 +76,9 @@ void omittedAdServer;
 void 0 as unknown as SardiusAdsHasNoTagUrl;
 void 0 as unknown as PluginsKeepSardiusAds;
 
-const invalidTagType: SardiusAdServer = {
-  // @ts-expect-error tagType is vast or vmap only
-  tagType: 'vpaid',
+const invalidPlacement: SardiusAdServer = {
+  // @ts-expect-error overlay placement is a fixed set
+  overlayPlacement: 'fullBleed',
 };
 
-const invalidCreativeType: SardiusAdServer = {
-  // @ts-expect-error Video.js-only creative types are not on this object
-  acceptedCreativeTypes: ['vjsOverlay'],
-};
-
-void invalidTagType;
-void invalidCreativeType;
+void invalidPlacement;
