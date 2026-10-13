@@ -13,13 +13,9 @@ import type { SardiusAdServer } from './adServer';
 
 export type {
   SardiusAdServer,
-  SardiusAdServerCompanionSlot,
-  SardiusAdServerCreativeType,
   SardiusAdServerFallback,
-  SardiusAdServerLinearSettings,
-  SardiusAdServerMarkerSources,
-  SardiusAdServerNonLinearSettings,
-  SardiusAdServerTagType,
+  SardiusAdServerFallbackEntry,
+  SardiusAdServerOverlayPlacement,
 } from './adServer';
 
 export interface CaptionOptions {

@@ -1,79 +1,40 @@
-/**
- * Bitmovin BAM v1 VAST/ad-server settings (SE-16300).
- * Stored at `plugins.sardiusAdServer`. Independent of `plugins.sardiusAds`.
- *
- * @module src/adServer
- */
+export const SARDIUS_AD_SERVER_OVERLAY_PLACEMENTS = [
+  'lowerThird',
+  'upperThird',
+  'topLeft',
+  'topRight',
+  'bottomLeft',
+  'bottomRight',
+  'center',
+] as const;
 
-/** v1 schedules VAST tags. `vmap` is reserved and must not be required. */
-export type SardiusAdServerTagType = 'vast' | 'vmap';
+export type SardiusAdServerOverlayPlacement =
+  (typeof SARDIUS_AD_SERVER_OVERLAY_PLACEMENTS)[number];
 
-/** Creative families BAM can request from a VAST tag / Sardius feed. */
-export type SardiusAdServerCreativeType = 'linear' | 'nonLinear' | 'companion';
-
-/**
- * Which in-stream signals may schedule a break. Independent flags so SCP can
- * opt into stored cues, HLS DATERANGE, SCTE, and/or CUETAG without a mode enum.
- */
-export interface SardiusAdServerMarkerSources {
-  storedCues?: boolean;
-  dateRange?: boolean;
-  scte35?: boolean;
-  cueTags?: boolean;
+export interface SardiusAdServerFallbackEntry {
+  timing: 'intervalMinutes' | 'percentage';
+  value: number;
+  mediaUrl?: string;
+  clickThroughUrl?: string;
 }
 
-/** Linear VAST slot preferences (Sardius feed query hints; not skip UI for sardiusAds). */
-export interface SardiusAdServerLinearSettings {
-  minDurationSeconds?: number;
-  maxDurationSeconds?: number;
-  skippable?: boolean;
-  skipOffsetSeconds?: number;
-}
-
-/** Non-linear overlay slot preferences. */
-export interface SardiusAdServerNonLinearSettings {
-  width?: number;
-  height?: number;
-  showCloseButton?: boolean;
-}
-
-/** Companion slot size. */
-export interface SardiusAdServerCompanionSlot {
-  width: number;
-  height: number;
-}
-
-/**
- * Opt-in breaks when no stored/manifest markers exist.
- * `postroll` and `percentage` are VOD-only at runtime.
- */
 export interface SardiusAdServerFallback {
   enabled?: boolean;
-  preroll?: boolean;
-  postroll?: boolean;
-  intervalSeconds?: number;
-  percentage?: number;
+  entries?: SardiusAdServerFallbackEntry[];
 }
 
 /**
- * New ad-server / VAST config. External tags use `tagUrl` unchanged except
- * caller-defined placeholders; Sardius feed URLs may add slot query params
- * in the feeds ticket.
+ * Bitmovin Advertising Module settings. Separate from `sardiusAds`.
+ * One HTTPS VAST URL is requested at asset cue markers that do not store a media URL.
  */
 export interface SardiusAdServer {
   enabled?: boolean;
   tagUrl?: string;
-  tagType?: SardiusAdServerTagType;
-  markerSources?: SardiusAdServerMarkerSources;
-  acceptedCreativeTypes?: SardiusAdServerCreativeType[];
-  linear?: SardiusAdServerLinearSettings;
-  nonLinear?: SardiusAdServerNonLinearSettings;
-  companionSlots?: SardiusAdServerCompanionSlot[];
-  /**
-   * Optional preroll-only frequency window in seconds. Runtime stores
-   * `{accountId}_{assetId}_vast_break_history` and skips later prerolls
-   * inside that window. Independent of `sardiusAds.frequencyEach`.
-   */
-  frequencyEach?: number;
+  overlayPlacement?: SardiusAdServerOverlayPlacement;
+  showCloseButton?: boolean;
+  /** A cue at startMs 0 suppresses direct sardiusAds pre-roll. Default off. */
+  skipPrerollWhenCueAtStart?: boolean;
+  /** A cue at the end of the asset suppresses direct sardiusAds post-roll. Default off. */
+  skipPostrollWhenCueAtEnd?: boolean;
   fallback?: SardiusAdServerFallback;
 }
