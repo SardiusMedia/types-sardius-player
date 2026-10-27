@@ -54,10 +54,10 @@
     "@types/node" "*"
     joi "^17.3.0"
 
-"@types/hls-parser@^0.8.4":
-  version "0.8.4"
-  resolved "https://registry.yarnpkg.com/@types/hls-parser/-/hls-parser-0.8.4.tgz#dca9ae2b3c7afdfa162c4ddded1ca534eefde874"
-  integrity sha512-9cqcoJi+PxqK5skhzL8yW0/dYqVj4EUo5RF9yzbd6ReDVi31mS8v07ehzYN/trgcStdDvoraeupD2Z9Maj5sEw==
+"@types/hls-parser@^0.8.7":
+  version "0.8.7"
+  resolved "https://registry.yarnpkg.com/@types/hls-parser/-/hls-parser-0.8.7.tgz#26360493231ed8606ebe995976c63c69c3982657"
+  integrity sha512-3ry9V6i/uhSbNdvBUENAqt2p5g+xKIbjkr5Qv4EaXe7eIJnaGQntFZalRLQlKoEop381a0LwUr2qNKKlxQC4TQ==
   dependencies:
     "@types/node" "*"
 
