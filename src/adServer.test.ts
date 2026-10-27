@@ -76,9 +76,23 @@ void omittedAdServer;
 void 0 as unknown as SardiusAdsHasNoTagUrl;
 void 0 as unknown as PluginsKeepSardiusAds;
 
+const topPlacement: SardiusAdServer = {
+  overlayPlacement: 'top',
+};
+const middleCenterPlacement: SardiusAdServer = {
+  overlayPlacement: 'middleCenter',
+};
+
 const invalidPlacement: SardiusAdServer = {
   // @ts-expect-error overlay placement is a fixed set
   overlayPlacement: 'fullBleed',
 };
+const removedUpperThird: SardiusAdServer = {
+  // @ts-expect-error upperThird was replaced by top
+  overlayPlacement: 'upperThird',
+};
 
+void topPlacement;
+void middleCenterPlacement;
 void invalidPlacement;
+void removedUpperThird;
