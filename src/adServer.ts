@@ -1,11 +1,20 @@
 export const SARDIUS_AD_SERVER_OVERLAY_PLACEMENTS = [
   'lowerThird',
-  'upperThird',
+  'top',
   'topLeft',
+  'topCenter',
   'topRight',
+  'middleLeft',
+  'middleCenter',
+  'middleRight',
   'bottomLeft',
+  'bottomCenter',
   'bottomRight',
+  'left',
   'center',
+  'right',
+  'middle',
+  'whole',
 ] as const;
 
 export type SardiusAdServerOverlayPlacement =
